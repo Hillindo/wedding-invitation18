@@ -1,6 +1,6 @@
 export default function Footer () {
     return (
-        <section className='grid items-center justify-center gap-10 pb-10 bg-black text-white'>
+        <section className='grid items-center justify-center gap-10 pb-20 bg-black text-white'>
 
         <div className='flex items-center justify-center text-xs pt-4 lg:text-sm'>
           <span className='text-center'>
