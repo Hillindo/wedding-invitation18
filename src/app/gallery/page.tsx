@@ -8,8 +8,8 @@ import 'swiper/css/navigation';
 import Lightbox from "react-18-image-lightbox";
 import "react-18-image-lightbox/style.css";
 import { Autoplay, Navigation} from 'swiper/modules';
-import Stagger from 'next@js/app/component/animation/stagger/stagger';
 import { motion, AnimatePresence } from "framer-motion";
+import Image from 'next/image';
 
 
 export default function Gallery({ data }: any) {
@@ -63,7 +63,6 @@ export default function Gallery({ data }: any) {
                 caption
             </p> */}
                 {preweddingVideo && preweddingVideo?.length > 0 ? (
-                    <Stagger>
                         <motion.div
                             variants={itemA}
                             className="w-full aspect-video  rounded-xl overflow-hidden mb-8">
@@ -74,7 +73,6 @@ export default function Gallery({ data }: any) {
                                 } title="YouTube video player" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" ></iframe>
                     </motion.div>
 
-                    </Stagger>
                 ):null}
             <div>
             <Swiper
@@ -99,10 +97,7 @@ export default function Gallery({ data }: any) {
                                     setShowModal(true);
                                 }}
                                     className='w-full h-64  rounded-xl overflow-hidden' >
-                                        <motion.img
-                                            initial={{ opacity: 0,}}
-                                            whileInView={{ opacity: 1 }}
-                                            transition={{ duration:1 }}
+                                        <Image
                                             src={res.image_crop} alt="" className='w-full h-full object-cover' />
                                 </div>
                                
@@ -126,7 +121,7 @@ export default function Gallery({ data }: any) {
             <i className='fa fa-close'></i>
           </button>
                                     <div className=' mt-5 w-4/5 mx-auto'>
-                                        <img src={selectedImage?.url} className="w-full" alt="" />
+                                        <Image src={selectedImage?.url} className="w-full" alt="" />
                                     </div>
                                    
                                 </div>

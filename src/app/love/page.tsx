@@ -4,6 +4,7 @@ import Observer from "next@js/app/component/observer/observer-up";
 import Observer2 from "next@js/app/component/observer/observer-moveLeft";
 import Observer3 from "next@js/app/component/observer/observer-moveRight";
 import Observer4 from "next@js/app/component/observer/observer-zoomIn";
+import Image from "next/image";
 
 
 export default function LoveStory({ data }: any) {
@@ -42,7 +43,7 @@ const [story, setStory] = useState<any>([]);
                         <div className="mb-8" key={index}>
                             <div className="w-56 h-40  rounded-lg mx-auto mb-2 overflow-hidden">
                                 <Observer4>
-                                    <img src={res?.images } alt="" className="object-cover w-full h-full object-top" />
+                                    <Image src={res?.images } alt="" className="object-cover w-full h-full object-top" />
                                 </Observer4>
 
                             </div>

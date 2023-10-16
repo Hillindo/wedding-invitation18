@@ -5,6 +5,7 @@ import Observer from "next@js/app/component/observer/observer-up";
 import Observer2 from "next@js/app/component/observer/observer-moveLeft";
 import Observer3 from "next@js/app/component/observer/observer-moveRight";
 import Observer4 from "next@js/app/component/observer/observer-zoomIn";
+import Image from "next/image";
 
 export default function Couple({data}:any) {
 const [socmedLeft, setSocmedLeft] = useState<any>([]);
@@ -65,7 +66,7 @@ const [socmedLeft, setSocmedLeft] = useState<any>([]);
                     </div>
                     <Observer4>
                         <div className=" mb-5 w-full relative flex justify-center">
-                            <img src={`${data?.brideGroomLeft ? (data.brideGroomLeft[0].image_male ?
+                            <Image src={`${data?.brideGroomLeft ? (data.brideGroomLeft[0].image_male ?
                                 data.brideGroomLeft[0].image_male : data.brideGroomLeft[0].image_female) : '' }`}
                                 className="border-solid border-2 border-white rounded-[1000px] w-[70%] sm:w-1/2 md:w-1/2 lg:w-[70%] bg-white h-[300px] min-[400px]:h-[400px] sm:h-[400px] md:h-[500px] lg:h-[400px] object-cover"
                                 alt="" />
@@ -101,7 +102,7 @@ const [socmedLeft, setSocmedLeft] = useState<any>([]);
                     </Observer4>
                     <Observer4>
                         <div className=" mb-5 w-full relative flex justify-center">
-                            <img src={`${data?.brideGroomRight ? (data.brideGroomRight[0].image_male ?
+                            <Image src={`${data?.brideGroomRight ? (data.brideGroomRight[0].image_male ?
                                 data.brideGroomRight[0].image_male : data.brideGroomRight[0].image_female) : '' }`}
                                 className="border-solid border-2 bg-white border-white rounded-[1000px] w-[70%] sm:w-1/2 md:w-1/2 lg:w-[70%] h-[300px] min-[400px]:h-[400px] sm:h-[400px] md:h-[500px] lg:h-[400px] object-cover"
                                 alt="" />

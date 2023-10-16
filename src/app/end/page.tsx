@@ -5,6 +5,7 @@ import Observer from "next@js/app/component/observer/observer-up";
 import Observer2 from "next@js/app/component/observer/observer-moveLeft";
 import Observer3 from "next@js/app/component/observer/observer-moveRight";
 import Observer4 from "next@js/app/component/observer/observer-zoomIn";
+import Image from "next/image";
 
 export default function Last({data}:any) {
   const [frontPage, setFrontPage] = useState<any>([]);
@@ -46,7 +47,7 @@ export default function Last({data}:any) {
             className="w-full md:w-3/4 lg:w-full mx-auto h-[620px] md:h-[800px] lg:h-[620px] bg-white/80 text text-center mt-24 rounded-t-full p-7 flex flex-col justify-between">
             <div
               className="h-3/4 md:h-4/5 lg:h-3/4 w-full  rounded-t-full overflow-hidden">
-              <img src={frontPage?.front_page ? frontPage?.front_page : " "} alt="" className="w-full h-full object-cover object-center" />
+              <Image src={frontPage?.front_page ? frontPage?.front_page : " "} alt="" className="w-full h-full object-cover object-center" />
             </div>
                   <Observer4>
             <p

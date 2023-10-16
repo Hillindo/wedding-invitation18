@@ -1,4 +1,5 @@
 "use client";
+import Image from "next/image";
 import { useState, useEffect } from "react";
 
 export default function Front({data, guestName, onOpenNextSections}:any) {
@@ -34,7 +35,7 @@ return (
 <div className="absolute w-full h-full bottom-0 z-20 py-28 mt-auto">
                     <div className="w-full h-full flex flex-col justify-center text-white">
                         <div className="w-full h-auto">
-                            <img src="https://invitingart.id/wp-content/uploads/2022/06/blank.png" alt="" loading="lazy" />
+                            <Image src="https://invitingart.id/wp-content/uploads/2022/06/blank.png" alt="" loading="lazy" />
                         </div>
                         <div className="w-auto h-auto text-center font-quicksand tracking-[1px] text-[15px] opacity-80 md:text-2xl lg:text-[15px]">
                             THE WEDDING OF
