@@ -4,7 +4,6 @@ import Observer from "next@js/app/component/observer/observer-up";
 import Observer2 from "next@js/app/component/observer/observer-moveLeft";
 import Observer3 from "next@js/app/component/observer/observer-moveRight";
 import Observer4 from "next@js/app/component/observer/observer-zoomIn";
-import Image from "next/image";
 
 export default function CountdownDate({data}:any) {
     const [event, setEvent] = useState<any>([]);
@@ -57,12 +56,12 @@ export default function CountdownDate({data}:any) {
         <div className='m-2 p-3 w-full flex flex-wrap'>
                 <div className="absolute top-0 left-[-70px] ml-auto h-auto w-4/5 sm:w-1/2 lg:w-4/5">
             <Observer3>
-            <Image src="/img/bg-4.png" className='w-full h-auto' alt="" />
+            <img src="/img/bg-4.png" className='w-full h-auto' alt="" />
             </Observer3>
                 </div>
                 <div className="absolute  opacity-50 top-1/3 mr-auto right-[-70px] h-auto w-4/5 sm:w-1/2 lg:w-4/5">
             <Observer2>
-            <Image src="/img/bg-3.png" className='w-full h-auto' alt="" />
+            <img src="/img/bg-3.png" className='w-full h-auto' alt="" />
             </Observer2>
                 </div>
             <div className='mt-8 z-[1] w-full flex flex-wrap sm:flex-nowrap lg:flex-wrap mx-auto justify-center '>

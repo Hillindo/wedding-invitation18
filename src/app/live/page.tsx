@@ -33,7 +33,6 @@ export default function Live(data:any) {
     
         fetchData();
     }, [data]);
-    console.log(data.data.liveStream);
     
   return (
     <section>

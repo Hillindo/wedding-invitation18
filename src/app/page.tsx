@@ -54,7 +54,7 @@ if (currentURL) {
   const splitSlash = currentURL.split("https://");
   const domain = splitSlash[1]?.split(".")[0];
   setCookie("subDomain", domain);
-  // setCookie("subDomain", "wildanfania");
+  // setCookie("subDomain", "adam-jihan");
 }
 useEffect(() => {
   const images = Array.from(document.images);
@@ -121,6 +121,7 @@ useEffect(() => {
     getData();
   }
 }, [myCookie]);
+// console.log(data, "data");
 
   return (
     <div >

@@ -9,7 +9,6 @@ import Lightbox from "react-18-image-lightbox";
 import "react-18-image-lightbox/style.css";
 import { Autoplay, Navigation} from 'swiper/modules';
 import { motion, AnimatePresence } from "framer-motion";
-import Image from 'next/image';
 
 
 export default function Gallery({ data }: any) {
@@ -97,7 +96,10 @@ export default function Gallery({ data }: any) {
                                     setShowModal(true);
                                 }}
                                     className='w-full h-64  rounded-xl overflow-hidden' >
-                                        <Image
+                                        <motion.img
+                                            initial={{ opacity: 0,}}
+                                            whileInView={{ opacity: 1 }}
+                                            transition={{ duration:1 }}
                                             src={res.image_crop} alt="" className='w-full h-full object-cover' />
                                 </div>
                                
@@ -121,7 +123,7 @@ export default function Gallery({ data }: any) {
             <i className='fa fa-close'></i>
           </button>
                                     <div className=' mt-5 w-4/5 mx-auto'>
-                                        <Image src={selectedImage?.url} className="w-full" alt="" />
+                                        <img src={selectedImage?.url} className="w-full" alt="" />
                                     </div>
                                    
                                 </div>

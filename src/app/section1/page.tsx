@@ -2,7 +2,6 @@
 import { useState, useEffect } from "react";
 import { motion } from 'framer-motion';
 import Snowfalls from '../component/snowfalls/SnowfallComponent';
-import Image from "next/image";
 
 export default function Section1({data}:any) {
   const [event, setEvent] = useState<any>([]);
@@ -76,7 +75,7 @@ transformOrigin: 'center', // Rotate around the center
 }}
 >
         <div className="h-full max-w-full flex justify-center mb-4">
-            <Image src="/logo/iconpastinikah.svg" className=" w-2/5 animate-moveDown-1" alt="" rel="preload" fetchPriority="high" />
+            <img src="/logo/iconpastinikah.svg" className=" w-2/5 animate-moveDown-1" alt="" rel="preload" fetchPriority="high" />
         </div>
 </motion.div>
         <div className="w-full h-auto text-center font-quicksand tracking-[3px] text-[13px] opacity-80 md:text-lg xl:text-[13px] text-black animate-moveDown-1">

@@ -1,5 +1,3 @@
-import Image from "next/image";
-
 export default function Footer () {
     return (
         <section className='grid items-center justify-center gap-10 pb-20 bg-black text-white'>
@@ -7,7 +5,7 @@ export default function Footer () {
         <div className='flex items-center justify-center text-xs pt-4 lg:text-sm'>
           <span className='text-center'>
           <a href="https://pastinikah.id" target='_blank' className='pt-5 pb-5 flex justify-center'>
-          <Image src="/logo/iconpastinikah2.svg" className=' w-1/3' alt="" loading="lazy"/>
+          <img src="/logo/iconpastinikah2.svg" className=' w-1/3' alt="" loading="lazy"/>
           </a>
           ©CopyRight 
           </span>

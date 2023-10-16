@@ -103,7 +103,7 @@ export default function Location({data}:any) {
     const formattedDate = res.date.replace(' ', 'T') + '.000000Z';
     
       return (
-            <Observer4>
+            <Observer4 key={res.id}>
         <div className="bg-[#FFFFFF91] p-5 my-5 max-w-xs w-full rounded-3xl" id="date">
                 <div className="p-2 w-full">
                     <div className="mb-5 text-left mt-2 font-semibold text-black tracking-[4px] text-base italic font-timesnr">

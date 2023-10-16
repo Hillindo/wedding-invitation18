@@ -6,7 +6,6 @@ import Observer from "next@js/app/component/observer/observer-up";
 import Observer2 from "next@js/app/component/observer/observer-moveLeft";
 import Observer3 from "next@js/app/component/observer/observer-moveRight";
 import Observer4 from "next@js/app/component/observer/observer-zoomIn";
-import Image from "next/image";
 
 export default function Gift ({data}:any) {
   const [caption3, setCaption3] = useState("");
@@ -115,13 +114,13 @@ export default function Gift ({data}:any) {
                           className=' mt-10 container max-w-md lg:max-w-md xl:max-w-lg flex justify-center relative z-50 text-white'
                           key={index}>
                           <div className='flex justify-center relative w-full h-full aspect-card'>
-                            <Image src="/img/bank2.png" className=' h-full w-full absolute' rel="preload" alt="" />
+                            <img src="/img/bank2.png" className=' h-full w-full absolute' rel="preload" />
                             <div className='z-10 w-full  h-full  px-4  py-2 flex flex-col justify-between '>
                               <div className=" ml-auto mr-2 text-white font-normal w-[80%] text-end ">
-                                <Image src={res?.bank?.path_pict } className="w-[40%] ml-auto" alt="" rel="preload" />
+                                <img src={res?.bank?.path_pict } className="w-[40%] ml-auto" alt="" rel="preload" />
                               </div>
                               <div>
-                                <Image src="/img/bank3.png" alt="" className="w-[20%]" rel="preload" />
+                                <img src="/img/bank3.png" alt="" className="w-[20%]" rel="preload" />
                               </div>
                               <div>
                               <div className=" flex flex-wrap items-end gap-2 mb-3">
@@ -142,7 +141,7 @@ export default function Gift ({data}:any) {
                                 <strong> {res?.user?.name ? res.user.name : " "}</strong>
                               </div>
                               </div>
-                              <Image src="/logo/iconpastinikah.svg" alt="" className="w-[30%] ml-auto" />
+                              <img src="/logo/iconpastinikah.svg" alt="" className="w-[30%] ml-auto" />
                               </div>
                                 
                               </div>
@@ -160,13 +159,13 @@ export default function Gift ({data}:any) {
                       className=' mt-10 container max-w-md lg:max-w-md xl:max-w-lg flex justify-center relative z-50 text-white'
                       key={index}>
                       <div className='flex justify-center relative w-full h-full  aspect-card'>
-                        <Image src="/img/bank2.png" className=' h-full w-full absolute' rel="preload" alt=""/>
+                        <img src="/img/bank2.png" className=' h-full w-full absolute' rel="preload" />
                         <div className='z-10 w-full  h-full px-4  py-2 flex flex-col justify-between '>
                           <div className=" ml-auto mr-2 text-white font-normal w-[80%] text-end ">
-                            <Image src={res?.bank?.path_pict } className="w-[40%] ml-auto" alt="" rel="preload" />
+                            <img src={res?.bank?.path_pict } className="w-[40%] ml-auto" alt="" rel="preload" />
                           </div>
                           <div>
-                                <Image src="/img/bank3.png" alt="" className="w-[20%]" rel="preload" />
+                                <img src="/img/bank3.png" alt="" className="w-[20%]" rel="preload" />
                           </div>
                           <div>
                           <div className=" flex flex-wrap items-end gap-2 mb-2">
@@ -192,7 +191,7 @@ export default function Gift ({data}:any) {
                                 <strong> {res?.user?.name ? res.user.name : " "}</strong>
                               </div>
                               </div>
-                              <Image src="/logo/iconpastinikah.svg" alt="" className="w-[30%] ml-auto" rel="preload" />
+                              <img src="/logo/iconpastinikah.svg" alt="" className="w-[30%] ml-auto" rel="preload" />
                               </div>
                             
                           </div>
@@ -216,7 +215,7 @@ export default function Gift ({data}:any) {
           >
             <i className='fa fa-close'></i>
           </button>
-          <Image src={contentModal?.qr_path} className="object-cover py-5 sm:max-w-xs " alt="" loading='lazy' />
+          <img src={contentModal?.qr_path} className="object-cover py-5 sm:max-w-xs " alt="" loading='lazy' />
         </Modal>
       </div>
       {/* konvensional */}
