@@ -138,7 +138,7 @@ export default function Gift ({data}:any) {
                                 atas nama
                               </p>
                               <div className=" break-words text-lg">
-                                <strong> {res?.user?.name ? res.user.name : " "}</strong>
+                                <strong> {res?.owner_name ? res.owner_name : " "}</strong>
                               </div>
                               </div>
                               <img src="/logo/iconpastinikah.svg" alt="" className="w-[30%] ml-auto" />
@@ -188,7 +188,7 @@ export default function Gift ({data}:any) {
                                 atas nama
                               </p>
                               <div className=" break-words text-lg">
-                                <strong> {res?.user?.name ? res.user.name : " "}</strong>
+                                <strong> {res?.owner_name ? res.owner_name : " "}</strong>
                               </div>
                               </div>
                               <img src="/logo/iconpastinikah.svg" alt="" className="w-[30%] ml-auto" rel="preload" />
