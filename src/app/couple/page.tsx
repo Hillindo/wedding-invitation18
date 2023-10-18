@@ -79,8 +79,7 @@ const [socmedLeft, setSocmedLeft] = useState<any>([]);
                                     data.brideGroomLeft[0].name_male : data.brideGroomLeft[0].name_female) : ''}
                                 </h3>
                                 <div className=" text-black font-redressed text-center text-lg">
-                                    {data?.brideGroomLeft ? (data.brideGroomLeft[0].name_male ? "Putra" : "Putri") : ''}
-                                    dari Bapak {data?.brideGroomLeft ? (data.brideGroomLeft[0].father_male ?
+                                    {data?.brideGroomLeft ? (data.brideGroomLeft[0].name_male ? "Putra" : "Putri") : ''} dari Bapak {data?.brideGroomLeft ? (data.brideGroomLeft[0].father_male ?
                                     data.brideGroomLeft[0].father_male : data.brideGroomLeft[0].father_female) : ''}
                                     <br /> dan Ibu {data?.brideGroomLeft ? (data.brideGroomLeft[0].mother_male ?
                                     data.brideGroomLeft[0].mother_male : data.brideGroomLeft[0].mother_female) : ''}
