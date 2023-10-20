@@ -39,7 +39,7 @@ export default function Last({data}:any) {
 }, [data]);
 
     return (
-        <div className=" bg-cover bg-bottom bg-fixed  relative">
+        <div className=" bg-cover bg-bottom bg-fixed text-black relative">
 <Observer>
             <div className="pb-16 px-6 relative">
           <div
