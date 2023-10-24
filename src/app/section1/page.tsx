@@ -82,7 +82,7 @@ transformOrigin: 'center', // Rotate around the center
             THE WEDDING OF
         </div>
         <div className="w-full h-auto text-center tracking-[3.7px] text-[42px] font-medium animate-moveDown-1 font-cinzel text-[#474747]"> 
-        {nameMale ? nameMale: " "} & {nameFemale ? nameFemale : " "}
+        {nameFemale ? nameFemale: " "} & {nameMale ? nameMale : " "}
         </div>
     </div>
 </div>
