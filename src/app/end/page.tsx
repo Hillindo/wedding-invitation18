@@ -51,7 +51,7 @@ export default function Last({data}:any) {
                   <Observer4>
             <p
               className="text-sm md:text-xl lg:text-sm font-quicksand my-2">
-              {caption2 ? caption2 : defaultCaption2}
+              Merupakan Suatu Kebahagiaan Dan Kehormatan Bagi Kami Apabila Bapak/Ibu/Saudara/i Berkenan Hadir Untuk Memberikan Doa Restu Kepada Kami. Atas Kehadiran Dan Doa Restunya Kami Ucapkan Terima Kasih.
             </p>
             <h1
               className="font-roserri text-3xl md:text-4xl lg:text-3xl capitalize">

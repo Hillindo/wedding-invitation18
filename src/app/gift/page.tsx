@@ -62,7 +62,7 @@ export default function Gift ({data}:any) {
       <>
       {bank?.length > 0 ? (
     <Observer4>
-   <section className="w-full pt-10 pb-20">
+   <section className="w-full pt-28 pb-40">
 
      <div className="bg-[#051E31] rounded-3xl shadow-slate-800 shadow-md relative mx-5 sm:mx-20 lg:px-5 border-white flex z-20 border">
      <div className=" rounded-3xl bg-bottom bg-no-repeat bg-cover bg-blend-multiply h-full w-full absolute z-10 bg-[#051E31]" style={{backgroundImage: `url('/img6/bg-4.jpg')`}}></div>
