@@ -40,7 +40,7 @@ return (
                             THE WEDDING OF
                         </div>
                         <div className="w-auto h-auto text-center tracking-[3.7px] font-qageto text-[30px] md:text-6xl lg:text-[40px] text-white opacity-95"> 
-                        {nameMale ? nameMale: " "} & {nameFemale ? nameFemale : " "}
+                        {nameFemale ? nameFemale: " "} & {nameMale ? nameMale : " "}
                         </div>
                         <div className="w-auto h-auto text-center text-[10px] text-white opacity-95 md:text-2xl lg:text-[15px] md:mt-4 xl:mt-0">
                             Kepada Yth :
