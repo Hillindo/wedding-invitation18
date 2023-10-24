@@ -68,7 +68,7 @@ export default function CountdownDate({data}:any) {
                 <Observer>
                 <div className='w-full flex justify-center'>
                     <div className='p-3 flex justify-center bg-white rounded-3xl w-[250px] sm:w-[350px] md:w-[400px] lg:w-[300px] h-[250px] sm:h-[350px] md:h-[400px] lg:h-[300px]'>
-                    <iframe src={`${event?.length > 0 ? event[0]?.url : "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3962.8250149254054!2d106.9285380738836!3d-6.668593765190272!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e69b75158a75fb7%3A0x4783f70c2ac389f5!2sBromelia%20Sport%20Center!5e0!3m2!1sid!2sid!4v1689038709719!5m2!1sid!2sid"}`} loading="lazy" className="rounded-3xl w-full h-full"></iframe>
+                    <iframe src={`${event?.length > 0 ? event[0]?.url : ""}`} loading="lazy" className="rounded-3xl w-full h-full"></iframe>
                     </div>
                 </div>
                 </Observer>
