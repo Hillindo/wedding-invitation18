@@ -25,10 +25,18 @@ export default function Section1({data}:any) {
 
     fetchData();
 }, [data]);
-
+function parseDate(str:any) {
+  const [dateparts, timeparts] = str.split(" ");
+  const [year, month, day] = dateparts.split("-");
+  const [hours = 0, minutes = 0, seconds = 0] = timeparts?.split(":") ?? [];
+  // Treats the string as UTC, but you can remove the `Date.UTC` part and use
+  // `new Date` directly to treat the string as local time
+  return new Date(Date.UTC(+year, +month - 1, +day, +hours, +minutes, +seconds));
+}
 useEffect(() => {
   if (event?.length > 0) {
-    const date = new Date(event[0]?.date);
+    const dateString = event[0]?.date;
+    const date = parseDate(dateString);
     setFormattedDate(
       date.toLocaleDateString("id-ID", {
         year: "numeric",

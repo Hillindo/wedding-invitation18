@@ -19,11 +19,21 @@ export default function Location({data}:any) {
     seconds: 0,
   });
 
+  function parseDate(str:any) {
+    const [dateparts, timeparts] = str.split(" ");
+    const [year, month, day] = dateparts.split("-");
+    const [hours = 0, minutes = 0, seconds = 0] = timeparts?.split(":") ?? [];
+    // Treats the string as UTC, but you can remove the `Date.UTC` part and use
+    // `new Date` directly to treat the string as local time
+    return new Date(Date.UTC(+year, +month - 1, +day, +hours, +minutes, +seconds));
+}
+
   useEffect(() => {
     if (event?.length > 0) {
-      
+      const dateString = event[0]?.date;
+      const d = parseDate(dateString);
       const calculateCountdown = () => {
-        const targetDate = new Date(event[0]?.date).getTime();
+        const targetDate = d.getTime();
         const now = new Date().getTime();
 
         const diff = Math.max(targetDate - now, 0);
@@ -63,9 +73,10 @@ export default function Location({data}:any) {
 
   useEffect(() => {
     if (event?.length > 0) {
-      const date = new Date(event[0]?.date);
+      const dateString = event[0]?.date;
+      const d = parseDate(dateString);
       setFormattedDate(
-        date.toLocaleDateString("id-ID", {
+        d.toLocaleDateString("id-ID", {
           weekday: "long",
           year: "numeric",
           month: "long",
@@ -100,8 +111,8 @@ export default function Location({data}:any) {
             window.open(eventUrl, '_blank');
         }
     };
-    const formattedDate = res.date.replace(' ', 'T') + '.000000Z';
-    
+    const dateString = res.date;
+    const d = parseDate(dateString);
       return (
             <Observer4 key={res.id}>
         <div className="bg-[#FFFFFF91] p-5 my-5 max-w-xs w-full rounded-3xl text-black" id="date">
@@ -110,7 +121,7 @@ export default function Location({data}:any) {
                         {res.name}
                     </div>
                     <div className="mb-5 capitalize font-semibold text-left mt-2 text-black text-xl font-garaigit">
-                    {new Date(formattedDate).toLocaleDateString("id-ID", {
+                    {d.toLocaleDateString("id-ID", {
               weekday: "long",
               year: "numeric",
               month: "long",

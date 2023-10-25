@@ -15,11 +15,21 @@ export default function CountdownDate({data}:any) {
         seconds: 0,
       });
 
+      function parseDate(str:any) {
+        const [dateparts, timeparts] = str.split(" ");
+        const [year, month, day] = dateparts.split("-");
+        const [hours = 0, minutes = 0, seconds = 0] = timeparts?.split(":") ?? [];
+        // Treats the string as UTC, but you can remove the `Date.UTC` part and use
+        // `new Date` directly to treat the string as local time
+        return new Date(Date.UTC(+year, +month - 1, +day, +hours, +minutes, +seconds));
+    }
+
       useEffect(() => {
         if (event?.length > 0) {
-          
+                const dateString = event[0]?.date;
+      const d = parseDate(dateString);
           const calculateCountdown = () => {
-            const targetDate = new Date(event[0]?.date).getTime();
+            const targetDate = d.getTime();
             const now = new Date().getTime();
     
             const diff = Math.max(targetDate - now, 0);
@@ -70,6 +80,13 @@ export default function CountdownDate({data}:any) {
                     <div className='p-3 flex justify-center bg-white rounded-3xl w-[250px] sm:w-[350px] md:w-[400px] lg:w-[300px] h-[250px] sm:h-[350px] md:h-[400px] lg:h-[300px]'>
                     <iframe src={`${event?.length > 0 ? event[0]?.url : ""}`} loading="lazy" className="rounded-3xl w-full h-full"></iframe>
                     </div>
+                </div>
+                <div className="w-full flex justify-center">
+                <a target='blank' href={`${event?.length > 0 && event[0]?.description != null ? event[0]?.description : event[0]?.url}`} className='px-4 py-1 rounded-2xl bg-blue-500 hover:bg-blue-800 text-white my-3'>
+                        <button>
+                            Klik Map Disini
+                        </button>
+                </a>
                 </div>
                 </Observer>
                 <div className='w-full flex flex-nowrap flex-col items-center justify-center text-white mx-5 mt-5'>
