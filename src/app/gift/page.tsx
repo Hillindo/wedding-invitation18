@@ -125,10 +125,10 @@ export default function Gift ({data}:any) {
                               <div>
                               <div className=" flex flex-wrap items-end gap-2 mb-3">
                                 <div className="text-white  break-all tracking-[2px]">
-                                  {res?.bank?.code ?? "32xxxxxxxx"} {res?.rekening ? res.rekening : "req"}
+                                  {res?.rekening ? res.rekening : "req"}
                                 </div>
                                 <div className="">
-                                  <CopyButton text={`${res?.bank?.code ? res.bank.code : "12345678" }${res?.rekening ?
+                                  <CopyButton text={`${res?.rekening ?
                                     res.rekening : "12345678" }`} />
                                 </div>
                               </div>
