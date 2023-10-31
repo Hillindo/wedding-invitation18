@@ -121,7 +121,7 @@ useEffect(() => {
     getData();
   }
 }, [myCookie]);
-// console.log(data, "data");
+console.log(data, "data");
 
   return (
     <div >

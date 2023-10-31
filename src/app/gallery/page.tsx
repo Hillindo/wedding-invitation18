@@ -65,11 +65,13 @@ export default function Gallery({ data }: any) {
                         <motion.div
                             variants={itemA}
                             className="w-full aspect-video  rounded-xl overflow-hidden mb-8">
-                        <iframe className="w-full h-full" src={
+                        {/* <iframe className="w-full h-full" src={`${
                                   preweddingVideo[0]?.video_name ??
-                                  preweddingVideo[0]?.url_video ??
-                                  ""
-                                } title="YouTube video player" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" ></iframe>
+                                  preweddingVideo[0]?.url_video ?? ""}
+                                `} title="YouTube video player" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" ></iframe> */}
+                                 <video className='w-full h-full' src={`${
+                                  preweddingVideo[0]?.video_name ??
+                                  preweddingVideo[0]?.url_video ?? ""}`} preload='auto' controls></video>
                     </motion.div>
 
                 ):null}
