@@ -65,7 +65,8 @@ export default function Gallery({ data }: any) {
                         <motion.div
                             variants={itemA}
                             className="w-full aspect-video  rounded-xl overflow-hidden mb-8">
-                                {preweddingVideo[0]?.url_video != null ? (
+
+                                {preweddingVideo[0]?.url_video != "" ? (
                         <iframe className="w-full h-full" src={`${
                                   preweddingVideo[0]?.url_video}
                                 `} title="YouTube video player" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" ></iframe>
@@ -73,6 +74,7 @@ export default function Gallery({ data }: any) {
                                  <video className='w-full h-full' src={`${
                                   preweddingVideo[0]?.video_name}`} preload='auto' controls></video>
                                 )}
+
                     </motion.div>
 
                 ):null}
