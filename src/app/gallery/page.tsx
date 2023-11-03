@@ -72,7 +72,7 @@ export default function Gallery({ data }: any) {
                                 `} title="YouTube video player" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" ></iframe>
                                 ) : (
                                  <video className='w-full h-full' src={`${
-                                  preweddingVideo[0]?.video_name}`} preload='auto' controls></video>
+                                  preweddingVideo[0]?.video_name}`} preload='auto' autoPlay controls></video>
                                 )}
 
                     </motion.div>
