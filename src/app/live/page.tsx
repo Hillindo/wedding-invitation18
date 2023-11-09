@@ -45,7 +45,7 @@ export default function Live(data:any) {
                         Live Streaming
                     </div>
                     <div className="mb-5 w-full flex items-center">
-                    <div className=" font-quicksand text-base text-center">
+                    <div className=" font-quicksand text-base text-center text-black">
                     <p>{caption4 ? caption4 : defaultcaption4}</p>
                     </div>
                     </div>
