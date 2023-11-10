@@ -62,7 +62,7 @@ export default function Gift ({data}:any) {
       <>
       {bank?.length > 0 ? (
     <Observer4>
-   <section className="w-full pt-28 pb-40">
+   <section className="w-full pt-28">
 
      <div className="bg-[#051E31] rounded-3xl shadow-slate-800 shadow-md relative mx-5 sm:mx-20 lg:px-5 border-white flex z-20 border">
      <div className=" rounded-3xl bg-bottom bg-no-repeat bg-cover bg-blend-multiply h-full w-full absolute z-10 bg-[#051E31]" style={{backgroundImage: `url('/img6/bg-4.jpg')`}}></div>
@@ -70,7 +70,7 @@ export default function Gift ({data}:any) {
             <div className="font-amiri text-2xl text-white text-center">
                 Wedding Gift
             </div>
-            <div className="text-center font-quicksand text-sm mb-5 mx-5 text-white">    
+            <div className="text-center font-quicksand text-sm mb-5 w-full mx-5 text-white">    
 				{caption3 ? caption3: defaultCaption3}			
             </div>
 
@@ -173,7 +173,7 @@ export default function Gift ({data}:any) {
                              {res?.rekening ? res.rekening : "req"}
                             </div>
                             <div className="">
-                            <CopyButton text={`${res?.rekening ? res.rekening : "12345678" }`} />
+                            <CopyButton text={`${res?.rekening ? res.rekening : "12345678" }`} color={"black"} hovercolor={"white"} warn={"Rekening"}/>
                                 </div>
                                 
                               </div>

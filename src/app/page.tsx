@@ -10,6 +10,7 @@ import Date from './date/page'
 import Event from './event/page'
 import Greeting from './greeting/page'
 import Gift from './gift/page'
+import BrideGift from './gift/bridegift'
 import Love from './love/page'
 import Live from './live/page'
 import Gallery from './gallery/page'
@@ -54,7 +55,7 @@ if (currentURL) {
   const splitSlash = currentURL.split("https://");
   const domain = splitSlash[1]?.split(".")[0];
   setCookie("subDomain", domain);
-  // setCookie("subDomain", "vina-rases");
+  // setCookie("subDomain", "aryogtg");
 }
 useEffect(() => {
   const images = Array.from(document.images);
@@ -155,6 +156,7 @@ console.log(data, "data");
             style={{backgroundImage: `url('/img/bg-6.jpg')`}}></div>
       <Greeting />
       <Gift data={data}/>
+      <BrideGift data={data}/>
       </section>
       <Love data={data} />
       <Gallery data={data} />

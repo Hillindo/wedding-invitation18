@@ -1,7 +1,7 @@
 "use client";
 import { useState } from 'react';
 import { message } from 'antd';
-const CopyButton = ({ text }: any) => {
+const CopyButton = ({ text, warn, color, hovercolor }: any) => {
   const [isCopied, setIsCopied] = useState(false);
   const copyToClipboard = (text:any) => {
     const textarea = document.createElement("textarea");
@@ -15,14 +15,14 @@ const CopyButton = ({ text }: any) => {
     // navigator.clipboard.writeText(text);
     copyToClipboard(text)
     setIsCopied(true);
-    message.success("Rekening copied to clipboard!");
+    message.success(`${warn} copied to clipboard!`);
   };
 
   return (
     <div>
       <button
         onClick={handleCopy}
-        className="bg-black hover:bg-white text-white hover:text-black active:bg-green-400 font-normal py-1 px-2 md:py-2 md:px-4 rounded fa fa-copy"
+        className={`bg-${color} hover:bg-${hovercolor} text-${hovercolor} hover:text-${color} active:bg-green-400 font-normal py-1 px-1 md:py-2 md:px-4 rounded fa fa-copy`}
       >
         {isCopied}
       </button>
