@@ -151,7 +151,7 @@ console.log(data, "data");
       <Couple data={data}/>
       <Date data={data}/>
       <Event data={data}/>
-      <section className='bg-white py-[10%] relative w-full'>
+      <section className='bg-white py-[10%] relative w-full z-40'>
         <div className='bg-[#A5131300] mix-blend-multiply top-0 bg-center h-full w-full absolute'
             style={{backgroundImage: `url('/img/bg-6.jpg')`}}></div>
       <Greeting />

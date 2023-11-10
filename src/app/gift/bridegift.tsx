@@ -28,7 +28,7 @@ export default function BrideGift ({data}:any) {
    <section className="w-full pt-28 pb-40">
 
      <div className="bg-[#051E31] rounded-3xl shadow-slate-800 shadow-md relative mx-5 sm:mx-20 lg:px-5 border-white flex z-20 border">
-     <div className=" rounded-3xl bg-bottom bg-no-repeat bg-cover bg-blend-multiply h-full w-full absolute z-10 bg-[#051E31]" style={{backgroundImage: `url('/img6/bg-4.jpg')`}}></div>
+     <div className=" rounded-3xl bg-bottom bg-no-repeat bg-cover bg-blend-multiply h-full w-full absolute z-10 bg-[#051E31]" style={{backgroundImage: `url('/img/bg-2.jpg')`}}></div>
      <div className="w-full flex flex-wrap justify-center items-center text-center py-5 z-50">
         <div className="w-full">
             <div className="font-amiri text-2xl text-white mb-5 text-center">
