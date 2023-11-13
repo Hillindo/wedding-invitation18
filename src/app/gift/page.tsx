@@ -65,7 +65,7 @@ export default function Gift ({data}:any) {
    <section className="w-full pt-28">
 
      <div className="bg-[#051E31] rounded-3xl shadow-slate-800 shadow-md relative mx-5 sm:mx-20 lg:px-5 border-white flex z-20 border">
-     <div className=" rounded-3xl bg-center bg-no-repeat bg-cover bg-blend-multiply h-full w-full absolute z-10 bg-[#051E31]" style={{backgroundImage: `url('/img/bg-1.jpg')`}}></div>
+     <div className=" rounded-3xl bg-center left-0 bg-no-repeat bg-cover bg-blend-multiply h-full w-full absolute z-10 bg-[#051E31]" style={{backgroundImage: `url('/img/bg-1.jpg')`}}></div>
         <div className="w-full flex flex-wrap justify-center items-center gap-5 text-center py-5 bg-transparent z-50">
             <div className="font-amiri text-2xl text-white text-center">
                 Wedding Gift
@@ -86,7 +86,7 @@ export default function Gift ({data}:any) {
      </div>
      {isModalOpen && (
         <div className="fixed top-0 w-full h-full flex justify-center items-center bg-black bg-opacity-50 z-[60] lg:max-w-lg mx-auto">
-            <div className="bg-white py-2 rounded-lg mx-2 font-lionel max-h-[80vh] overflow-y-scroll">
+            <div className="bg-white py-2 rounded-lg mx-2 font-lionel max-h-[500px] overflow-y-scroll">
 
                 <div className='border-b flex items-center p-3'>
                     <p className=' text-xl grow font-semibold'>Kirim Hadiah</p>
