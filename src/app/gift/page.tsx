@@ -129,7 +129,7 @@ export default function Gift ({data}:any) {
                                 </div>
                                 <div className="">
                                   <CopyButton text={`${res?.rekening ?
-                                    res.rekening : "12345678" }`} />
+                                    res.rekening : "12345678" }`} color={"black"} hovercolor={"white"} warn={"Rekening"}/>
                                 </div>
                               </div>
                               <div className="flex">
