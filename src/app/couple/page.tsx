@@ -9,8 +9,6 @@ import Observer4 from "next@js/app/component/observer/observer-zoomIn";
 export default function Couple({data}:any) {
 const [socmedLeft, setSocmedLeft] = useState<any>([]);
     const [socmedRight, setSocmedRight] = useState<any>([]);
-        const [nameMale, setNameMale] = useState("");
-        const [nameFemale, setNameFemale] = useState("");
         const [defaultCaption2, setdefaultCaption2] = useState("");
         const [caption2, setCaption2] = useState("");
         useEffect(() => {
@@ -24,10 +22,6 @@ const [socmedLeft, setSocmedLeft] = useState<any>([]);
         data?.defaultCaption?.map((res: any) => {
         if (res.category_type == 2 && res.is_default == 1) {
         setdefaultCaption2(res.description);}});
-        const nameMale = data.nameMale?.name_male?.split(" ");
-        const nameFemale = data.nameFemale?.name_female?.split(" ");
-        setNameMale(nameMale ? nameMale[0] : "");
-        setNameFemale(nameFemale ? nameFemale[0] : "");
         const socmedLeft = data?.socmed.filter((res:any) => res.position == 'left')
         setSocmedLeft(socmedLeft ? socmedLeft[0] : [])
         const socmedRight = data?.socmed.filter((res:any) => res.position == 'right')

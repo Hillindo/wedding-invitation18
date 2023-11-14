@@ -8,8 +8,10 @@ import Observer4 from "next@js/app/component/observer/observer-zoomIn";
 
 export default function Last({data}:any) {
   const [frontPage, setFrontPage] = useState<any>([]);
-  const [nameMale, setNameMale] = useState("");
-  const [nameFemale, setNameFemale] = useState("");
+  const [nameLeft, setNameLeft] = useState("");
+        const [nameRight, setNameRight] = useState("");
+        const [nameAliasLeft, setNameAliasLeft] = useState("");
+        const [nameAliasRight, setNameAliasRight] = useState("");
   const [defaultCaption2, setdefaultCaption2] = useState("");
   const [caption2, setCaption2] = useState("");
   useEffect(() => {
@@ -24,10 +26,12 @@ export default function Last({data}:any) {
                 if (res.category_type == 2 && res.is_default == 1) {
                   setdefaultCaption2(res.description);}});
         setFrontPage(data.frontPage);
-        const nameMale = data.nameMale?.name_male?.split(" ");
-        const nameFemale = data.nameFemale?.name_female?.split(" ");
-        setNameMale(nameMale ? nameMale[0] : "");
-        setNameFemale(nameFemale ? nameFemale[0] : "");
+        const nameLeft = data?.brideGroomLeft && (data.brideGroomLeft[0].name_male ? data.brideGroomLeft[0].name_male : data.brideGroomLeft[0].name_female)?.split(" ");
+              const nameRight = data?.brideGroomRight && (data.brideGroomRight[0].name_male ? data.brideGroomRight[0].name_male : data.brideGroomRight[0].name_female)?.split(" ");
+              setNameLeft(nameLeft ? nameLeft[0] : "");
+              setNameRight(nameRight ? nameRight[0] : "");
+              setNameAliasLeft(data?.brideGroomLeft[0]?.name_alias);
+              setNameAliasRight(data?.brideGroomRight[0]?.name_alias);
        
       } catch (error) {
         console.error('Error fetching data:', error);
@@ -55,7 +59,7 @@ export default function Last({data}:any) {
             </p>
             <h1
               className="font-roserri text-3xl md:text-4xl lg:text-3xl capitalize">
-            { nameFemale} & { nameMale}
+            {nameAliasLeft ? nameAliasLeft : nameLeft ? nameLeft: " "} & {nameAliasRight ? nameAliasRight : nameRight ? nameRight : " "}
             </h1>
                   </Observer4>
           </div>

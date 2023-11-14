@@ -2,8 +2,10 @@
 import { useState, useEffect } from "react";
 
 export default function Front({data, guestName, onOpenNextSections}:any) {
-    const [nameMale, setNameMale] = useState("");
-        const [nameFemale, setNameFemale] = useState("");
+    const [nameLeft, setNameLeft] = useState("");
+        const [nameRight, setNameRight] = useState("");
+        const [nameAliasLeft, setNameAliasLeft] = useState("");
+        const [nameAliasRight, setNameAliasRight] = useState("");
         const [newGuestName, setNewGuestName] = useState("")
 
   useEffect(() => {
@@ -16,10 +18,12 @@ export default function Front({data, guestName, onOpenNextSections}:any) {
         useEffect(() => {
           const fetchData = async () => {
               try {
-              const nameMale = data.nameMale?.name_male?.split(" ");
-              const nameFemale = data.nameFemale?.name_female?.split(" ");
-              setNameMale(nameMale ? nameMale[0] : "");
-              setNameFemale(nameFemale ? nameFemale[0] : "");
+                const nameLeft = data?.brideGroomLeft && (data.brideGroomLeft[0].name_male ? data.brideGroomLeft[0].name_male : data.brideGroomLeft[0].name_female)?.split(" ");
+                const nameRight = data?.brideGroomRight && (data.brideGroomRight[0].name_male ? data.brideGroomRight[0].name_male : data.brideGroomRight[0].name_female)?.split(" ");
+                setNameLeft(nameLeft ? nameLeft[0] : "");
+                setNameRight(nameRight ? nameRight[0] : "");
+                setNameAliasLeft(data?.brideGroomLeft[0]?.name_alias);
+                setNameAliasRight(data?.brideGroomRight[0]?.name_alias);
             } catch (error) {
               console.error('Error fetching data:', error);
             
@@ -40,7 +44,7 @@ return (
                             THE WEDDING OF
                         </div>
                         <div className="w-auto h-auto text-center tracking-[3.7px] font-qageto text-[30px] md:text-6xl lg:text-[40px] text-white opacity-95"> 
-                        {nameFemale ? nameFemale: " "} & {nameMale ? nameMale : " "}
+                        {nameAliasLeft ? nameAliasLeft : nameLeft ? nameLeft: " "} & {nameAliasRight ? nameAliasRight : nameRight ? nameRight : " "}
                         </div>
                         <div className="w-auto h-auto text-center text-[10px] text-white opacity-95 md:text-2xl lg:text-[15px] md:mt-4 xl:mt-0">
                             Kepada Yth :
