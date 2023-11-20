@@ -12,7 +12,7 @@ export default function Greeting() {
 const [greetings, setGreetings] = useState<any>([]);
     const [nameGuest, setNameGuest] = useState("");
     const [greetingWord, setGreetingWord] = useState("");
-    const [presence, setpresence] = useState("");
+    const [presence, setpresence] = useState("1");
     const [loading, setLoading] = useState(false);
     const [presenceError, setPresenceError] = useState("");
 
@@ -83,6 +83,8 @@ const [greetings, setGreetings] = useState<any>([]);
     setpresence("");
     setLoading(false);
     };
+    console.log(presence, "pres");
+    
     return (
             <section className='px-5 sm:mx-12 lg:px-5' id='greeting'>
                 <Observer>
@@ -105,7 +107,7 @@ const [greetings, setGreetings] = useState<any>([]);
                                 value={nameGuest} onChange={(e)=> setNameGuest(e.target.value)}>
                                 </textarea>
                         </div>
-                        <div className=" pb-3">
+                        {/* <div className=" pb-3">
                             <div className=" font-saignh text-sm mb-2">Attendance Confirmation*</div>
                             <div className="Frame40 justify-start items-start gap-[22px] inline-flex  font-saignh">
                                 <div className="Frame38 justify-start items-center gap-2 flex ">
@@ -139,7 +141,7 @@ const [greetings, setGreetings] = useState<any>([]);
                             </div>
                             {presenceError && (
             <div className="text-white rounded-lg text-lg bg-red-500 text-center">{presenceError}</div>)}
-                        </div>
+                        </div> */}
                         <div className=" pb-3">
                             <div className=" font-saignh text-sm mb-2">Give prayers and greetings to the bride and groom
                             </div>
