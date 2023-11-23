@@ -54,8 +54,8 @@ useEffect(() => {
 if (currentURL) {
   const splitSlash = currentURL.split("https://");
   const domain = splitSlash[1]?.split(".")[0];
-  // setCookie("subDomain", domain);
-  setCookie("subDomain", "vinblue");
+  setCookie("subDomain", domain);
+  // setCookie("subDomain", "vinblue");
 }
 useEffect(() => {
   const images = Array.from(document.images);
