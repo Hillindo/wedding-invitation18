@@ -170,9 +170,9 @@ const [greetings, setGreetings] = useState<any>([]);
                     <div className="text-white font-romantic text-base font-semibold">
                         {res.name_guest}
                     </div>
-                    <div className="text-white text-base font-romantic">
+                    {/* <div className="text-white text-base font-romantic">
                         {res.presence == 1 ? "Hadir" : "Tidak Hadir"}
-                    </div>
+                    </div> */}
                     <div className="Line2 w-full border-t border-white"></div>
                 </div>
                 ))
