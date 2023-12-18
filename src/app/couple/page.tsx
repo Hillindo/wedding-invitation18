@@ -44,11 +44,11 @@ const [socmedLeft, setSocmedLeft] = useState<any>([]);
                 style={{ backgroundImage:'url(/img/bg-6.jpg)' }}>
                 <div className="w-full h-full bg-[#FDFDFDAD] text-center font-quicksand py-8 px-5 ">
                     <Observer3>
-                        <h1 className=" text-4xl text-[#051E31] font-romantic capitalize pb-12">
+                        <h1 className=" text-4xl text-[#051E31] capitalize pb-12" style={{ fontFamily: `${data?.fontTitle ? data?.fontTitle?.font_title : "romantic"}` }}>
                             Pengantin
                         </h1>
                     </Observer3>
-                    <div className="text-center text-xl mb-5 font-redressed text-black w-full">
+                    <div className="text-center text-xl mb-5 text-black w-full" style={{ fontFamily: `${data?.fontContent ? data?.fontContent?.font_content : "Redressed"}` }}>
                         <div className=" mx-5">
                             <Observer>
                                 <p>

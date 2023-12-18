@@ -92,7 +92,7 @@ export default function CountdownDate({data}:any) {
                 <div className='w-full flex flex-nowrap flex-col items-center justify-center text-white mx-5 mt-5'>
                     <Observer>
                     <div className='mb-2 text-center'>
-                        <div className=' text-4xl text-white font-saignh'>
+                        <div className=' text-4xl text-white' style={{ fontFamily: `${data?.fontTitle ? data?.fontTitle?.font_title : "Saignh"}` }}>
                             Save the Date
                         </div>
                     </div>

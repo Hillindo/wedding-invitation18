@@ -41,11 +41,11 @@ export default function Live(data:any) {
           <div className="bg-[#9B899A00] p-5 flex flex-wrap justify-center z-20 relative">
             <div className="bg-[#FFFFFF91] p-5 my-5 w-full rounded-3xl">
                 <div className="p-2 flex flex-wrap w-full justify-center">
-                    <div className="mb-5 text-center mt-2 text-black text-4xl font-saignh">
+                    <div className="mb-5 text-center mt-2 text-black text-4xl" style={{ fontFamily: `${data?.fontTitle ? data?.fontTitle?.font_title : "Saignh"}` }}>
                         Live Streaming
                     </div>
                     <div className="mb-5 w-full flex items-center">
-                    <div className=" font-quicksand text-base text-center text-black">
+                    <div className="text-base text-center text-black" style={{ fontFamily: `${data?.fontContent ? data?.fontContent?.font_content : "Quicksand"}` }}>
                     <p>{caption4 ? caption4 : defaultcaption4}</p>
                     </div>
                     </div>

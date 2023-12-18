@@ -31,7 +31,7 @@ const [story, setStory] = useState<any>([]);
                 style={{backgroundImage: `url('/img/bg-8.png')`}}></div>
             <div className="w-full h-full text-center font-quicksand py-8 px-5 z-20 relative">
                 <Observer>
-                    <h1 className=" text-4xl font-romantic capitalize pb-12">
+                    <h1 className=" text-4xl capitalize pb-12" style={{ fontFamily: `${data?.fontTitle ? data?.fontTitle?.font_title : "romantic"}` }}>
                         love story
                     </h1>
                 </Observer>

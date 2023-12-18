@@ -55,7 +55,8 @@ export default function Gallery({ data }: any) {
                     whileInView={{ opacity: 1, x: 0 }}
                     transition={{ duration: 1 }}
                     viewport={{ once:true }}
-                    className="font-saignh text-5xl text-white mb-8 capitalize">
+                    className="text-5xl text-white mb-8 capitalize"
+                    style={{ fontFamily: `${data?.fontTitle ? data?.fontTitle?.font_title : "Saignh"}` }}>
                 gallery
             </motion.h1>
             {/* <p className='px-2 text-sm font-quicksand py-10'>

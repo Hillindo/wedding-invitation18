@@ -8,7 +8,7 @@ import Observer2 from "next@js/app/component/observer/observer-moveLeft";
 import Observer3 from "next@js/app/component/observer/observer-moveRight";
 import Observer4 from "next@js/app/component/observer/observer-zoomIn";
 
-export default function Greeting() {
+export default function Greeting({data}:any) {
 const [greetings, setGreetings] = useState<any>([]);
     const [nameGuest, setNameGuest] = useState("");
     const [greetingWord, setGreetingWord] = useState("");

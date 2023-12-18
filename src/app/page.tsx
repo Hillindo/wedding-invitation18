@@ -55,7 +55,7 @@ if (currentURL) {
   const splitSlash = currentURL.split("https://");
   const domain = splitSlash[1]?.split(".")[0];
   setCookie("subDomain", domain);
-  // setCookie("subDomain", "vinblue");
+  // setCookie("subDomain", "java2");
 }
 useEffect(() => {
   const images = Array.from(document.images);
@@ -95,6 +95,18 @@ useEffect(() => {
   setGuestName(splitGuest);
 });
 
+const addFontsDynamically = (fonts:any) => {
+  const style = document.createElement('style');
+  fonts.forEach((font:any) => {
+    style.appendChild(
+      document.createTextNode(`
+      @import url(${font?.font_url});
+      `)
+    );
+  });
+
+  document.head.appendChild(style);
+};
 useEffect(() => {
   if (myCookie) {
     const getData = async () => {
@@ -105,6 +117,7 @@ useEffect(() => {
         );
         setData(res.data);
         setMusic(res.data?.music?.path_music ?? res.data?.music?.embed_link);
+        addFontsDynamically(res.data.font);
 
         if (res?.data?.isItemNotPaid.length > 0) {
           setIsItemNotPaid(true)
@@ -154,7 +167,7 @@ console.log(data, "data");
       <section className='bg-white py-[10%] relative w-full z-40'>
         <div className='bg-[#A5131300] mix-blend-multiply top-0 bg-center h-full w-full absolute'
             style={{backgroundImage: `url('/img/bg-6.jpg')`}}></div>
-      <Greeting />
+      <Greeting data={data}/>
       <Gift data={data}/>
       <BrideGift data={data}/>
       </section>

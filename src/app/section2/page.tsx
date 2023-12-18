@@ -43,7 +43,7 @@ export default function Section2({data}:any) {
                         </div>
                             </Observer>
                             <Observer>
-                        <div className=' w-5/6 mx-auto text-center text-xs sm:text-sm font-quicksand font-medium text-black'>
+                        <div className=' w-5/6 mx-auto text-center text-xs sm:text-sm font-medium text-black' style={{ fontFamily: `${data?.fontContent ? data?.fontContent?.font_content : "Quicksand"}` }}>
                         {caption1 ? caption1 : defaultCaption1}
                         </div>
                             </Observer>

@@ -70,7 +70,7 @@ export default function Gift ({data}:any) {
             <div className="font-amiri text-2xl text-white text-center">
                 Wedding Gift
             </div>
-            <div className="text-center font-quicksand text-sm mb-5 w-full mx-5 text-white">    
+            <div className="text-center text-sm mb-5 w-full mx-5 text-white" style={{ fontFamily: `${data?.fontContent ? data?.fontContent?.font_content : "Quicksand"}` }}>    
 				{caption3 ? caption3: defaultCaption3}			
             </div>
 
