@@ -30,7 +30,8 @@ export default function Section2({data}:any) {
         fetchData();
     }, [data]);
   return (
-    <section className='bg-[#26819d] px-1 overflow-hidden w-full relative pt-5 pb-10'>
+    // <section className='bg-[#26819d] px-1 overflow-hidden w-full relative pt-5 pb-10'>
+    <section className='bg-[#86bbb3] px-1 overflow-hidden w-full relative pt-5 pb-10'>
         <div className='relative w-full sm:w-3/4 mx-auto '>
             <div className='relative flex'>
                 <div className='m-2 p-2 w-full flex relative min-[425px]:px-8 sm:px-0'>
