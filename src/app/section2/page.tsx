@@ -19,7 +19,7 @@ export default function Section2({data}:any) {
                   data?.defaultCaption?.map((res: any) => {
                     if (res.category_type == 1 && res.is_default == 1) {
                       setdefaultCaption1(res.description);}});
-          setFirstSectionImage(data?.firstSectionImage);
+        //   setFirstSectionImage(data?.firstSectionImage);
             
           } catch (error) {
             console.error('Error fetching data:', error);
@@ -38,11 +38,11 @@ export default function Section2({data}:any) {
                     <div className='flex justify-center p-5 relative w-full flex-nowrap'>
                         <img src="/img/bg-5.png" className='absolute w-full h-full z-10' alt="" />
                         <div className='top-3 sm:top-0 z-30 pt-3 min-h-[500px]'>
-                            <Observer>
+                            {/* <Observer>
                         <div className="flex justify-center mb-5">
                             <img src={firstSectionImage?.first_section_image} className="rounded-[200px] w-[70%] sm:w-3/5 md:w-1/2 lg:w-[70%] h-[250px] sm:h-[300px] md:h-[350px] object-cover" alt="" />
                         </div>
-                            </Observer>
+                            </Observer> */}
                             <Observer>
                         <div className=' w-5/6 mx-auto text-center text-xs sm:text-sm font-medium text-black' style={{ fontFamily: `${data?.fontContent ? data?.fontContent?.font_content : "Quicksand"}` }}>
                         {caption1 ? caption1 : defaultCaption1}
