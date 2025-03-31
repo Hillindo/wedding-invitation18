@@ -59,10 +59,10 @@ const [socmedLeft, setSocmedLeft] = useState<any>([]);
                     </div>
                     <Observer4>
                         <div className=" mb-5 w-full relative flex justify-center">
-                            <img src={`${data?.brideGroomLeft ? (data.brideGroomLeft[0].image_male ?
-                                data.brideGroomLeft[0].image_male : data.brideGroomLeft[0].image_female) : '' }`}
-                                className="border-solid border-2 border-white rounded-[1000px] w-[70%] sm:w-1/2 md:w-1/2 lg:w-[70%] bg-white h-[300px] min-[400px]:h-[400px] sm:h-[400px] md:h-[500px] lg:h-[400px] object-cover"
-                                alt="" />
+                            {/* Image removed but data is preserved */}
+                            <div className="border-solid border-2 border-white rounded-[1000px] w-[70%] sm:w-1/2 md:w-1/2 lg:w-[70%] bg-white h-[300px] min-[400px]:h-[400px] sm:h-[400px] md:h-[500px] lg:h-[400px] flex items-center justify-center">
+                                <i className="fa fa-user text-gray-300 text-6xl"></i>
+                            </div>
                         </div>
                     </Observer4>
                     <Observer4>
@@ -75,7 +75,7 @@ const [socmedLeft, setSocmedLeft] = useState<any>([]);
                                 <div className=" text-black font-redressed text-center text-lg">
                                     {data?.brideGroomLeft ? (data.brideGroomLeft[0].name_male ? "Putra" : "Putri") : ''} dari Bapak {data?.brideGroomLeft ? (data.brideGroomLeft[0].father_male ?
                                     data.brideGroomLeft[0].father_male : data.brideGroomLeft[0].father_female) : ''}
-                                    <br /> dan Ibu {data?.brideGroomLeft ? (data.brideGroomLeft[0].mother_male ?
+                                    <br /> dan Ibu {data?.brideGroomLeft ? (data.brideGroomLeft[0].mother_male ? 
                                     data.brideGroomLeft[0].mother_male : data.brideGroomLeft[0].mother_female) : ''}
                                 </div>
                                 <div className="my-6 ">
