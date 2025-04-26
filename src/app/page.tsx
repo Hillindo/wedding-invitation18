@@ -21,6 +21,12 @@ import LoadingScreen from "./component/loading/page";
 import BackgroundMusic from './component/music/page';
 import Navbar from './component/navbar/page'
 
+// Define tipe untuk ref musik
+interface BackgroundMusicRef {
+  playMusic: () => void;
+  pauseMusic: () => void;
+}
+
 export default function Home() {
   const [currentURL, setCurrentURL] = useState("");
   const [guestName, setGuestName] = useState("");
@@ -34,7 +40,7 @@ export default function Home() {
   const [mainContentVisible, setMainContentVisible] = useState(false);
   const [imageLoaded, setImageLoaded] = useState("flex");
   const [allImagesLoaded, setAllImagesLoaded] = useState(false);
-  const musicRef = useRef<any>(null);
+  const musicRef = useRef<BackgroundMusicRef>(null);
 
   const handleOpenInvitation = () => {
     // Play music when invitation is opened

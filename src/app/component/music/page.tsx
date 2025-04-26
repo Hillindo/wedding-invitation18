@@ -5,9 +5,19 @@ import { AiFillPlayCircle } from "react-icons/ai";
 import { PiStopCircleFill } from "react-icons/pi";
 import { MdStopCircle } from "react-icons/md";
 
-const BackgroundMusic = forwardRef(({ src }: any, ref) => {
-  const audioRef = useRef<any>(null);
-  const [isPlaying, setIsPlaying] = useState<any>(false);
+// Define interface untuk props dan ref methods
+interface BackgroundMusicProps {
+  src: string;
+}
+
+interface BackgroundMusicRef {
+  playMusic: () => void;
+  pauseMusic: () => void;
+}
+
+const BackgroundMusic = forwardRef<BackgroundMusicRef, BackgroundMusicProps>(({ src }, ref) => {
+  const audioRef = useRef<HTMLAudioElement | null>(null);
+  const [isPlaying, setIsPlaying] = useState<boolean>(false);
 
   useImperativeHandle(ref, () => ({
     playMusic: () => {
