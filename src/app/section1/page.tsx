@@ -33,8 +33,8 @@ function parseDate(str:any) {
   const [dateparts, timeparts] = str.split(" ");
   const [year, month, day] = dateparts.split("-");
   const [hours = 0, minutes = 0, seconds = 0] = timeparts?.split(":") ?? [];
-  // Treats the string as UTC, but you can remove the `Date.UTC` part and use
-  // `new Date` directly to treat the string as local time
+  // Treats the string as UTC, but you can remove the Date.UTC part and use
+  // new Date directly to treat the string as local time
   return new Date(Date.UTC(+year, +month - 1, +day, +hours, +minutes, +seconds));
 }
 useEffect(() => {
@@ -64,8 +64,8 @@ style={
 {animationDelay: '2s'}
 }
 >
-<div className="w-full items-center content-center h-full bg-cover bg-no-repeat mix-blend-multiply bg-bottom bg-blend-multiply z-30 inset-0 absolute" style={{backgroundImage: `url('/img/bg-2.jpg')`}}></div>
-<div className="bg-center bg-no-repeat bg-cover bg-blend-multiply mix-blend-multiply bg-transparent h-full w-full absolute z-30" style={{backgroundImage: `url('/img/birds.gif')`}}></div>
+<div className="w-full items-center content-center h-full bg-cover bg-no-repeat mix-blend-multiply bg-bottom bg-blend-multiply z-30 inset-0 absolute" style={{backgroundImage: url('/img/bg-2.jpg')}}></div>
+<div className="bg-center bg-no-repeat bg-cover bg-blend-multiply mix-blend-multiply bg-transparent h-full w-full absolute z-30" style={{backgroundImage: url('/img/birds.gif')}}></div>
 </motion.div>
     <div className="flex flex-wrap justify-center items-center content-center flex-grow flex-shrink flex-col gap-2 w-full h-full text-center py-40 pb-96 sm:pb-[600px] z-50">
 
@@ -98,6 +98,6 @@ transformOrigin: 'center', // Rotate around the center
         </div>
     </div>
 </div>
-    </>
-  )
+    </>
+  )
 }
