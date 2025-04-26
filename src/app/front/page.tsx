@@ -49,9 +49,7 @@ export default function Front({data, guestName}:any) {
     const handleOpenInvitation = () => {
         if (isGateOpen) {
             router.push('/section1');
-        } else {
-            handleOpenGate();
-        }
+        } 
     };
 
     return (
@@ -64,7 +62,7 @@ export default function Front({data, guestName}:any) {
             <section 
                 className='relative w-full min-h-screen bg-transparent bg-cover bg-center bg-no-repeat' 
                 style={{ backgroundImage: 'url(/img/bg-1.jpg)' }}
-                onClick={!isGateOpen ? handleOpenGate : undefined}  // Click anywhere to open the gates initially
+                onClick={undefined}  // Menghapus referensi ke handleOpenGate karena tidak diperlukan
             >
                 <div className="w-full min-h-screen opacity-50 bg-black top-0 left-0"></div>
                 <div className="absolute w-full h-full bottom-0 z-20 py-28 mt-auto">
