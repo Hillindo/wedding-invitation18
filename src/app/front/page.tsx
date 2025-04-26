@@ -74,7 +74,7 @@ export default function Front({data, guestName, onOpenInvitation}:any) {
                                     transition={{ delay: 0.5 }}
                                     className="w-full h-auto"
                                 >
-                                    <img src="https://invitingart.id/wp-content/uploads/2022/06/blank.png" alt="" loading="lazy" />
+                                    <img src="/img/rumah-gadang.png" alt="" loading="lazy" />
                                 </motion.div>
                                 <motion.div
                                     initial={{ opacity: 0 }}
