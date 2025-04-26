@@ -12,10 +12,10 @@ export default function Front({data, guestName}:any) {
     const [newGuestName, setNewGuestName] = useState("");
     const [isGateOpen, setIsGateOpen] = useState(false);
 
-    // Handle gate opening
-    const handleOpenGate = () => {
+    useEffect(() => {
+        // Otomatis membuka gerbang setelah halaman dimuat
         setIsGateOpen(true);
-    };
+    }, []);
 
     // Handle when gate animation is complete
     const handleGateAnimationComplete = () => {
