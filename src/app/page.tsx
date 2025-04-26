@@ -1,5 +1,5 @@
 "use client"
-import { useState, useEffect, useRef } from 'react';
+import { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { setCookie, getCookie } from "cookies-next";
 import axios from "next@js/lib/axios";
@@ -21,12 +21,6 @@ import LoadingScreen from "./component/loading/page";
 import BackgroundMusic from './component/music/page';
 import Navbar from './component/navbar/page'
 
-// Define tipe untuk ref musik
-interface BackgroundMusicRef {
-  playMusic: () => void;
-  pauseMusic: () => void;
-}
-
 export default function Home() {
   const [currentURL, setCurrentURL] = useState("");
   const [guestName, setGuestName] = useState("");
@@ -40,13 +34,11 @@ export default function Home() {
   const [mainContentVisible, setMainContentVisible] = useState(false);
   const [imageLoaded, setImageLoaded] = useState("flex");
   const [allImagesLoaded, setAllImagesLoaded] = useState(false);
-  const musicRef = useRef<BackgroundMusicRef>(null);
+  const [musicEnabled, setMusicEnabled] = useState(false);
 
   const handleOpenInvitation = () => {
-    // Play music when invitation is opened
-    if (musicRef.current) {
-      musicRef.current.playMusic();
-    }
+    // Enable music when invitation is opened
+    setMusicEnabled(true);
     
     // Set mainContentVisible first, then hide front page
     setMainContentVisible(true);
@@ -190,7 +182,7 @@ export default function Home() {
                   </section>
                   <Footer />
                   <Navbar/>
-                  <BackgroundMusic ref={musicRef} src={music ? music : "/testMusic.mp3"} />
+                  <BackgroundMusic src={music ? music : "/testMusic.mp3"} isEnabled={musicEnabled} />
                 </div>
               </div>
             </>
