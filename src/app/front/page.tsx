@@ -65,7 +65,7 @@ export default function Front({data, guestName, onOpenInvitation}:any) {
                         className='relative w-full min-h-screen bg-transparent bg-cover bg-center bg-no-repeat lg:max-w-md mx-auto' 
                         style={{ backgroundImage: 'url(/img/bg-1.jpg)' }}
                     >
-                        <div className="w-full min-h-screen opacity-50 bg-black top-0 left-0 absolute"></div>
+                        {/* <div className="w-full min-h-screen opacity-50 bg-black top-0 left-0 absolute"></div> */}
                         <div className="absolute w-full h-full bottom-0 z-20 py-28 mt-auto">
                             <div className="w-full h-full flex flex-col justify-center text-white">
                                 <motion.div 
