@@ -19,7 +19,7 @@ export default function Front({data, guestName}:any) {
 
     // Handle when gate animation is complete
     const handleGateAnimationComplete = () => {
-        router.push('/section1'); // Navigasi ke halaman berikutnya setelah animasi selesai
+        // Tetap di halaman "Open Invitation" setelah animasi selesai
     };
 
     useEffect(() => {
@@ -52,6 +52,7 @@ export default function Front({data, guestName}:any) {
         } 
     };
 
+    // Mengembalikan layout seperti semula
     return (
         <GateAnimation 
             isOpen={isGateOpen} 
@@ -60,9 +61,8 @@ export default function Front({data, guestName}:any) {
             rightColor="#A4907C"  // A slightly lighter brown for the right gate
         >
             <section 
-                className='relative w-full min-h-screen bg-transparent bg-cover bg-center bg-no-repeat' 
+                className='relative w-full min-h-screen bg-transparent bg-cover bg-center bg-no-repeat lg:max-w-md mx-auto' 
                 style={{ backgroundImage: 'url(/img/bg-1.jpg)' }}
-                onClick={undefined}  // Menghapus referensi ke handleOpenGate karena tidak diperlukan
             >
                 <div className="w-full min-h-screen opacity-50 bg-black top-0 left-0"></div>
                 <div className="absolute w-full h-full bottom-0 z-20 py-28 mt-auto">
@@ -87,7 +87,7 @@ export default function Front({data, guestName}:any) {
                                 <span>
                                     <i className="fa fa-envelope-open mr-2 z-20"></i>
                                 </span>
-                                {isGateOpen ? "Open Invitation" : "Tap to Open"}
+                                Open Invitation
                             </button>
                         </a>
                     </div>
