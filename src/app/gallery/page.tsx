@@ -44,7 +44,7 @@ export default function Gallery({ data }: any) {
     }
 
     return (
-        <div className="w-full h-full relative lg:max-w-md mx-auto" id='gallery'>
+        <section className="relative w-full bg-[#051E31] lg:max-w-md mx-auto" id="gallery">
             <div className='mix-blend-multiply bg-[#051E31] top-0 bg-bottom h-full w-full absolute'
             style={{backgroundImage: `url('/img/bg-8.png')`}}></div>
             <div className="w-full h-full py-16 px-6 text-center z-20 relative">
@@ -138,6 +138,6 @@ export default function Gallery({ data }: any) {
                     </AnimatePresence>
             </div>
             </div>
-        </div>
+        </section>
     )
 }

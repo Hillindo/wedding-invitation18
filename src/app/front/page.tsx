@@ -1,10 +1,8 @@
 "use client";
 import { useState, useEffect } from "react";
 import GateAnimation from "../component/gate/GateAnimation";
-import { useRouter } from 'next/navigation';
 
-export default function Front({data, guestName}:any) {
-    const router = useRouter();
+export default function Front({data, guestName, onOpenInvitation}:any) {
     const [nameLeft, setNameLeft] = useState("");
     const [nameRight, setNameRight] = useState("");
     const [nameAliasLeft, setNameAliasLeft] = useState("");
@@ -16,11 +14,6 @@ export default function Front({data, guestName}:any) {
         // Otomatis membuka gerbang setelah halaman dimuat
         setIsGateOpen(true);
     }, []);
-
-    // Handle when gate animation is complete
-    const handleGateAnimationComplete = () => {
-        // Tetap di halaman "Open Invitation" setelah animasi selesai
-    };
 
     useEffect(() => {
         if (guestName) {
@@ -45,20 +38,19 @@ export default function Front({data, guestName}:any) {
         fetchData();
     }, [data]);
 
-    // Function to handle opening next sections after clicking "Open Invitation"
+    // Function to handle opening invitation
     const handleOpenInvitation = () => {
-        if (isGateOpen) {
-            router.push('/section1');
-        } 
+        if (isGateOpen && onOpenInvitation) {
+            onOpenInvitation();
+        }
     };
 
-    // Mengembalikan layout seperti semula
     return (
         <GateAnimation 
             isOpen={isGateOpen} 
-            onAnimationComplete={handleGateAnimationComplete}
-            leftColor="#8D7B68"  // A warm brown tone for the left gate
-            rightColor="#A4907C"  // A slightly lighter brown for the right gate
+            onAnimationComplete={() => {}}
+            leftColor="#8D7B68"
+            rightColor="#A4907C"
         >
             <section 
                 className='relative w-full min-h-screen bg-transparent bg-cover bg-center bg-no-repeat lg:max-w-md mx-auto' 
