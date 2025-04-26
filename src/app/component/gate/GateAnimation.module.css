@@ -20,8 +20,8 @@
   border-right: 1px solid rgba(255, 255, 255, 0.2);
   box-shadow: 5px 0 15px rgba(0, 0, 0, 0.3);
   background-image: url('/img/javanese-batik.png');
-  background-blend-mode: overlay;
   background-size: cover;
+  background-position: center;
 }
 
 .rightGate {
@@ -30,8 +30,8 @@
   border-left: 1px solid rgba(255, 255, 255, 0.2);
   box-shadow: -5px 0 15px rgba(0, 0, 0, 0.3);
   background-image: url('/img/wayang.png');
-  background-blend-mode: overlay;
   background-size: cover;
+  background-position: center;
 }
 
 .leftOpen {
