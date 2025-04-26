@@ -78,7 +78,7 @@ export default function Front({data, guestName, onOpenInvitation}:any) {
                                     src="/img/rumah-gadang.png" 
                                     alt="Rumah Gadang" 
                                     loading="lazy" 
-                                    style={{ maxWidth: "40%", margin: "0 auto", display: "block" }}
+                                    style={{ maxWidth: "65%", margin: "0 auto", display: "block" }}
                                 />
                             </motion.div>
                                 <motion.div
