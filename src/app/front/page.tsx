@@ -17,7 +17,7 @@ export default function Front({data, guestName, onOpenNextSections}:any) {
 
     // Handle when gate animation is complete
     const handleGateAnimationComplete = () => {
-        // This can be empty as we'll keep showing the content
+        onOpenNextSections(); // Transition to the next section after the gate animation completes
     };
 
     useEffect(() => {
