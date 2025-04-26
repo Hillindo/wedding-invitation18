@@ -1,5 +1,6 @@
 "use client"
 import { useState, useEffect } from 'react';
+import { motion, AnimatePresence } from 'framer-motion';
 import { setCookie, getCookie } from "cookies-next";
 import axios from "next@js/lib/axios";
 import Front from "./front/page";
@@ -35,11 +36,12 @@ export default function Home() {
   const [allImagesLoaded, setAllImagesLoaded] = useState(false);
 
   const handleOpenInvitation = () => {
-    setFrontVisible(false);
+    // Set mainContentVisible first, then hide front page
     setMainContentVisible(true);
     setTimeout(() => {
+      setFrontVisible(false);
       setImageLoaded("hidden");
-    }, 2000);
+    }, 500); // Reduced timeout to make transition smoother
   };
 
   useEffect(() => {
@@ -147,37 +149,37 @@ export default function Home() {
                 </div>
               )}
               <div className='mx-auto lg:max-w-md overflow-y-auto overflow-x-hidden relative scroll-smooth h-screen'>
-                {frontVisible ? (
-                  <Front data={data} guestName={guestName} onOpenInvitation={handleOpenInvitation}/>   
-                ) : null}
+                {frontVisible && (
+                  <div className="absolute inset-0 z-50">
+                    <Front data={data} guestName={guestName} onOpenInvitation={handleOpenInvitation}/>   
+                  </div>
+                )}
                 
-                {mainContentVisible ? (
-                  <>
-                    <Section1 data={data}/>
-                    <Section2 data={data}/>
-                    <Couple data={data}/>
-                    <Date data={data}/>
-                    <Event data={data}/>
-                    <section className='bg-white py-[10%] relative w-full z-40'>
-                      <div className='bg-[#A5131300] mix-blend-multiply top-0 bg-center h-full w-full absolute'
-                          style={{backgroundImage: `url('/img/bg-6.jpg')`}}></div>
-                      <Greeting data={data}/>
-                      <Gift data={data}/>
-                      <BrideGift data={data}/>
-                    </section>
-                    <Love data={data} />
-                    <Gallery data={data} />
-                    <section className='bg-white py-[10%] relative w-full'>
-                      <div className='bg-[#A5131300] mix-blend-multiply top-0 bg-bottom bg-cover h-full w-full absolute'
-                          style={{backgroundImage: `url('/img/bg-6.jpg')`}}></div>
-                      <Live data={data}/>
-                      <End data={data}/>
-                    </section>
-                    <Footer />
-                    <Navbar/>
-                    <BackgroundMusic src={music ? music : "/testMusic.mp3"} />
-                  </>
-                ) : null}
+                <div className={`relative ${mainContentVisible ? 'opacity-100' : 'opacity-0'} transition-opacity duration-500`}>
+                  <Section1 data={data}/>
+                  <Section2 data={data}/>
+                  <Couple data={data}/>
+                  <Date data={data}/>
+                  <Event data={data}/>
+                  <section className='bg-white py-[10%] relative w-full z-40'>
+                    <div className='bg-[#A5131300] mix-blend-multiply top-0 bg-center h-full w-full absolute'
+                        style={{backgroundImage: `url('/img/bg-6.jpg')`}}></div>
+                    <Greeting data={data}/>
+                    <Gift data={data}/>
+                    <BrideGift data={data}/>
+                  </section>
+                  <Love data={data} />
+                  <Gallery data={data} />
+                  <section className='bg-white py-[10%] relative w-full'>
+                    <div className='bg-[#A5131300] mix-blend-multiply top-0 bg-bottom bg-cover h-full w-full absolute'
+                        style={{backgroundImage: `url('/img/bg-6.jpg')`}}></div>
+                    <Live data={data}/>
+                    <End data={data}/>
+                  </section>
+                  <Footer />
+                  <Navbar/>
+                  <BackgroundMusic src={music ? music : "/testMusic.mp3"} />
+                </div>
               </div>
             </>
           )}    
