@@ -174,7 +174,7 @@ export default function Location({ data }: any) {
 
   return (
     <section
-      className="relative w-full h-full bg-fixed bg-top bg-cover bg-opacity-50"
+      className="relative w-full h-full bg-fixed bg-top bg-cover bg-opacity-50 lg:max-w-md mx-auto"
       style={{ backgroundImage: `url('/img/bg-7.jpg')` }}
     >
       <div className="bg-white opacity-50 absolute w-full h-full" />

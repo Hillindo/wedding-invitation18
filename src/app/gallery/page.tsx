@@ -1,4 +1,3 @@
-
 "use client"
 import { Swiper, SwiperSlide } from 'swiper/react';
 import React, {useEffect, useState } from 'react';
@@ -45,7 +44,7 @@ export default function Gallery({ data }: any) {
     }
 
     return (
-        <div className="w-full h-full relative" id='gallery'>
+        <div className="w-full h-full relative lg:max-w-md mx-auto" id='gallery'>
             <div className='mix-blend-multiply bg-[#051E31] top-0 bg-bottom h-full w-full absolute'
             style={{backgroundImage: `url('/img/bg-8.png')`}}></div>
             <div className="w-full h-full py-16 px-6 text-center z-20 relative">

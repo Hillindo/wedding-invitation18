@@ -26,7 +26,7 @@ const [story, setStory] = useState<any>([]);
     return (
     <>
         {data?.loveStory?.length > 0 ? (
-        <div className=" h-fit bg-cover text-white bg-center relative" style={{ backgroundImage:'url(/img/bg-8.png)' }}>
+        <div className="h-fit bg-cover text-white bg-center relative lg:max-w-md mx-auto" style={{ backgroundImage:'url(/img/bg-8.png)' }}>
             <div className='mix-blend-multiply bg-[#051E31] top-0 bg-center h-full w-full absolute'
                 style={{backgroundImage: `url('/img/bg-8.png')`}}></div>
             <div className="w-full h-full text-center font-quicksand py-8 px-5 z-20 relative">

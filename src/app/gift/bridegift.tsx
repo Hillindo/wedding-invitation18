@@ -25,8 +25,7 @@ export default function BrideGift ({data}:any) {
       <>
       {brideGift != null ? (
     <Observer4>
-   <section className="w-full pt-28 pb-40">
-
+   <section className="w-full pt-28 pb-40 lg:max-w-md mx-auto">
      <div className="bg-[#051E31] rounded-3xl shadow-slate-800 shadow-md relative w-3/4 mx-auto lg:px-5 border-white flex z-20 border">
      <div className=" rounded-3xl left-0 bg-bottom bg-no-repeat bg-cover bg-blend-multiply h-full w-full absolute z-10 bg-[#051E31]" style={{backgroundImage: `url('/img/bg-2.jpg')`}}></div>
      <div className="w-full flex flex-wrap justify-center items-center text-center py-5 z-50">

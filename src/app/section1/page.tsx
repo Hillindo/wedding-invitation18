@@ -54,19 +54,19 @@ useEffect(() => {
   return (
     <>
       <Snowfalls/>
-    <div className="w-full flex flex-wrap justify-center items-center content-center h-full relative overflow-hidden">
+    <div className="w-full flex flex-wrap justify-center items-center content-center h-full relative overflow-hidden lg:max-w-md mx-auto">
       <motion.div
-initial={{ scale: 1.5 }}
-animate={{ scale: 1 }}
-transition={{ duration: 10, ease: 'linear',  }}
-className="absolute inset-0 overflow-hidden z-30"
-style={
-{animationDelay: '2s'}
-}
->
-<div className="w-full items-center content-center h-full bg-cover bg-no-repeat mix-blend-multiply bg-bottom bg-blend-multiply z-30 inset-0 absolute" style={{backgroundImage: url('/img/bg-2.jpg')}}></div>
-<div className="bg-center bg-no-repeat bg-cover bg-blend-multiply mix-blend-multiply bg-transparent h-full w-full absolute z-30" style={{backgroundImage: url('/img/birds.gif')}}></div>
-</motion.div>
+        initial={{ scale: 1.5 }}
+        animate={{ scale: 1 }}
+        transition={{ duration: 10, ease: 'linear' }}
+        className="absolute inset-0 overflow-hidden z-30"
+        style={{animationDelay: '2s'}}
+      >
+        <div className="w-full items-center content-center h-full bg-cover bg-no-repeat mix-blend-multiply bg-bottom bg-blend-multiply z-30 inset-0 absolute" 
+             style={{backgroundImage: `url('/img/bg-2.jpg')`}}></div>
+        <div className="bg-center bg-no-repeat bg-cover bg-blend-multiply mix-blend-multiply bg-transparent h-full w-full absolute z-30" 
+             style={{backgroundImage: `url('/img/birds.gif')`}}></div>
+      </motion.div>
     <div className="flex flex-wrap justify-center items-center content-center flex-grow flex-shrink flex-col gap-2 w-full h-full text-center py-40 pb-96 sm:pb-[600px] z-50">
 
         <div className="h-full max-w-full flex justify-center mb-4 animate-moveDown-1">

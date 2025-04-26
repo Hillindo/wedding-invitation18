@@ -35,7 +35,7 @@ export default function Live(data:any) {
     }, [data]);
     
   return (
-    <section>
+    <section className="lg:max-w-md mx-auto">
          {liveStream && liveStream.length > 0 ? (
             <Observer4>
           <div className="bg-[#9B899A00] p-5 flex flex-wrap justify-center z-20 relative">

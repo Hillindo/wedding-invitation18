@@ -86,8 +86,8 @@ const [greetings, setGreetings] = useState<any>([]);
     console.log(presence, "pres");
     
     return (
-            <section className='px-5 sm:mx-12 lg:px-5' id='greeting'>
-                <Observer>
+    <section className='px-5 sm:mx-12 lg:px-5 lg:max-w-md mx-auto' id='greeting'>
+        <Observer>
         <section
             className="bg-[#051E31] z-50 w-full rounded-3xl shadow-slate-200 shadow-md relative mt-12 text-white">
             <div className="w-full flex flex-wrap mx-auto py-12">
@@ -192,7 +192,7 @@ const [greetings, setGreetings] = useState<any>([]);
                 )}
             </div>
         </section>
-                </Observer>
-            </section>
-    )
-    }
+        </Observer>
+    </section>
+)
+}

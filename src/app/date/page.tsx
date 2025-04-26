@@ -62,7 +62,7 @@ export default function CountdownDate({data}:any) {
       getData();
     }, [data]); 
   return (
-    <section className='py-[10%] bg-[#051E31] w-full relative' id="location">
+    <section className='py-[10%] bg-[#051E31] relative lg:max-w-md mx-auto' id="location">
         <div className='m-2 p-3 w-full flex flex-wrap'>
                 <div className="absolute top-0 left-[-70px] ml-auto h-auto w-4/5 sm:w-1/2 lg:w-4/5">
             <Observer3>

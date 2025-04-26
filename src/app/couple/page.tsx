@@ -40,7 +40,7 @@ const [socmedLeft, setSocmedLeft] = useState<any>([]);
         'Facebook' ? 'fa-facebook' : 'fa-twitter';
         return (
         <>
-            <div className=" h-fit bg-cover text-white bg-center py-8 px-5" id="couple"
+            <div className="h-fit bg-cover text-white bg-center py-8 px-5 lg:max-w-md mx-auto" id="couple"
                 style={{ backgroundImage:'url(/img/bg-6.jpg)' }}>
                 <div className="w-full h-full bg-[#FDFDFDAD] text-center font-quicksand py-8 px-5 ">
                     <Observer3>
