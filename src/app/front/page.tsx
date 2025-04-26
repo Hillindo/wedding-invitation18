@@ -1,8 +1,10 @@
 "use client";
 import { useState, useEffect } from "react";
 import GateAnimation from "../component/gate/GateAnimation";
+import { useRouter } from 'next/navigation';
 
-export default function Front({data, guestName, onOpenNextSections}:any) {
+export default function Front({data, guestName}:any) {
+    const router = useRouter();
     const [nameLeft, setNameLeft] = useState("");
     const [nameRight, setNameRight] = useState("");
     const [nameAliasLeft, setNameAliasLeft] = useState("");
@@ -17,7 +19,7 @@ export default function Front({data, guestName, onOpenNextSections}:any) {
 
     // Handle when gate animation is complete
     const handleGateAnimationComplete = () => {
-        onOpenNextSections(); // Transition to the next section after the gate animation completes
+        router.push('/section1'); // Navigasi ke halaman berikutnya setelah animasi selesai
     };
 
     useEffect(() => {
@@ -46,7 +48,7 @@ export default function Front({data, guestName, onOpenNextSections}:any) {
     // Function to handle opening next sections after clicking "Open Invitation"
     const handleOpenInvitation = () => {
         if (isGateOpen) {
-            onOpenNextSections();
+            router.push('/section1');
         } else {
             handleOpenGate();
         }
