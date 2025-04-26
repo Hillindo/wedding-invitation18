@@ -68,30 +68,35 @@ export default function Front({data, guestName, onOpenInvitation}:any) {
                         {/* <div className="w-full min-h-screen opacity-50 bg-black top-0 left-0 absolute"></div> */}
                         <div className="absolute w-full h-full bottom-0 z-20 py-28 mt-auto">
                             <div className="w-full h-full flex flex-col justify-center text-white">
-                                <motion.div 
-                                    initial={{ opacity: 0, y: -20 }}
-                                    animate={{ opacity: 1, y: 0 }}
-                                    transition={{ delay: 0.5 }}
-                                    className="w-full h-auto"
-                                >
-                                    <img src="/img/rumah-gadang.png" alt="" loading="lazy" />
-                                </motion.div>
+                            <motion.div 
+                                initial={{ opacity: 0, y: -20 }}
+                                animate={{ opacity: 1, y: 0 }}
+                                transition={{ delay: 0.5 }}
+                                className="w-full h-auto"
+                            >
+                                <img 
+                                    src="/img/rumah-gadang.png" 
+                                    alt="Rumah Gadang" 
+                                    loading="lazy" 
+                                    style={{ maxWidth: "40%", margin: "0 auto", display: "block" }}
+                                />
+                            </motion.div>
                                 <motion.div
                                     initial={{ opacity: 0 }}
                                     animate={{ opacity: 1 }}
                                     transition={{ delay: 0.8 }}
                                     className="space-y-4"
                                 >
-                                    <div className="w-auto h-auto text-center font-quicksand tracking-[1px] text-[15px] opacity-80 md:text-2xl lg:text-[15px]">
+                                    <div className="w-auto h-auto text-center font-quicksand tracking-[1px] text-[15px] opacity-80 md:text-2xl lg:text-[15px] text-black">
                                         THE WEDDING OF
                                     </div>
-                                    <div className="w-auto h-auto text-center tracking-[3.7px] font-qageto text-[30px] md:text-6xl lg:text-[40px] text-white opacity-95"> 
+                                    <div className="w-auto h-auto text-center tracking-[3.7px] font-qageto text-[30px] md:text-6xl lg:text-[40px] text-black opacity-95"> 
                                         {nameAliasLeft ? nameAliasLeft : nameLeft ? nameLeft: " "} & {nameAliasRight ? nameAliasRight : nameRight ? nameRight : " "}
                                     </div>
-                                    <div className="w-auto h-auto text-center text-[10px] text-white opacity-95 md:text-2xl lg:text-[15px] md:mt-4 xl:mt-0">
+                                    <div className="w-auto h-auto text-center text-[10px] text-black opacity-95 md:text-2xl lg:text-[15px] md:mt-4 xl:mt-0">
                                         Kepada Yth :
                                     </div>
-                                    <div className="w-auto h-auto text-center text-[24px] mt-2 font-newsreader text-white opacity-95 md:text-5xl lg:text-[26px] md:mt-4 xl:mt-2">
+                                    <div className="w-auto h-auto text-center text-[24px] mt-2 font-newsreader text-black opacity-95 md:text-5xl lg:text-[26px] md:mt-4 xl:mt-2">
                                         {newGuestName ? newGuestName : ""}
                                     </div>
                                 </motion.div>
