@@ -56,7 +56,7 @@ export default function Section1({data}:any) {
             className="h-full max-w-full flex justify-center mb-8"
           >
             <img 
-              src="/logo/iconpastinikah.svg" 
+              src="/logo/logo-hill-nay.png" 
               className="w-1/3 md:w-1/4 lg:w-1/5" 
               alt="Logo Pasti Nikah" 
               rel="preload" 
@@ -70,10 +70,10 @@ export default function Section1({data}:any) {
             transition={{ duration: 1, delay: 1 }}
             className="text-center space-y-4"
           >
-            <div className="text-center font-quicksand tracking-[3px] text-[15px] opacity-80 md:text-lg xl:text-[15px] text-white">
+            <div className="text-center font-quicksand tracking-[3px] text-[17px] opacity-80 md:text-lg xl:text-[15px] text-black">
               THE WEDDING OF
             </div>
-            <div className="text-center tracking-[3.7px] text-[42px] font-medium font-cinzel text-white opacity-95"> 
+            <div className="text-center tracking-[3.7px] text-[42px] font-medium font-cinzel text-black opacity-95"> 
               {nameAliasLeft ? nameAliasLeft : nameLeft ? nameLeft: " "} & {nameAliasRight ? nameAliasRight : nameRight ? nameRight : " "}
             </div>
           </motion.div>
