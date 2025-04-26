@@ -1,5 +1,5 @@
 "use client"
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useRef } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { setCookie, getCookie } from "cookies-next";
 import axios from "next@js/lib/axios";
@@ -34,8 +34,14 @@ export default function Home() {
   const [mainContentVisible, setMainContentVisible] = useState(false);
   const [imageLoaded, setImageLoaded] = useState("flex");
   const [allImagesLoaded, setAllImagesLoaded] = useState(false);
+  const musicRef = useRef<any>(null);
 
   const handleOpenInvitation = () => {
+    // Play music when invitation is opened
+    if (musicRef.current) {
+      musicRef.current.playMusic();
+    }
+    
     // Set mainContentVisible first, then hide front page
     setMainContentVisible(true);
     setTimeout(() => {
@@ -178,7 +184,7 @@ export default function Home() {
                   </section>
                   <Footer />
                   <Navbar/>
-                  <BackgroundMusic src={music ? music : "/testMusic.mp3"} />
+                  <BackgroundMusic ref={musicRef} src={music ? music : "/testMusic.mp3"} />
                 </div>
               </div>
             </>

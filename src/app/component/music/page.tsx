@@ -1,18 +1,34 @@
 "use client";
 
-
-import React, { useEffect, useRef, useState } from "react";
+import React, { useEffect, useRef, useState, forwardRef, useImperativeHandle } from "react";
 import { AiFillPlayCircle } from "react-icons/ai";
 import { PiStopCircleFill } from "react-icons/pi";
 import { MdStopCircle } from "react-icons/md";
 
-const BackgroundMusic = ({ src }: any) => {
+const BackgroundMusic = forwardRef(({ src }: any, ref) => {
   const audioRef = useRef<any>(null);
-  const [isPlaying, setIsPlaying] = useState<any>(true);
+  const [isPlaying, setIsPlaying] = useState<any>(false);
+
+  useImperativeHandle(ref, () => ({
+    playMusic: () => {
+      if (audioRef.current && !isPlaying) {
+        audioRef.current.play().then(() => {
+          setIsPlaying(true);
+        }).catch((error: any) => {
+          console.error("Audio playback failed:", error);
+        });
+      }
+    },
+    pauseMusic: () => {
+      if (audioRef.current && isPlaying) {
+        audioRef.current.pause();
+        setIsPlaying(false);
+      }
+    }
+  }));
 
   useEffect(() => {
     if (audioRef.current) {
-      audioRef.current.autoplay = true;
       audioRef.current.loop = true;
     }
   }, []);
@@ -22,7 +38,9 @@ const BackgroundMusic = ({ src }: any) => {
       if (isPlaying) {
         audioRef.current.pause();
       } else {
-        audioRef.current.play();
+        audioRef.current.play().catch((error: any) => {
+          console.error("Audio playback failed:", error);
+        });
       }
       setIsPlaying(!isPlaying);
     }
@@ -48,6 +66,8 @@ const BackgroundMusic = ({ src }: any) => {
       </button>
     </div>
   );
-};
+});
+
+BackgroundMusic.displayName = "BackgroundMusic";
 
 export default BackgroundMusic;
