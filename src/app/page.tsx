@@ -18,7 +18,7 @@ import Gallery from './gallery/page'
 import End from './end/page'
 import Footer from './footer/page'
 import LoadingScreen from "./component/loading/page";
-import BackgroundMusic from './component/music/page';
+import BackgroundMusic from './component/music/BackgroundMusic';
 import Navbar from './component/navbar/page'
 
 export default function Home() {
