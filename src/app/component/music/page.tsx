@@ -10,15 +10,22 @@ interface BackgroundMusicProps {
   isEnabled?: boolean;
 }
 
+/**
+ * Komponen BackgroundMusic
+ * - Memainkan audio background dengan kontrol play/pause
+ * - Auto play saat undangan dibuka (isEnabled)
+ * - Otomatis pause saat tab tidak aktif, resume jika kembali
+ * - User bisa play/pause manual
+ */
 const BackgroundMusic = ({ src, isEnabled = false }: BackgroundMusicProps) => {
   const audioRef = useRef<HTMLAudioElement | null>(null);
   const [isPlaying, setIsPlaying] = useState<boolean>(false);
+  const [isManuallyPaused, setIsManuallyPaused] = useState<boolean>(false);
 
-  // Efek untuk memulai pemutaran musik saat isEnabled berubah menjadi true
+  // Sinkronisasi auto play dengan isEnabled
   useEffect(() => {
-    if (isEnabled && audioRef.current && !isPlaying) {
+    if (isEnabled && audioRef.current && !isPlaying && !isManuallyPaused) {
       const playPromise = audioRef.current.play();
-      
       if (playPromise !== undefined) {
         playPromise
           .then(() => {
@@ -28,27 +35,35 @@ const BackgroundMusic = ({ src, isEnabled = false }: BackgroundMusicProps) => {
             console.error("Audio playback failed:", error);
           });
       }
+    } else if (!isEnabled && audioRef.current && isPlaying) {
+      audioRef.current.pause();
+      setIsPlaying(false);
     }
-  }, [isEnabled, isPlaying]);
+  }, [isEnabled, isPlaying, isManuallyPaused]);
 
   useEffect(() => {
+    // Set audio loop
     if (audioRef.current) {
       audioRef.current.loop = true;
     }
   }, []);
 
+  /**
+   * Handler play/pause manual dari user
+   */
   const handlePlayPause = () => {
     if (audioRef.current) {
       if (isPlaying) {
         audioRef.current.pause();
         setIsPlaying(false);
+        setIsManuallyPaused(true);
       } else {
         const playPromise = audioRef.current.play();
-        
         if (playPromise !== undefined) {
           playPromise
             .then(() => {
               setIsPlaying(true);
+              setIsManuallyPaused(false);
             })
             .catch((error) => {
               console.error("Audio playback failed:", error);
@@ -57,6 +72,26 @@ const BackgroundMusic = ({ src, isEnabled = false }: BackgroundMusicProps) => {
       }
     }
   };
+
+  /**
+   * Pause audio saat tab tidak aktif, resume jika kembali
+   */
+  useEffect(() => {
+    const handleVisibilityChange = () => {
+      if (document.hidden && audioRef.current && isPlaying) {
+        audioRef.current.pause();
+      } else if (!document.hidden && audioRef.current && isEnabled && !isManuallyPaused) {
+        const playPromise = audioRef.current.play();
+        if (playPromise !== undefined) {
+          playPromise.then(() => setIsPlaying(true)).catch(() => {});
+        }
+      }
+    };
+    document.addEventListener("visibilitychange", handleVisibilityChange);
+    return () => {
+      document.removeEventListener("visibilitychange", handleVisibilityChange);
+    };
+  }, [isPlaying, isEnabled, isManuallyPaused]);
 
   return (
     <div className="fixed top-3 right-1 z-50">
@@ -80,4 +115,11 @@ const BackgroundMusic = ({ src, isEnabled = false }: BackgroundMusicProps) => {
   );
 };
 
-export default BackgroundMusic;
+// Komponen halaman Next.js untuk /music
+const MusicPage = () => {
+  // Path file musik statis di public
+  const musicSrc = "/testMusic.mp3";
+  return <BackgroundMusic src={musicSrc} isEnabled={false} />;
+};
+
+export default MusicPage;
