@@ -91,10 +91,18 @@ const BackgroundMusic = ({ src, isEnabled = false }: BackgroundMusicProps) => {
 
   return (
     <div className="fixed top-3 right-1 z-50">
-      <audio ref={audioRef} src={src} />
+      <audio
+        ref={audioRef}
+        src={src}
+        preload="auto"
+        playsInline
+        muted={false}
+        // Safari/iOS butuh playsInline dan muted false
+      />
       <button
         className={`${isPlaying ? "animate-spin" : ""}`}
         onClick={handlePlayPause}
+        aria-label={isPlaying ? "Pause music" : "Play music"}
       >
         {isPlaying ? (
           <div className="text-4xl bg-[#051E31] text-slate-100 rounded-full">
