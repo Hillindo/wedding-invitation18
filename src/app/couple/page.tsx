@@ -58,6 +58,14 @@ const [socmedLeft, setSocmedLeft] = useState<any>([]);
                         </div>
                     </div>
                     <Observer4>
+                        <div className=" mb-5 w-full relative flex justify-center">
+                            <img src={`${data?.brideGroomLeft ? (data.brideGroomLeft[0].image_male ?
+                                data.brideGroomLeft[0].image_male : data.brideGroomLeft[0].image_female) : '' }`}
+                                className="border-solid border-2 border-white rounded-[1000px] w-[70%] sm:w-1/2 md:w-1/2 lg:w-[70%] bg-white h-[300px] min-[400px]:h-[400px] sm:h-[400px] md:h-[500px] lg:h-[400px] object-cover"
+                                alt="" />
+                        </div>
+                    </Observer4>
+                    <Observer4>
                         <div className="mb-5 w-full ">
                             <div className="flex items-center justify-center flex-col flex-nowrap w-full">
                                 <h3 className=" text-black mb-1 text-center text-3xl font-bloverly">
