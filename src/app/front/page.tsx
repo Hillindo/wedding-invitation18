@@ -90,12 +90,13 @@ export default function Front({data, guestName, onOpenInvitation}:any) {
                         
                         {/* Flower decorations - BOTTOM */}
                         <div className="absolute left-0 bottom-0 z-10 w-full">
-                            <div className="relative h-40">
+                            <div className="relative h-40 overflow-hidden">
+                                {/* Mengubah teknik styling untuk overflow bunga - lebih kompatibel dengan Vercel */}
                                 <img src="/img/flower-front/Bunga5.png" alt="Flower decoration" 
                                     className="absolute left-0 w-32 md:w-40" 
                                     style={{ 
-                                        transform: 'rotate(-5deg)',
-                                        bottom: '-50%', // Half of the image hidden below the viewport
+                                        transform: 'rotate(-5deg) translateY(50%)', 
+                                        bottom: '0'
                                     }} />
                                 <img src="/img/flower-front/Bunga6.png" alt="Flower decoration" 
                                     className="absolute left-1/2 bottom-0 transform -translate-x-1/2 w-40 md:w-48" />
