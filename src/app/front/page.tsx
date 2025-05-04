@@ -89,8 +89,11 @@ export default function Front({data, guestName, onOpenInvitation}:any) {
                         <div className="absolute left-0 bottom-0 z-10 w-full">
                             <div className="relative h-40">
                                 <img src="/img/flower-front/Bunga5.png" alt="Flower decoration" 
-                                    className="absolute left-0 bottom-0 w-32 md:w-40" 
-                                    style={{ transform: 'rotate(-5deg)' }} />
+                                    className="absolute left-0 w-32 md:w-40" 
+                                    style={{ 
+                                        transform: 'rotate(-5deg)',
+                                        bottom: '-50%', // Half of the image hidden below the viewport
+                                    }} />
                                 <img src="/img/flower-front/Bunga6.png" alt="Flower decoration" 
                                     className="absolute left-1/2 bottom-0 transform -translate-x-1/2 w-40 md:w-48" />
                                 <img src="/img/flower-front/Bunga7.png" alt="Flower decoration" 
