@@ -284,7 +284,7 @@ export default function Front({data, guestName, onOpenInvitation}:any) {
                                         }
                                     }}
                                 >
-                                    <img src="/img/flower-front/Bunga6.png" alt="Flower decoration" 
+                                    <img src="/img/flower-front/Bunga1.png" alt="Flower decoration" 
                                         className="w-32 md:w-40" style={{ transform: 'rotate(-30deg)' }}
                                          />
                                 </motion.div>
