@@ -27,12 +27,12 @@ export default function Front({data, guestName, onOpenInvitation}:any) {
             try {
                 // Tambahkan pengecekan untuk data sebelum mengakses propertinya
                 if (data && data.brideGroomLeft && data.brideGroomRight) {
-                    const nameLeft = data.brideGroomLeft[0] && (data.brideGroomLeft[0].name_male ? data.brideGroomLeft[0].name_male : data.brideGroomLeft[0].name_female)?.split(" ");
-                    const nameRight = data.brideGroomRight[0] && (data.brideGroomRight[0].name_male ? data.brideGroomRight[0].name_male : data.brideGroomRight[0].name_female)?.split(" ");
+                    const nameLeft = data?.brideGroomLeft[0] && (data?.brideGroomLeft[0].name_male ? data.brideGroomLeft[0].name_male : data.brideGroomLeft[0].name_female)?.split(" ");
+                    const nameRight = data?.brideGroomRight[0] && (data?.brideGroomRight[0].name_male ? data.brideGroomRight[0].name_male : data.brideGroomRight[0].name_female)?.split(" ");
                     setNameLeft(nameLeft ? nameLeft[0] : "");
                     setNameRight(nameRight ? nameRight[0] : "");
-                    setNameAliasLeft(data.brideGroomLeft[0]?.name_alias || "");
-                    setNameAliasRight(data.brideGroomRight[0]?.name_alias || "");
+                    setNameAliasLeft(data?.brideGroomLeft[0]?.name_alias || "");
+                    setNameAliasRight(data?.brideGroomRight[0]?.name_alias || "");
                 }
             } catch (error) {
                 console.error('Error fetching data:', error);
