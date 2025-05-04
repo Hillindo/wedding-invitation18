@@ -63,7 +63,9 @@ export default function Front({data, guestName, onOpenInvitation}:any) {
                 >
                     <section 
                         className='relative w-full min-h-screen bg-transparent bg-cover bg-center bg-no-repeat lg:max-w-md mx-auto' 
-                        style={{ backgroundImage: 'url(/img/bg-1.jpg)' }}
+                        style={{ backgroundColor: '#001530' }}
+                        // Original background image implementation
+                        // style={{ backgroundImage: 'url(/img/bg-1.jpg)' }}
                     >
                         {/* <div className="w-full min-h-screen opacity-50 bg-black top-0 left-0 absolute"></div> */}
                         <div className="absolute w-full h-full bottom-0 z-20 py-28 mt-auto">
