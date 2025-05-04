@@ -95,7 +95,7 @@ export default function Front({data, guestName, onOpenInvitation}:any) {
                                 <img src="/img/flower-front/Bunga5.png" alt="Flower decoration" 
                                     className="absolute left-0 w-32 md:w-40" 
                                     style={{ 
-                                        transform: 'rotate(-5deg) translateY(50%)', 
+                                        transform: 'rotate(-5deg) translateY(40%)', 
                                         bottom: '0'
                                     }} />
                                 <img src="/img/flower-front/Bunga6.png" alt="Flower decoration" 
