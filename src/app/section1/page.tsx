@@ -68,14 +68,48 @@ export default function Section1({data}:any) {
             initial={{ y: 50, opacity: 0 }}
             animate={{ y: 0, opacity: 1 }}
             transition={{ duration: 1, delay: 1 }}
-            className="text-center space-y-4"
+            className="text-center space-y-6 px-4" // Increased spacing for better visual hierarchy
           >
-            <div className="text-center font-quicksand tracking-[3px] text-[17px] opacity-80 md:text-lg xl:text-[15px] text-black">
+            {/* THE WEDDING OF */}
+            <div 
+              className="font-quicksand tracking-[1px] text-[15px] opacity-80" 
+              style={{ color: '#e1ba60' }}
+            >
               THE WEDDING OF
             </div>
-            <div className="text-center tracking-[3.7px] text-[42px] font-medium font-cinzel text-black opacity-95"> 
+
+            {/* Names */}
+            <div 
+              className="font-qageto text-4xl lg:text-5xl tracking-[3px] opacity-95" 
+              style={{ color: '#e1ba60' }}
+            > 
               {nameAliasLeft ? nameAliasLeft : nameLeft ? nameLeft: " "} & {nameAliasRight ? nameAliasRight : nameRight ? nameRight : " "}
             </div>
+
+            {/* Date */}
+            <div 
+              className="font-quicksand text-[15px] opacity-90"
+              style={{ color: '#e1ba60' }}
+            >
+              Minggu, 06 Juli 2025
+            </div>
+
+            {/* Countdown Boxes */}
+            <div className="flex justify-center space-x-2 sm:space-x-3 md:space-x-4">
+              <div className="w-[50px] h-[50px] sm:w-[60px] sm:h-[60px] md:w-[70px] md:h-[70px] rounded-md" style={{backgroundColor: '#e1ba60'}}></div>
+              <div className="w-[50px] h-[50px] sm:w-[60px] sm:h-[60px] md:w-[70px] md:h-[70px] rounded-md" style={{backgroundColor: '#e1ba60'}}></div>
+              <div className="w-[50px] h-[50px] sm:w-[60px] sm:h-[60px] md:w-[70px] md:h-[70px] rounded-md" style={{backgroundColor: '#e1ba60'}}></div>
+              <div className="w-[50px] h-[50px] sm:w-[60px] sm:h-[60px] md:w-[70px] md:h-[70px] rounded-md" style={{backgroundColor: '#e1ba60'}}></div>
+            </div>
+
+            {/* Simpan Tanggal Button */}
+            <button 
+              className="font-quicksand font-semibold py-2.5 px-5 rounded-lg text-sm flex items-center justify-center mx-auto"
+              style={{ backgroundColor: '#e1ba60', color: '#001530' }} // Using dark blue for text, similar to front page background
+            >
+              <i className="fa fa-calendar mr-2"></i> {/* Assuming Font Awesome is available */}
+              Simpan Tanggal
+            </button>
           </motion.div>
         </div>
       </div>
