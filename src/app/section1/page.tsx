@@ -51,6 +51,13 @@ export default function Section1({data}:any) {
 
   return (
     <>
+      <div className="absolute top-0 left-0 w-full h-20 sm:h-24 md:h-28 lg:h-32 overflow-hidden z-40">
+        <img
+          src="/img/goldrain.png"
+          className="w-full h-full object-cover"
+          alt="Gold rain effect"
+        />
+      </div>
       <Snowfalls/>
       <div className="w-full min-h-screen flex flex-wrap justify-center items-center content-center relative overflow-hidden">
         <motion.div
