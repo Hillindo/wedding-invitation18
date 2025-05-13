@@ -169,14 +169,39 @@ export default function Location({ data }: any) {
     //   console.log(data, "data");
 
     return (
-        <section
-            className="relative w-full h-full bg-fixed bg-top bg-cover bg-opacity-50 lg:max-w-md mx-auto"
-            style={{ backgroundImage: `url('/img/bg-7.jpg')` }}
-            id="location"
-        >
-            <div className="bg-[#051E31] w-full h-full mix-blend-multiply absolute" style={{backgroundImage: `url('/img/bg-7.jpg')`}}></div>
-            <div className="bg-[#9B899A00] p-5 flex flex-wrap justify-center z-20 relative gap-4">
-                {events}
+      <section
+          className="relative w-full h-full bg-fixed bg-top bg-cover bg-opacity-50 lg:max-w-md mx-auto"
+          style={{ backgroundImage: `url('/img/bg-7.jpg')` }}
+          id="location"
+      >
+          <div className="bg-[#051E31] w-full h-full mix-blend-multiply absolute" style={{backgroundImage: `url('/img/bg-7.jpg')`}}></div>
+          <div className="bg-[#9B899A00] p-5 flex flex-wrap justify-center z-20 relative gap-4">
+              {event?.length > 0 && (
+                  <div className="w-full flex justify-center mb-8">
+                      <button
+                          className="bg-black rounded-sm justify-center items-center gap-4 text-white text-xs py-2 px-5 font-sans"
+                          onClick={() => {
+                              if (event[0].date && event[0].start_event && event[0].end_event) {
+                                  const startDate = event[0].date.split(" ")[0];
+                                  const startTime = startDate + "T" + event[0].start_event.replace(":", "");
+                                  const endTime = startDate + "T" + event[0].end_event.replace(":", "");
+                                  const eventUrl = `https://www.google.com/calendar/render?action=TEMPLATE&text=${encodeURIComponent(
+                                      event[0].name
+                                  )}&dates=${encodeURIComponent(
+                                      startTime + "/" + endTime
+                                  )}&location=${encodeURIComponent(event[0].address)}`;
+                                  window.open(eventUrl, "_blank");
+                              }
+                          }}
+                      >
+                          <span>
+                              Save the Date (First Event)
+                              <i className="fas fa-arrow-right-long ml-2"></i>
+                          </span>
+                      </button>
+                  </div>
+              )}
+              {events}
             </div>
         </section>
     );
