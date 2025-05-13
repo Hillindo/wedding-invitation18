@@ -10,6 +10,12 @@ export default function Section1({data}:any) {
   const [nameAliasLeft, setNameAliasLeft] = useState("");
   const [nameAliasRight, setNameAliasRight] = useState("");
   const [formattedDate, setFormattedDate] = useState("");
+  const [countdown, setCountdown] = useState({
+    days: 0,
+    hours: 0,
+    minutes: 0,
+    seconds: 0
+  });
 
   useEffect(() => {
     const fetchData = async () => {
@@ -27,6 +33,21 @@ export default function Section1({data}:any) {
     };
     fetchData();
   }, [data]);
+
+  useEffect(() => {
+    const calculateCountdown = () => {
+      const targetDate = new Date('2025-07-06 00:00:00').getTime();
+      const now = new Date().getTime();
+      const diff = Math.max(targetDate - now, 0);
+      const days = Math.floor(diff / (1000 * 60 * 60 * 24));
+      const hours = Math.floor((diff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+      const minutes = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60));
+      const seconds = Math.floor((diff % (1000 * 60)) / 1000);
+      setCountdown({ days, hours, minutes, seconds });
+    };
+    const interval = setInterval(calculateCountdown, 1000);
+    return () => clearInterval(interval);
+  }, []);
 
   return (
     <>
@@ -96,10 +117,22 @@ export default function Section1({data}:any) {
 
             {/* Countdown Boxes */}
             <div className="flex justify-center space-x-2 sm:space-x-3 md:space-x-4">
-              <div className="w-[50px] h-[50px] sm:w-[60px] sm:h-[60px] md:w-[70px] md:h-[70px] rounded-md" style={{backgroundColor: '#e1ba60'}}></div>
-              <div className="w-[50px] h-[50px] sm:w-[60px] sm:h-[60px] md:w-[70px] md:h-[70px] rounded-md" style={{backgroundColor: '#e1ba60'}}></div>
-              <div className="w-[50px] h-[50px] sm:w-[60px] sm:h-[60px] md:w-[70px] md:h-[70px] rounded-md" style={{backgroundColor: '#e1ba60'}}></div>
-              <div className="w-[50px] h-[50px] sm:w-[60px] sm:h-[60px] md:w-[70px] md:h-[70px] rounded-md" style={{backgroundColor: '#e1ba60'}}></div>
+              <div className="w-[50px] h-[50px] sm:w-[60px] sm:h-[60px] md:w-[70px] md:h-[70px] rounded-md flex flex-col items-center justify-center" style={{backgroundColor: '#e1ba60'}}>
+                <div className="text-lg font-bold">{countdown.days}</div>
+                <div className="text-xs">Days</div>
+              </div>
+              <div className="w-[50px] h-[50px] sm:w-[60px] sm:h-[60px] md:w-[70px] md:h-[70px] rounded-md flex flex-col items-center justify-center" style={{backgroundColor: '#e1ba60'}}>
+                <div className="text-lg font-bold">{countdown.hours}</div>
+                <div className="text-xs">Hours</div>
+              </div>
+              <div className="w-[50px] h-[50px] sm:w-[60px] sm:h-[60px] md:w-[70px] md:h-[70px] rounded-md flex flex-col items-center justify-center" style={{backgroundColor: '#e1ba60'}}>
+                <div className="text-lg font-bold">{countdown.minutes}</div>
+                <div className="text-xs">Minutes</div>
+              </div>
+              <div className="w-[50px] h-[50px] sm:w-[60px] sm:h-[60px] md:w-[70px] md:h-[70px] rounded-md flex flex-col items-center justify-center" style={{backgroundColor: '#e1ba60'}}>
+                <div className="text-lg font-bold">{countdown.seconds}</div>
+                <div className="text-xs">Seconds</div>
+              </div>
             </div>
 
             {/* Simpan Tanggal Button */}
