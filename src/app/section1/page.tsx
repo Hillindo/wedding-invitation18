@@ -76,9 +76,9 @@ export default function Section1({data}:any) {
             transition={{ duration: 1, delay: 0.5 }}
             className="h-full max-w-full flex justify-center mb-8"
           >
-            <img 
-              src="/logo/logo-hill-nay.png" 
-              className="w-1/3 md:w-1/4 lg:w-1/5" 
+            <img
+              src="/logo/logo-hill-nay.png"
+              className="w-4/5 md:w-3/5 lg:w-2/5"
               alt="Logo Pasti Nikah" 
               rel="preload" 
               fetchPriority="high" 
