@@ -55,7 +55,7 @@ const [socmedLeft, setSocmedLeft] = useState<any>([]);
         return (
         <>
             <div className="h-fit bg-cover text-white bg-center py-8 px-5 lg:max-w-md mx-auto" id="couple"
-                style={{ backgroundImage:'url(/img/bg-6.jpg)' }}>
+                style={{ backgroundImage:'url(/img/bg-2.jpg)' }}>
                 <div className="w-full h-full bg-[#FDFDFDAD] text-center font-quicksand py-8 px-5 ">
                     <Observer3>
                         <h1 className=" text-4xl text-[#051E31] capitalize pb-12" style={{ fontFamily: `${data?.fontTitle ? data?.fontTitle?.font_title : "romantic"}` }}>
