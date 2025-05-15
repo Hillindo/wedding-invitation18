@@ -87,11 +87,28 @@ export default function Front({data, guestName, onOpenInvitation}:any) {
                     onAnimationComplete={() => {}}
                     leftColor="#8D7B68"
                     rightColor="#A4907C"
-                >
-                    <section 
+                >                    <section 
                         className='relative w-full min-h-screen bg-transparent bg-cover bg-center bg-no-repeat lg:max-w-md mx-auto' 
-                        style={{ backgroundColor: '#001530' }}
+                        style={{ backgroundImage: `url('/img/bg-2.jpg')` }}
                     >
+                        {/* Corner ornaments - TOP LEFT */}
+                        <div className="absolute top-0 left-0 w-1/4 h-auto z-10">
+                            <img 
+                                src="/img/bg-10.png" 
+                                alt="Corner decoration" 
+                                className="w-full h-auto"
+                            />
+                        </div>
+                        
+                        {/* Corner ornaments - TOP RIGHT */}
+                        <div className="absolute top-0 right-0 w-1/4 h-auto z-10 transform scale-x-[-1]">
+                            <img 
+                                src="/img/bg-10.png" 
+                                alt="Corner decoration" 
+                                className="w-full h-auto"
+                            />
+                        </div>
+                        
                         {/* Flower decorations - LEFT */}
                         <motion.div 
                                 className="w-full h-auto top-[600px] absolute left-[-100px]"
