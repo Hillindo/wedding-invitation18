@@ -92,7 +92,7 @@ export default function Front({data, guestName, onOpenInvitation}:any) {
                         style={{ backgroundImage: `url('/img/bg-2.jpg')` }}
                     >
                         {/* Corner ornaments - TOP RIGHT */}
-                        <div className="absolute top-0 right-0 w-1/4 h-auto z-10">
+                        <div className="absolute top-0 right-0 w-1/2 h-auto z-10">
                             <img 
                                 src="/img/bg-10.png" 
                                 alt="Corner decoration" 
@@ -101,7 +101,7 @@ export default function Front({data, guestName, onOpenInvitation}:any) {
                         </div>
                         
                         {/* Corner ornaments - TOP LEFT */}
-                        <div className="absolute top-0 left-0 w-1/4 h-auto z-10 transform scale-x-[-1]">
+                        <div className="absolute top-0 left-0 w-1/2 h-auto z-10 transform scale-x-[-1]">
                             <img 
                                 src="/img/bg-10.png" 
                                 alt="Corner decoration" 
