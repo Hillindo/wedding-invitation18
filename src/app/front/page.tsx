@@ -307,7 +307,7 @@ export default function Front({data, guestName, onOpenInvitation}:any) {
                                 </motion.div>
                             </div>
                         </div>
-                          {/* Frame Border */}
+                          {/* Frame Border 1*/}
                         <div className="absolute inset-0 flex items-center justify-center z-10 px-8 py-12">
                             <img 
                                 src="/img/Asset1.png" 
