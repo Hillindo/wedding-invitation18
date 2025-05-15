@@ -92,7 +92,7 @@ export default function Front({data, guestName, onOpenInvitation}:any) {
                         style={{ backgroundImage: `url('/img/bg-2.jpg')` }}
                     >
                         {/* Corner ornaments - TOP RIGHT */}
-                        <div className="absolute top-0 right-0 w-1/2 h-auto z-10">
+                        <div className="absolute top-0 right-0 w-3/8 h-auto z-10">
                             <img 
                                 src="/img/bg-10.png" 
                                 alt="Corner decoration" 
@@ -101,7 +101,7 @@ export default function Front({data, guestName, onOpenInvitation}:any) {
                         </div>
                         
                         {/* Corner ornaments - TOP LEFT */}
-                        <div className="absolute top-0 left-0 w-1/2 h-auto z-10 transform scale-x-[-1]">
+                        <div className="absolute top-0 left-0 w-3/8 h-auto z-10 transform scale-x-[-1]">
                             <img 
                                 src="/img/bg-10.png" 
                                 alt="Corner decoration" 
@@ -306,6 +306,14 @@ export default function Front({data, guestName, onOpenInvitation}:any) {
                                          />
                                 </motion.div>
                             </div>
+                        </div>
+                          {/* Frame Border */}
+                        <div className="absolute inset-0 flex items-center justify-center z-10 px-8 py-12">
+                            <img 
+                                src="/img/Asset1.png" 
+                                alt="Frame decoration" 
+                                className="w-full h-full object-contain"
+                            />
                         </div>
                         
                         <div className="absolute w-full h-full bottom-0 z-20 py-28 mt-auto">
