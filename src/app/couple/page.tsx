@@ -75,10 +75,9 @@ const [socmedLeft, setSocmedLeft] = useState<any>([]);
                     <div className="flex flex-col items-center gap-16 px-4 max-w-3xl mx-auto">
                         {/* Pengantin Wanita */}
                         <Observer2>
-                            <div className="flex flex-col items-center w-full max-w-md">
-                                <div className="mb-8">
+                            <div className="flex flex-col items-center w-full max-w-md">                                <div className="mb-8">
                                     {/* Frame oval dengan border emas seperti pada referensi */}
-                                    <div className="border-2 border-[#D4AF37] rounded-[40px] w-[180px] h-[300px] overflow-hidden flex items-center justify-center relative">
+                                    <div className="border-4 border-[#D4AF37] rounded-[80px] w-[200px] h-[280px] overflow-hidden flex items-center justify-center relative" style={{ borderRadius: '100px / 140px' }}>
                                         <img 
                                             src={`${data?.brideGroomLeft && data.brideGroomLeft.length > 0 
                                                 ? (data.brideGroomLeft[0].image_female || data.brideGroomLeft[0].image_male) 
@@ -122,10 +121,9 @@ const [socmedLeft, setSocmedLeft] = useState<any>([]);
 
                         {/* Pengantin Pria */}
                         <Observer3>
-                            <div className="flex flex-col items-center w-full max-w-md">
-                                <div className="mb-8">
+                            <div className="flex flex-col items-center w-full max-w-md">                                <div className="mb-8">
                                     {/* Frame oval dengan border emas seperti pada referensi */}
-                                    <div className="border-2 border-[#D4AF37] rounded-[40px] w-[180px] h-[300px] overflow-hidden flex items-center justify-center">
+                                    <div className="border-4 border-[#D4AF37] rounded-[80px] w-[200px] h-[280px] overflow-hidden flex items-center justify-center relative" style={{ borderRadius: '100px / 140px' }}>
                                         <img 
                                             src={`${data?.brideGroomRight && data.brideGroomRight.length > 0 
                                                 ? (data.brideGroomRight[0].image_male || data.brideGroomRight[0].image_female) 
