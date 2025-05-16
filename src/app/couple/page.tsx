@@ -135,7 +135,8 @@ const [socmedLeft, setSocmedLeft] = useState<any>([]);
 
                         {/* Pengantin Pria */}
                         <Observer3>
-                            <div className="flex flex-col items-center w-full max-w-md">                                <div className="mb-8 relative">                                    {/* Container utama dengan posisi relative */}
+                            <div className="flex flex-col items-center w-full max-w-md">                               
+                                 <div className="mb-8 relative">
                                     <div className="w-[400px] h-[450px] relative mr-[-30px]">
                                         {/* Komponen foto pengantin (independent) */}
                                         <div className="absolute top-[10%] left-[15%] w-[70%] h-[80%] z-0" style={{ zIndex: 0 }}>
@@ -158,6 +159,7 @@ const [socmedLeft, setSocmedLeft] = useState<any>([]);
                                                 className="w-full h-full" 
                                                 alt="Frame Dekoratif Pria"
                                             />
+                                    </div>
                                     </div>
                                 </div>
                                 <div className="text-center">
