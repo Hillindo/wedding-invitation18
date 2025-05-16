@@ -75,15 +75,24 @@ const [socmedLeft, setSocmedLeft] = useState<any>([]);
                     <div className="flex flex-col items-center gap-16 px-4 max-w-3xl mx-auto">
                         {/* Pengantin Wanita */}
                         <Observer2>
-                            <div className="flex flex-col items-center w-full max-w-md">                                <div className="mb-8">
-                                    {/* Frame oval dengan border emas seperti pada referensi */}
-                                    <div className="border-4 border-[#D4AF37] rounded-[80px] w-[200px] h-[280px] overflow-hidden flex items-center justify-center relative" style={{ borderRadius: '100px / 140px' }}>
+                            <div className="flex flex-col items-center w-full max-w-md">                                <div className="mb-8 relative">
+                                    {/* Frame dekoratif untuk pengantin wanita */}
+                                    <div className="w-[280px] h-[320px] relative">
+                                        {/* Foto pengantin di dalam frame */}
+                                        <div className="absolute top-[10%] left-[15%] w-[70%] h-[80%] overflow-hidden z-0">
+                                            <img 
+                                                src={`${data?.brideGroomLeft && data.brideGroomLeft.length > 0 
+                                                    ? (data.brideGroomLeft[0].image_female || data.brideGroomLeft[0].image_male) 
+                                                    : '' }`}
+                                                className="w-full h-full object-cover"
+                                                alt="Pengantin Wanita" 
+                                            />
+                                        </div>
+                                        {/* Gambar frame dekoratif */}
                                         <img 
-                                            src={`${data?.brideGroomLeft && data.brideGroomLeft.length > 0 
-                                                ? (data.brideGroomLeft[0].image_female || data.brideGroomLeft[0].image_male) 
-                                                : '' }`}
-                                            className="w-full h-full object-cover"
-                                            alt="Pengantin Wanita" 
+                                            src="/img/LeftImagesBride.png" 
+                                            className="absolute top-0 left-0 w-full h-full z-10" 
+                                            alt="Frame Dekoratif Wanita"
                                         />
                                     </div>
                                 </div>
@@ -121,15 +130,24 @@ const [socmedLeft, setSocmedLeft] = useState<any>([]);
 
                         {/* Pengantin Pria */}
                         <Observer3>
-                            <div className="flex flex-col items-center w-full max-w-md">                                <div className="mb-8">
-                                    {/* Frame oval dengan border emas seperti pada referensi */}
-                                    <div className="border-4 border-[#D4AF37] rounded-[80px] w-[200px] h-[280px] overflow-hidden flex items-center justify-center relative" style={{ borderRadius: '100px / 140px' }}>
+                            <div className="flex flex-col items-center w-full max-w-md">                                <div className="mb-8 relative">
+                                    {/* Frame dekoratif untuk pengantin pria */}
+                                    <div className="w-[280px] h-[320px] relative">
+                                        {/* Foto pengantin di dalam frame */}
+                                        <div className="absolute top-[10%] left-[15%] w-[70%] h-[80%] overflow-hidden z-0">
+                                            <img 
+                                                src={`${data?.brideGroomRight && data.brideGroomRight.length > 0 
+                                                    ? (data.brideGroomRight[0].image_male || data.brideGroomRight[0].image_female) 
+                                                    : '' }`}
+                                                className="w-full h-full object-cover"
+                                                alt="Pengantin Pria" 
+                                            />
+                                        </div>
+                                        {/* Gambar frame dekoratif */}
                                         <img 
-                                            src={`${data?.brideGroomRight && data.brideGroomRight.length > 0 
-                                                ? (data.brideGroomRight[0].image_male || data.brideGroomRight[0].image_female) 
-                                                : '' }`}
-                                            className="w-full h-full object-cover"
-                                            alt="Pengantin Pria" 
+                                            src="/img/RightImagesBride.png" 
+                                            className="absolute top-0 left-0 w-full h-full z-10" 
+                                            alt="Frame Dekoratif Pria"
                                         />
                                     </div>
                                 </div>
