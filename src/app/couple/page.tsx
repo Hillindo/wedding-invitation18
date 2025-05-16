@@ -78,13 +78,12 @@ const [socmedLeft, setSocmedLeft] = useState<any>([]);
                             <div className="flex flex-col items-center w-full max-w-md">                                <div className="mb-8 relative">
                                     {/* Frame dekoratif untuk pengantin wanita */}
                                     <div className="w-[280px] h-[320px] relative">
-                                        {/* Foto pengantin di dalam frame */}
-                                        <div className="absolute top-[10%] left-[15%] w-[70%] h-[80%] overflow-hidden z-0">
+                                        {/* Foto pengantin di dalam frame */}                                        <div className="absolute top-[10%] left-[15%] w-[70%] h-[80%] overflow-hidden z-0 rounded-[100px]" style={{ borderRadius: '100px / 140px' }}>
                                             <img 
                                                 src={`${data?.brideGroomLeft && data.brideGroomLeft.length > 0 
                                                     ? (data.brideGroomLeft[0].image_female || data.brideGroomLeft[0].image_male) 
                                                     : '' }`}
-                                                className="w-full h-full object-cover"
+                                                className="w-full h-full object-cover object-center md:object-[50%_40%] lg:object-[50%_35%]"
                                                 alt="Pengantin Wanita" 
                                             />
                                         </div>
@@ -133,13 +132,12 @@ const [socmedLeft, setSocmedLeft] = useState<any>([]);
                             <div className="flex flex-col items-center w-full max-w-md">                                <div className="mb-8 relative">
                                     {/* Frame dekoratif untuk pengantin pria */}
                                     <div className="w-[280px] h-[320px] relative">
-                                        {/* Foto pengantin di dalam frame */}
-                                        <div className="absolute top-[10%] left-[15%] w-[70%] h-[80%] overflow-hidden z-0">
+                                        {/* Foto pengantin di dalam frame */}                                        <div className="absolute top-[10%] left-[15%] w-[70%] h-[80%] overflow-hidden z-0 rounded-[100px]" style={{ borderRadius: '100px / 140px' }}>
                                             <img 
                                                 src={`${data?.brideGroomRight && data.brideGroomRight.length > 0 
                                                     ? (data.brideGroomRight[0].image_male || data.brideGroomRight[0].image_female) 
                                                     : '' }`}
-                                                className="w-full h-full object-cover"
+                                                className="w-full h-full object-cover object-center md:object-[50%_40%] lg:object-[45%_35%]"
                                                 alt="Pengantin Pria" 
                                             />
                                         </div>
