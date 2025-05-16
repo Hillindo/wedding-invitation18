@@ -92,31 +92,9 @@ export default function CountdownDate({data}:any) {
                 <div className='w-full flex flex-nowrap flex-col items-center justify-center text-white mx-5 mt-5'>
                     <Observer>
                     <div className='mb-2 text-center'>
-                       {event?.length > 0 && (
-                          <div className="w-full flex justify-center mb-8">
-                              <button
-                                  className="bg-black rounded-sm justify-center items-center gap-4 text-white text-xs py-2 px-5 font-sans"
-                                  onClick={() => {
-                                      if (event[0].date && event[0].start_event && event[0].end_event) {
-                                          const startDate = event[0].date.split(" ")[0];
-                                          const startTime = startDate + "T" + event[0].start_event.replace(":", "");
-                                          const endTime = startDate + "T" + event[0].end_event.replace(":", "");
-                                          const eventUrl = `https://www.google.com/calendar/render?action=TEMPLATE&text=${encodeURIComponent(
-                                              event[0].name
-                                          )}&dates=${encodeURIComponent(
-                                              startTime + "/" + endTime
-                                          )}&location=${encodeURIComponent(event[0].address)}`;
-                                          window.open(eventUrl, "_blank");
-                                      }
-                                  }}
-                              >
-                                  <span>
-                                      Save the Date (First Event)
-                                      <i className="fas fa-arrow-right-long ml-2"></i>
-                                  </span>
-                              </button>
-                          </div>
-                      )}
+                        <div className=' text-4xl text-white' style={{ fontFamily: `${data?.fontTitle ? data?.fontTitle?.font_title : "Saignh"}` }}>
+                            Save the Date
+                        </div>
                     </div>
                     </Observer>
                     <Observer4>

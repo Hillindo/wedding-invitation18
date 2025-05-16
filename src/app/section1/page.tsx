@@ -142,13 +142,32 @@ export default function Section1({data}:any) {
             </div>
 
             {/* Simpan Tanggal Button */}
-            <button 
-              className="font-quicksand font-semibold py-2.5 px-5 rounded-lg text-sm flex items-center justify-center mx-auto"
-              style={{ backgroundColor: '#e1ba60', color: '#001530' }} // Using dark blue for text, similar to front page background
-            >
-              <i className="fa fa-calendar mr-2"></i> {/* Assuming Font Awesome is available */}
-              Simpan Tanggal
-            </button>
+             {event?.length > 0 && (
+                  <div className="w-full flex justify-center mb-8">
+                      <button
+                           className="font-quicksand font-semibold py-2.5 px-5 rounded-lg text-sm flex items-center justify-center mx-auto"
+                          style={{ backgroundColor: '#e1ba60', color: '#001530' }} // Using dark blue for text, similar to front page background
+                          onClick={() => {
+                              if (event[0].date && event[0].start_event && event[0].end_event) {
+                                  const startDate = event[0].date.split(" ")[0];
+                                  const startTime = startDate + "T" + event[0].start_event.replace(":", "");
+                                  const endTime = startDate + "T" + event[0].end_event.replace(":", "");
+                                  const eventUrl = `https://www.google.com/calendar/render?action=TEMPLATE&text=${encodeURIComponent(
+                                      event[0].name
+                                  )}&dates=${encodeURIComponent(
+                                      startTime + "/" + endTime
+                                  )}&location=${encodeURIComponent(event[0].address)}`;
+                                  window.open(eventUrl, "_blank");
+                              }
+                          }}
+                      >
+                          <span>
+                              Simpan Tanggal
+                              <i className="fas fa-arrow-right-long ml-2"></i>
+                          </span>
+                      </button>
+                  </div>
+              )}
           </motion.div>
         </div>
       </div>
