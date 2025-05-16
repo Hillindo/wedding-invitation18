@@ -77,7 +77,7 @@ const [socmedLeft, setSocmedLeft] = useState<any>([]);
                         <Observer2>
                             <div className="flex flex-col items-center w-full max-w-md">                                <div className="mb-8 relative">
                                     {/* Frame dekoratif untuk pengantin wanita */}
-                                    <div className="w-[320px] h-[380px] relative ml-[-20px]">
+                                    <div className="w-[360px] h-[420px] relative ml-[-30px]">
                                         {/* Foto pengantin di dalam frame */}                                        <div className="absolute top-[10%] left-[15%] w-[70%] h-[80%] overflow-hidden z-0 rounded-[100px]" style={{ borderRadius: '100px / 140px' }}>
                                             <img 
                                                 src={`${data?.brideGroomLeft && data.brideGroomLeft.length > 0 
@@ -131,7 +131,7 @@ const [socmedLeft, setSocmedLeft] = useState<any>([]);
                         <Observer3>
                             <div className="flex flex-col items-center w-full max-w-md">                                <div className="mb-8 relative">
                                     {/* Frame dekoratif untuk pengantin pria */}
-                                    <div className="w-[320px] h-[380px] relative mr-[-20px]">
+                                    <div className="w-[360px] h-[420px] relative mr-[-30px]">
                                         {/* Foto pengantin di dalam frame */}                                        <div className="absolute top-[10%] left-[15%] w-[70%] h-[80%] overflow-hidden z-0 rounded-[100px]" style={{ borderRadius: '100px / 140px' }}>
                                             <img 
                                                 src={`${data?.brideGroomRight && data.brideGroomRight.length > 0 
