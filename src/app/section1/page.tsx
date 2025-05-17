@@ -78,7 +78,7 @@ export default function Section1({data}:any) {
           />
         </motion.div>        
         <div className="flex flex-wrap justify-center items-center content-center flex-grow flex-shrink flex-col gap-2 w-full h-full text-center py-8 z-50 mt-[-80px] sm:mt-[-85px] lg:mt-[-60px]">
-          <div className="h-full max-w-full flex justify-center mb-8 -mt-32 md:-mt-40 lg:-mt-48">
+          <div className="h-full max-w-full flex justify-center mb-8 -mt-32 md:-mt-40 lg:-mt-32">
             <img
               src="/logo/logo-hill-nay.png"
               className="w-3/5 md:w-3/5 lg:w-7/10"
