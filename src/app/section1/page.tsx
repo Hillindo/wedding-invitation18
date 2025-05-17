@@ -50,7 +50,9 @@ export default function Section1({data}:any) {
   }, []);
   return (
     <>
-      <div className="absolute top-0 left-0 w-full h-40 sm:h-48 md:h-56 lg:h-72 overflow-hidden" style={{ zIndex: 999 }}>
+     
+      <Snowfalls/>
+       <div className="absolute top-0 left-0 w-full h-40 sm:h-48 md:h-56 lg:h-72 overflow-hidden" style={{ zIndex: 999 }}>
         <img
           src="/img/goldrain.png"
           className="w-full h-full object-cover"
@@ -59,7 +61,6 @@ export default function Section1({data}:any) {
           fetchPriority="high"
         />
       </div>
-      <Snowfalls/>
       <div className="w-full min-h-screen flex flex-wrap justify-center items-center content-center relative overflow-hidden">
         <motion.div
           initial={{ scale: 1.5 }}
