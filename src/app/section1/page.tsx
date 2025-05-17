@@ -84,7 +84,7 @@ export default function Section1({data}:any) {
           >
             <img
               src="/logo/logo-hill-nay.png"
-              className="w-7/10 md:w-3/5 lg:w-1/2"
+              className="w-3/5 md:w-3/5 lg:w-7/10"
               alt="Logo Pasti Nikah" 
               rel="preload" 
               fetchPriority="high" 
