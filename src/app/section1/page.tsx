@@ -81,9 +81,8 @@ export default function Section1({data}:any) {
           alt="Gold rain effect"
         />
       </div>
-      
-      {/* Flower decorations - BOTTOM */}
-      <div className="absolute left-0 bottom-[-95px] z-50 w-full">
+        {/* Flower decorations - BOTTOM */}
+      <div className="fixed left-0 bottom-0 z-[150] w-full pointer-events-none">
         <div className="relative h-40">
           <motion.div 
             className="absolute left-[-30px] bottom-[10px]"
@@ -123,7 +122,7 @@ export default function Section1({data}:any) {
           </motion.div>
 
           <motion.div 
-            className="absolute left-1/2 bottom-0 left-[120px] bottom-[-80px]"
+            className="absolute left-[120px] bottom-[-35px]"
             animate={{
               y: [0, -2, 0, -3, 0],
               transition: {
