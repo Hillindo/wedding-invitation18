@@ -150,7 +150,7 @@ export default function Section1({data}:any) {
               Simpan Tanggal
             </button>
             {/* Flower decorations - BOTTOM dengan gambar dirotasi horizontal */}
-              <div className="absolute left-0 bottom-[-95px] z-10 w-full">
+              <div className="absolute left-0 bottom-[-95px] z-[5] w-full">
                   <div className="relative h-40">
                       <motion.div 
                           className="absolute left-[-30px] bottom-[10px]"
