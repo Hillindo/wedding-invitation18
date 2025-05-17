@@ -356,7 +356,7 @@ export default function Front({data, guestName, onOpenInvitation}:any) {
                                     </div>
                                 </motion.div>
                                 <motion.a 
-                                    className="-mt-8 md:mt-8 text-center w-full h-auto cursor-pointer"
+                                    className="-mt-3 md:mt-8 text-center w-full h-auto cursor-pointer"
                                     initial={{ opacity: 0, y: 20 }}
                                     animate={{ opacity: 1, y: 0 }}
                                     transition={{ delay: 1.2 }}
