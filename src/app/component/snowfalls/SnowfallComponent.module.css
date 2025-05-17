@@ -21,10 +21,10 @@
   
   .flake {
     position: absolute;
-    top: -10px;
-    width: 10px;
-    height: 10px;
-    background-color: white;
+    top: -5px;
+    width: 5px;
+    height: 5px;
+    background-color: goldenrod;
     border-radius: 50%;
     animation: snowfall infinite linear;
   }
