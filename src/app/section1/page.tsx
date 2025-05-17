@@ -82,7 +82,7 @@ export default function Section1({data}:any) {
         />
       </div>
         {/* Flower decorations - BOTTOM */}
-      <div className="fixed left-0 bottom-0 z-[150] w-full pointer-events-none">
+      <div className="fixed left-0 bottom-0 z-[200] w-full pointer-events-none">
         <div className="relative h-40">
           <motion.div 
             className="absolute left-[-30px] bottom-[10px]"
