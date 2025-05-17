@@ -76,13 +76,9 @@ export default function Section1({data}:any) {
             className="bg-center bg-no-repeat bg-cover bg-blend-multiply mix-blend-multiply bg-transparent h-full w-full absolute z-30" 
             style={{backgroundImage: `url('/img/birds.gif')`}}
           />
-        </motion.div>        <div className="flex flex-wrap justify-center items-center content-center flex-grow flex-shrink flex-col gap-2 w-full h-full text-center py-8 z-50 mt-[-10px] sm:mt-[-15px] lg:mt-[-20px]">
-          <motion.div
-            initial={{ y: -100, opacity: 0 }}
-            animate={{ y: 50, opacity: 1 }}
-            transition={{ duration: 1, delay: 0.5 }}
-            className="h-full max-w-full flex justify-center mb-8 -mt-20"
-          >
+        </motion.div>        
+        <div className="flex flex-wrap justify-center items-center content-center flex-grow flex-shrink flex-col gap-2 w-full h-full text-center py-8 z-50 mt-[-100px] sm:mt-[-105px] lg:mt-[-100px]">
+          <div className="h-full max-w-full flex justify-center mb-8 -mt-32 md:-mt-40 lg:-mt-48">
             <img
               src="/logo/logo-hill-nay.png"
               className="w-3/5 md:w-3/5 lg:w-7/10"
@@ -90,7 +86,7 @@ export default function Section1({data}:any) {
               rel="preload" 
               fetchPriority="high" 
             />
-          </motion.div>
+          </div>
 
           <motion.div
             initial={{ y: 50, opacity: 0 }}
