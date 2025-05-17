@@ -52,7 +52,7 @@ export default function Section1({data}:any) {
     <>
      
       <Snowfalls/>
-       <div className="absolute top-0 left-0 w-full h-40 sm:h-48 md:h-56 lg:h-72 overflow-hidden" style={{ zIndex: 999 }}>
+       <div className="absolute top-0 left-0 w-full h-60 sm:h-72 md:h-96 lg:h-screen overflow-hidden" style={{ zIndex: 999 }}>
         <img
           src="/img/goldrain.png"
           className="w-full h-full object-cover"
