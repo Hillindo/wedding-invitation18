@@ -50,7 +50,7 @@ export default function Section1({data}:any) {
   }, []);
   return (
     <>
-      <div className="absolute top-0 left-0 w-full h-40 sm:h-48 md:h-56 lg:h-64 overflow-hidden z-[100]">
+      <div className="absolute top-0 left-0 w-full h-40 sm:h-48 md:h-56 lg:h-64 overflow-hidden z-35">
         <img
           src="/img/goldrain.png"
           className="w-full h-full object-cover"
