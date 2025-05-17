@@ -73,9 +73,7 @@ export default function Section1({data}:any) {
             className="bg-center bg-no-repeat bg-cover bg-blend-multiply mix-blend-multiply bg-transparent h-full w-full absolute z-30" 
             style={{backgroundImage: `url('/img/birds.gif')`}}
           />
-        </motion.div>
-
-        <div className="flex flex-wrap justify-center items-center content-center flex-grow flex-shrink flex-col gap-2 w-full h-full text-center py-8 z-50 mt-[10px]">
+        </motion.div>        <div className="flex flex-wrap justify-center items-center content-center flex-grow flex-shrink flex-col gap-2 w-full h-full text-center py-8 z-50 mt-[-10px] sm:mt-[-15px] lg:mt-[-20px]">
           <motion.div
             initial={{ y: -50, opacity: 0 }}
             animate={{ y: 0, opacity: 1 }}
