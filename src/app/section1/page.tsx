@@ -17,6 +17,31 @@ export default function Section1({data}:any) {
     seconds: 0
   });
 
+  // Animasi keyframes untuk bunga
+  const flowerAnimationLeft = {
+    animate: {
+      x: [0, -5, 0, -2, 0],
+      rotate: [-5, -3, -5, -7, -5],
+      transition: {
+        duration: 5,
+        repeat: Infinity,
+        ease: "easeInOut"
+      }
+    }
+  };
+
+  const flowerAnimationRight = {
+    animate: {
+      x: [0, 5, 0, 2, 0],
+      rotate: [5, 3, 5, 7, 5],
+      transition: {
+        duration: 5,
+        repeat: Infinity,
+        ease: "easeInOut"
+      }
+    }
+  };
+
   useEffect(() => {
     const fetchData = async () => {
       try {
@@ -57,6 +82,123 @@ export default function Section1({data}:any) {
           alt="Gold rain effect"
         />
       </div>
+
+      {/* Flower decorations - LEFT */}
+      <motion.div 
+        className="w-full h-auto top-[300px] absolute left-[-100px] z-50"
+        animate={{
+          x: [0, 10, 0, -5, 0],
+          transition: {
+            duration: 5,
+            repeat: Infinity,
+            ease: "easeInOut",
+            delay: 0.3
+          }
+        }}
+      >
+        <img src="/img/flower-front/Bunga6.png" alt="Flower decoration" 
+          className="w-32 md:w-40 " style={{ transform: 'rotate(35deg)' }}
+        />
+      </motion.div>
+      
+      <motion.div 
+        className="w-full h-auto top-[350px] absolute left-[-100px] z-50"
+        animate={{
+          x: [0, 10, 0, -5, 0],
+          transition: {
+            duration: 5,
+            repeat: Infinity,
+            ease: "easeInOut",
+            delay: 0.3
+          }
+        }}
+      >
+        <img src="/img/flower-front/Bunga4.png" alt="Flower decoration" 
+          className="w-32 md:w-40 " style={{ transform: 'rotate(35deg)' }}
+        />
+      </motion.div>
+      
+      <motion.div 
+        className="w-full h-auto top-[500px] absolute left-[-100px] z-50"
+        animate={{
+          x: [0, 10, 0, -5, 0],
+          transition: {
+            duration: 5,
+            repeat: Infinity,
+            ease: "easeInOut",
+            delay: 0.3
+          }
+        }}
+      >
+        <img src="/img/flower-front/Bunga1.png" alt="Flower decoration" 
+          className="w-32 md:w-40 " style={{ transform: 'rotate(35deg)' }}
+        />
+      </motion.div>
+      
+      <motion.div 
+        className="w-full h-auto top-[600px] absolute left-[-100px] z-50"
+        animate={{
+          x: [0, 9, 0, -4, 0],
+          transition: {
+            duration: 5,
+            repeat: Infinity,
+            ease: "easeInOut",
+            delay: 0.5
+          }
+        }}
+      >
+        <img src="/img/flower-front/Bunga7.png" alt="Flower decoration" 
+          className="w-32 md:w-40 " style={{ transform: 'rotate(35deg)' }}
+        />
+      </motion.div>
+      
+      {/* Flower decorations - RIGHT */}
+      <motion.div 
+        className="top-[300px] absolute right-[-80px] z-50"
+        animate={{
+          x: [0, 10, 0, -5, 0],
+          transition: {
+            duration: 5,
+            repeat: Infinity,
+            ease: "easeInOut",
+            delay: 0.3
+          }
+        }}
+      >
+        <img src="/img/flower-front/Bunga2.png" alt="Flower decoration" 
+          className="w-32 md:w-40 " style={{ transform: 'rotate(340deg)' }}
+        />
+      </motion.div>
+      
+      <motion.div 
+        className="top-[450px] absolute right-[-80px] z-50"
+        style={{ transformOrigin: "right center" }}
+        animate={flowerAnimationRight.animate}
+      >
+        <img src="/img/flower-front/Bunga1.png" alt="Flower decoration" 
+          className="w-32 md:w-40 " style={{ transform: 'rotate(340deg)' }} 
+        />
+      </motion.div>
+      
+      <motion.div 
+        className="top-[550px] absolute right-[-80px] z-50" 
+        style={{ transformOrigin: "right center" }}
+        animate={{
+          x: [0, 3, 0, 5, 0],
+          rotate: [-10, -8, -10, -12, -10],
+          transition: {
+            duration: 6,
+            repeat: Infinity,
+            ease: "easeInOut",
+            delay: 1
+          }
+        }}
+      >
+        <img src="/img/flower-front/Bunga5.png" alt="Flower decoration" 
+          className="w-32 md:w-40 " style={{ transform: 'rotate(340deg)' }} 
+        />
+      </motion.div>
+      
       <Snowfalls/>
       <div className="w-full min-h-screen flex flex-wrap justify-center items-center content-center relative overflow-hidden">
         <motion.div
