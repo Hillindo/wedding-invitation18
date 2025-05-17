@@ -122,7 +122,7 @@ export default function Section1({data}:any) {
             </div>
 
             {/* Countdown Boxes */}
-            <div className="flex justify-center space-x-2 sm:space-x-3 md:space-x-4">
+            <div className="flex justify-center space-x-2 sm:space-x-3 md:space-x-4 relative z-20">
               <div className="w-[50px] h-[50px] sm:w-[60px] sm:h-[60px] md:w-[70px] md:h-[70px] rounded-md flex flex-col items-center justify-center" style={{backgroundColor: '#e1ba60'}}>
                 <div className="text-lg font-bold">{countdown.days}</div>
                 <div className="text-xs">Days</div>
@@ -143,14 +143,13 @@ export default function Section1({data}:any) {
 
             {/* Simpan Tanggal Button */}
             <button 
-              className="font-quicksand font-semibold py-2.5 px-5 rounded-lg text-sm flex items-center justify-center mx-auto"
-              style={{ backgroundColor: '#e1ba60', color: '#001530' }} // Using dark blue for text, similar to front page background
+              className="font-quicksand font-semibold py-2.5 px-5 rounded-lg text-sm flex items-center justify-center mx-auto relative z-20"
+              style={{ backgroundColor: '#e1ba60', color: '#001530' }}
             >
-              <i className="fa fa-calendar mr-2"></i> {/* Assuming Font Awesome is available */}
+              <i className="fa fa-calendar mr-2"></i>
               Simpan Tanggal
-            </button>
-            {/* Flower decorations - BOTTOM dengan gambar dirotasi horizontal */}
-              <div className="absolute left-0 bottom-[-95px] z-[5] w-full">
+            </button>            {/* Flower decorations - BOTTOM dengan gambar dirotasi horizontal */}
+              <div className="absolute left-0 bottom-[-95px] -z-10 w-full">
                   <div className="relative h-40">
                       <motion.div 
                           className="absolute left-[-30px] bottom-[10px]"
