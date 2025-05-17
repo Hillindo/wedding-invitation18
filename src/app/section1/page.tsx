@@ -55,6 +55,8 @@ export default function Section1({data}:any) {
           src="/img/goldrain.png"
           className="w-full h-full object-cover"
           alt="Gold rain effect"
+          style={{ mixBlendMode: 'screen' }}
+          fetchPriority="high"
         />
       </div>
       <Snowfalls/>
