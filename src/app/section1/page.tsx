@@ -17,31 +17,6 @@ export default function Section1({data}:any) {
     seconds: 0
   });
 
-  // Animasi keyframes untuk bunga
-  const flowerAnimationLeft = {
-    animate: {
-      x: [0, -5, 0, -2, 0],
-      rotate: [-5, -3, -5, -7, -5],
-      transition: {
-        duration: 5,
-        repeat: Infinity,
-        ease: "easeInOut"
-      }
-    }
-  };
-
-  const flowerAnimationRight = {
-    animate: {
-      x: [0, 5, 0, 2, 0],
-      rotate: [5, 3, 5, 7, 5],
-      transition: {
-        duration: 5,
-        repeat: Infinity,
-        ease: "easeInOut"
-      }
-    }
-  };
-
   useEffect(() => {
     const fetchData = async () => {
       try {
@@ -74,106 +49,14 @@ export default function Section1({data}:any) {
     return () => clearInterval(interval);
   }, []);
   return (
-    <>      <div className="absolute top-0 left-0 w-full h-40 sm:h-48 md:h-56 lg:h-64 overflow-hidden z-[100]">
+    <>
+      <div className="absolute top-0 left-0 w-full h-40 sm:h-48 md:h-56 lg:h-64 overflow-hidden z-[100]">
         <img
           src="/img/goldrain.png"
           className="w-full h-full object-cover"
           alt="Gold rain effect"
         />
       </div>
-        {/* Flower decorations - BOTTOM */}
-      <div className="fixed left-0 bottom-0 z-[200] w-full pointer-events-none">
-        <div className="relative h-40">
-          <motion.div 
-            className="absolute left-[-30px] bottom-[10px]"
-            animate={{
-              x: [0, -10, 0, -4, 0],
-              y: [0, 1, 0],
-              transition: {
-                duration: 8,
-                repeat: Infinity,
-                ease: "easeInOut"
-              }
-            }}
-          >
-            <img src="/img/flower-front/Bunga2.png" alt="Flower decoration" 
-              className="w-32 md:w-40" 
-              style={{ transform: 'rotate(30deg)' }} 
-            />
-          </motion.div>
-
-          <motion.div 
-            className="absolute left-[40px] bottom-[-20px]"
-            animate={{
-              x: [0, 10, 0, 3, 0],
-              y: [0, -1, 0],
-              transition: {
-                duration: 3,
-                repeat: Infinity,
-                ease: "easeInOut",
-                delay: 0.2
-              }
-            }}
-          >
-            <img src="/img/flower-front/Bunga7.png" alt="Flower decoration" 
-              className="w-32 md:w-40" 
-              style={{ transform: 'rotate(10deg)' }}
-            />
-          </motion.div>
-
-          <motion.div 
-            className="absolute left-[120px] bottom-[-35px]"
-            animate={{
-              y: [0, -2, 0, -3, 0],
-              transition: {
-                duration: 4,
-                repeat: Infinity,
-                ease: "easeInOut"
-              }
-            }}
-          >
-            <img src="/img/flower-front/Bunga3.png" alt="Flower decoration" 
-              className="w-40 md:w-48"
-            />
-          </motion.div>
-
-          <motion.div 
-            className="absolute right-[50px] bottom-[10px]"
-            animate={{
-              x: [0, 10, 0, 3, 0],
-              transition: {
-                duration: 7,
-                repeat: Infinity,
-                ease: "easeInOut",
-                delay: 0.6
-              }
-            }}
-          >
-            <img src="/img/flower-front/Bunga6.png" alt="Flower decoration" 
-              className="w-32 md:w-40"
-            />
-          </motion.div>
-
-          <motion.div 
-            className="absolute right-[-40px] bottom-10"
-            animate={{
-              x: [0, 10, 0, -5, 0],
-              transition: {
-                duration: 5,
-                repeat: Infinity,
-                ease: "easeInOut",
-                delay: 0.3
-              }
-            }}
-          >
-            <img src="/img/flower-front/Bunga1.png" alt="Flower decoration" 
-              className="w-32 md:w-40" 
-              style={{ transform: 'rotate(-30deg)' }}
-            />
-          </motion.div>
-        </div>
-      </div>
-      
       <Snowfalls/>
       <div className="w-full min-h-screen flex flex-wrap justify-center items-center content-center relative overflow-hidden">
         <motion.div
@@ -259,32 +142,13 @@ export default function Section1({data}:any) {
             </div>
 
             {/* Simpan Tanggal Button */}
-             {event?.length > 0 && (
-                  <div className="w-full flex justify-center mb-8">
-                      <button
-                           className="font-quicksand font-semibold py-2.5 px-5 rounded-lg text-sm flex items-center justify-center mx-auto"
-                          style={{ backgroundColor: '#e1ba60', color: '#001530' }} // Using dark blue for text, similar to front page background
-                          onClick={() => {
-                              if (event[0].date && event[0].start_event && event[0].end_event) {
-                                  const startDate = event[0].date.split(" ")[0];
-                                  const startTime = startDate + "T" + event[0].start_event.replace(":", "");
-                                  const endTime = startDate + "T" + event[0].end_event.replace(":", "");
-                                  const eventUrl = `https://www.google.com/calendar/render?action=TEMPLATE&text=${encodeURIComponent(
-                                      event[0].name
-                                  )}&dates=${encodeURIComponent(
-                                      startTime + "/" + endTime
-                                  )}&location=${encodeURIComponent(event[0].address)}`;
-                                  window.open(eventUrl, "_blank");
-                              }
-                          }}
-                      >
-                          <span>
-                              Simpan Tanggal
-                              <i className="fas fa-arrow-right-long ml-2"></i>
-                          </span>
-                      </button>
-                  </div>
-              )}
+            <button 
+              className="font-quicksand font-semibold py-2.5 px-5 rounded-lg text-sm flex items-center justify-center mx-auto"
+              style={{ backgroundColor: '#e1ba60', color: '#001530' }} // Using dark blue for text, similar to front page background
+            >
+              <i className="fa fa-calendar mr-2"></i> {/* Assuming Font Awesome is available */}
+              Simpan Tanggal
+            </button>
           </motion.div>
         </div>
       </div>
