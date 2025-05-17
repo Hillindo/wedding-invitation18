@@ -149,6 +149,96 @@ export default function Section1({data}:any) {
               <i className="fa fa-calendar mr-2"></i> {/* Assuming Font Awesome is available */}
               Simpan Tanggal
             </button>
+            {/* Flower decorations - BOTTOM dengan gambar dirotasi horizontal */}
+              <div className="absolute left-0 bottom-[-95px] z-10 w-full">
+                  <div className="relative h-40">
+                      <motion.div 
+                          className="absolute left-[-30px] bottom-[10px]"
+                          animate={{
+                              x: [0, -10, 0, -4, 0],
+                              y: [0, 1, 0],
+                              transition: {
+                                  duration: 8,
+                                  repeat: Infinity,
+                                  ease: "easeInOut"
+                              }
+                          }}
+                      >
+                          <img src="/img/flower-front/Bunga2.png" alt="Flower decoration" 
+                              className="w-32 md:w-40" 
+                              style={{ transform: 'rotate(30deg)' }} />
+                      </motion.div>
+
+                      <motion.div 
+                          className="absolute left-[40px] bottom-[-20px]"
+                          animate={{
+                              x: [0, 10, 0, 3, 0],
+                              y: [0, -1, 0],
+                              transition: {
+                                  duration: 3,
+                                  repeat: Infinity,
+                                  ease: "easeInOut",
+                                  delay: 0.2
+                              }
+                          }}
+                      >
+                          <img src="/img/flower-front/Bunga7.png" alt="Flower decoration" 
+                              className="w-32 md:w-40" 
+                              style={{ transform: 'rotate(10deg)' }}
+                              />
+                      </motion.div>
+
+                      <motion.div 
+                          className="absolute left-1/2 bottom-0 left-[120px] bottom-[-80px]"
+                          animate={{
+                              y: [0, -2, 0, -3, 0],
+                              transition: {
+                                  duration: 4,
+                                  repeat: Infinity,
+                                  ease: "easeInOut"
+                              }
+                          }}
+                      >
+                          <img src="/img/flower-front/Bunga3.png" alt="Flower decoration" 
+                              className="w-40 md:w-48"
+                                />
+                      </motion.div>
+
+                      <motion.div 
+                          className="absolute right-[50px] bottom-[10px]"
+                          animate={{
+                              x: [0, 10, 0, 3, 0],
+                              transition: {
+                                  duration: 7,
+                                  repeat: Infinity,
+                                  ease: "easeInOut",
+                                  delay: 0.6
+                              }
+                          }}
+                      >
+                          <img src="/img/flower-front/Bunga6.png" alt="Flower decoration" 
+                              className="w-32 md:w-40"
+                                />
+                      </motion.div>
+
+                      <motion.div 
+                          className="absolute right-[-40px] bottom-10"
+                          animate={{
+                              x: [0, 10, 0, -5, 0],
+                              transition: {
+                                  duration: 5,
+                                  repeat: Infinity,
+                                  ease: "easeInOut",
+                                  delay: 0.3
+                              }
+                          }}
+                      >
+                          <img src="/img/flower-front/Bunga1.png" alt="Flower decoration" 
+                              className="w-32 md:w-40" style={{ transform: 'rotate(-30deg)' }}
+                                />
+                      </motion.div>
+                  </div>
+              </div>
           </motion.div>
         </div>
       </div>
