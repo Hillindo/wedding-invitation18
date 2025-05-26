@@ -85,98 +85,115 @@ export default function Location({ data }: any) {
     const start = startEvent?.substr(0, 5).replace(":", "-");
     const end = endEvent?.substr(0, 5).replace(":", "-");
 
-    const events =
-        allEvent?.length > 0 &&
-        allEvent.map((res: any, index: any) => {
-            const formatGoogleCalendarDateTime = (dateTime: string) => {
-                const formattedDateTime = dateTime.replace(/[-: ]/g, "");
-                return formattedDateTime;
-            };
+    const akadEvent = allEvent?.find((event: any) => event.name?.toLowerCase().includes("akad"));
+    const resepsiEvent = allEvent?.find((event: any) => event.name?.toLowerCase().includes("resepsi"));
 
-            const addToCalendar = () => {
-                if (res.date && res.start_event && res.end_event) {
-                    const startDate = res.date.split(" ")[0]; // Ambil tanggal dari date
-                    const startTime = formatGoogleCalendarDateTime(
-                        startDate + "T" + res.start_event
-                    );
-                    const endTime = formatGoogleCalendarDateTime(
-                        startDate + "T" + res.end_event
-                    );
+    const renderEventDetails = (eventData: any, eventTitleForCalendar: string) => {
+        if (!eventData) return null;
+        const d = parseDate(eventData.date);
 
-                    const eventUrl = `https://www.google.com/calendar/render?action=TEMPLATE&text=${encodeURIComponent(
-                        res.name
-                    )}&dates=${encodeURIComponent(
-                        startTime + "/" + endTime
-                    )}&location=${encodeURIComponent(res.address)}`;
-                    window.open(eventUrl, "_blank");
-                }
-            };
-            const dateString = res.date;
-            const d = parseDate(dateString);
-            return (
-                <Observer4 key={res.id}>
-                    <div
-                        className="bg-[#FFFFFF91] p-5 my-5 max-w-xs w-full rounded-3xl text-black"
-                        id="date"
-                    >
-                        <div className="p-2 w-full">
-                            <div className="mb-5 text-left mt-2 font-semibold text-black tracking-[4px] text-base italic font-timesnr">
-                                {res.name}
-                            </div>
-                            <div className="mb-5 capitalize font-semibold text-left mt-2 text-black text-xl font-garaigit">
-                                {d.toLocaleDateString("id-ID", {
-                                    weekday: "long",
-                                    year: "numeric",
-                                    month: "long",
-                                    day: "numeric",
-                                })}
-                            </div>
-                            <div className="mb-5 w-full border-t border-black" />
-                            <div className="w-full mb-5 flex items-center">
-                                <i className="fa-solid fa-clock pr-5"></i>
-                                <div className="text-sm">
-                                    {" "}
-                                    {`${res.start_event
-                                        .substr(0, 5)
-                                        .replace(":", "-")} ~ ${res.end_event
-                                        .substr(0, 5)
-                                        .replace(":", "-")}`}{" "}
-                                    {res.time_zone}
-                                </div>
-                            </div>
-                            <div className="mb-5 w-full flex items-center">
-                                <i className="fa-solid fa-location-dot pr-5"></i>
-                                <div className=" font-newsreader text-sm italic">
-                                    <p>{res.location}</p>
-                                </div>
-                            </div>
-                            <div className="flex justify-center">
-                                <button
-                                    className="MobileButton self-stretch bg-black rounded-sm justify-center items-center gap-4  text-white text-xs py-2 px-5 font-sans"
-                                    onClick={addToCalendar}
-                                >
-                                    <span>
-                                        Save the Date
-                                        <i className="fas fa-arrow-right-long ml-2"></i>
-                                    </span>
-                                </button>
-                            </div>
+        const formatGoogleCalendarDateTime = (dateTime: string) => {
+            // Ensures time part is correctly formatted (e.g., HHMMSS)
+            const [datePart, timePart] = dateTime.split("T");
+            const cleanedTimePart = timePart ? timePart.replace(/:/g, "") + "00".substring(0, 6 - timePart.replace(/:/g, "").length) : "000000"; // Pad to HHMMSS
+            return datePart.replace(/-/g, "") + "T" + cleanedTimePart;
+        };
+        
+        const addToCalendar = () => {
+            if (eventData.date && eventData.start_event && eventData.end_event) {
+                const startDate = eventData.date.split(" ")[0]; // Get date part
+                
+                // Ensure start_event and end_event are just times like "HH:MM:SS" or "HH:MM"
+                const startTimeStr = eventData.start_event.split(" ")[0]; // In case it has date too
+                const endTimeStr = eventData.end_event.split(" ")[0];
+
+                const startTime = formatGoogleCalendarDateTime(startDate + "T" + startTimeStr);
+                const endTime = formatGoogleCalendarDateTime(startDate + "T" + endTimeStr);
+
+                const eventUrl = `https://www.google.com/calendar/render?action=TEMPLATE&text=${encodeURIComponent(
+                    eventTitleForCalendar // Use the specific title for the calendar event
+                )}&dates=${encodeURIComponent(
+                    startTime + "/" + endTime
+                )}&location=${encodeURIComponent(eventData.address || eventData.location || '')}`;
+                window.open(eventUrl, "_blank");
+            }
+        };
+
+        return (
+            <Observer4>
+                <div className="text-center text-white">
+                    <div className="mb-3 capitalize font-semibold text-lg" style={{fontFamily: data?.fontContent?.font_content || 'Garaigit, serif'}}>
+                        {d.toLocaleDateString("id-ID", {
+                            weekday: "long",
+                            year: "numeric",
+                            month: "long",
+                            day: "numeric",
+                        })}
+                    </div>
+                    <div className="mb-3 w-full border-t border-gray-400 opacity-30" />
+                    <div className="w-full mb-3 flex items-center justify-center">
+                        <i className="fa-solid fa-clock pr-3 text-sm"></i>
+                        <div className="text-sm" style={{fontFamily: data?.fontContent?.font_content || 'sans-serif'}}>
+                            {`${eventData.start_event.substr(0, 5).replace(":", ".")} - ${eventData.end_event.substr(0, 5).replace(":", ".")}`} {eventData.time_zone}
                         </div>
                     </div>
-                </Observer4>
-            );
-        });
-    //   console.log(data, "data");
+                    <div className="mb-5 w-full flex items-center justify-center text-center">
+                        <i className="fa-solid fa-location-dot pr-3 text-sm"></i>
+                        <div className="text-sm italic" style={{fontFamily: data?.fontContent?.font_content || 'Newsreader, serif'}}>
+                            <p>{eventData.location || eventData.address}</p>
+                        </div>
+                    </div>
+                    <div className="flex justify-center mt-4">
+                        <button
+                            className="bg-yellow-400 hover:bg-yellow-500 text-black text-xs py-2.5 px-6 rounded-lg font-semibold tracking-wide"
+                            onClick={addToCalendar}
+                            style={{fontFamily: data?.fontContent?.font_content || 'sans-serif'}}
+                        >
+                            <span>
+                                Save the Date
+                                <i className="fas fa-arrow-right-long ml-2"></i>
+                            </span>
+                        </button>
+                    </div>
+                </div>
+            </Observer4>
+        );
+    };
 
     return (
         <section
-          className="relative w-full h-full bg-fixed bg-top bg-cover bg-opacity-50 lg:max-w-md mx-auto"
-          style={{ backgroundImage: `url('/img/bg-7.jpg')` }}
+          className="relative w-full py-16 px-4 bg-gray-100" // Updated section style
           id="location"
         >
-        <div className="bg-[#051E31] w-full h-full mix-blend-multiply absolute" style={{backgroundImage: `url('/img/bg-7.jpg')`}}></div>
-            <div className="bg-[#9B899A00] p-5 flex flex-wrap justify-center z-20 relative gap-4">
-              {events}
+            <div className="flex flex-col items-center gap-10 max-w-lg mx-auto"> {/* Increased gap */}
+              {akadEvent && (
+                <div
+                  className="w-full p-8 rounded-2xl shadow-xl text-white bg-center bg-cover" // Increased padding
+                  style={{ backgroundImage: `url('/img/bg-event.png')` }}
+                >
+                  <h2 className="text-4xl font-bold text-yellow-400 text-center mb-6" style={{fontFamily: data?.fontTitle?.font_title || 'Cinzel, serif'}}>
+                    AKAD NIKAH
+                  </h2>
+                  {renderEventDetails(akadEvent, "Akad Nikah")}
+                </div>
+              )}
+              {resepsiEvent && (
+                <div
+                  className="w-full p-8 rounded-2xl shadow-xl text-white bg-center bg-cover" // Increased padding
+                  style={{ backgroundImage: `url('/img/bg-event.png')` }}
+                >
+                  <h2 className="text-4xl font-bold text-yellow-400 text-center mb-6" style={{fontFamily: data?.fontTitle?.font_title || 'Cinzel, serif'}}>
+                    RESEPSI
+                  </h2>
+                  {renderEventDetails(resepsiEvent, "Resepsi")}
+                </div>
+              )}
+              {!akadEvent && !resepsiEvent && allEvent && allEvent.length > 0 && (
+                <p className="text-center text-gray-700 mt-4">Detail acara akan segera diperbarui.</p>
+              )}
+               {(!allEvent || allEvent.length === 0) && (
+                <p className="text-center text-gray-700 mt-4">Informasi acara tidak tersedia.</p>
+              )}
             </div>
         </section>
     );
