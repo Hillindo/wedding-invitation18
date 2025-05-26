@@ -179,7 +179,7 @@ export default function Location({ data }: any) {
           id="location"
         >
             <div className="absolute inset-0 bg-black opacity-30"></div> {/* Optional: Dark overlay for better text contrast on section bg */}
-            <div className="relative flex flex-col items-center gap-8 md:gap-10 max-w-lg mx-auto z-10"> {/* Content container */}
+            <div className="relative flex flex-col items-center gap-12 md:gap-16 max-w-xl mx-auto z-10"> {/* Content container */}
               {renderAllEvents()}
             </div>
         </section>
