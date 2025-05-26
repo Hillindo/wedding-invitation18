@@ -80,7 +80,7 @@ const [socmedLeft, setSocmedLeft] = useState<any>([]);
                                         {/* Komponen foto pengantin (independent) */}
                                         <div className="absolute top-[10%] left-[15%] w-[70%] h-[80%] z-0" style={{ zIndex: 0 }}>
                                             {/* Container oval untuk foto */}
-                                            <div className="w-full h-full overflow-hidden rounded-[100px]" style={{ borderRadius: '100px / 140px' }}>
+                                            <div className="w-full h-full overflow-hidden rounded-[100px] border-2 border-[#D4AF37]" style={{ borderRadius: '100px / 140px' }}>
                                                 <img 
                                                     src={`${data?.brideGroomLeft && data.brideGroomLeft.length > 0 
                                                         ? (data.brideGroomLeft[0].image_female || data.brideGroomLeft[0].image_male) 
@@ -91,14 +91,6 @@ const [socmedLeft, setSocmedLeft] = useState<any>([]);
                                             </div>
                                         </div>
                                         
-                                        {/* Komponen bingkai dekoratif (independent) */}
-                                        <div className="absolute top-0 left-0 w-full h-full" style={{ zIndex: 10 }}>
-                                            <img 
-                                                src="/img/LeftImagesBride.png" 
-                                                className="w-full h-full" 
-                                                alt="Frame Dekoratif Wanita"
-                                            />
-                                        </div>
                                     </div>
                                 </div>
                                 <div className="text-center">
@@ -141,7 +133,7 @@ const [socmedLeft, setSocmedLeft] = useState<any>([]);
                                         {/* Komponen foto pengantin (independent) */}
                                         <div className="absolute top-[10%] left-[15%] w-[70%] h-[80%] z-0" style={{ zIndex: 0 }}>
                                             {/* Container oval untuk foto */}
-                                            <div className="w-full h-full overflow-hidden rounded-[100px]" style={{ borderRadius: '100px / 140px' }}>
+                                            <div className="w-full h-full overflow-hidden rounded-[100px] border-2 border-[#D4AF37]" style={{ borderRadius: '100px / 140px' }}>
                                                 <img 
                                                     src={`${data?.brideGroomRight && data.brideGroomRight.length > 0 
                                                         ? (data.brideGroomRight[0].image_male || data.brideGroomRight[0].image_female) 
@@ -152,14 +144,6 @@ const [socmedLeft, setSocmedLeft] = useState<any>([]);
                                             </div>
                                         </div>
                                         
-                                        {/* Komponen bingkai dekoratif (independent) */}
-                                        <div className="absolute top-0 left-0 w-full h-full" style={{ zIndex: 10 }}>
-                                            <img 
-                                                src="/img/RightImagesBride.png" 
-                                                className="w-full h-full" 
-                                                alt="Frame Dekoratif Pria"
-                                            />
-                                    </div>
                                     </div>
                                 </div>
                                 <div className="text-center">
