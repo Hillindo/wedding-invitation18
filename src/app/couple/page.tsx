@@ -56,6 +56,16 @@ const [socmedLeft, setSocmedLeft] = useState<any>([]);
             <div className="min-h-screen bg-cover text-white bg-center py-8 px-5 lg:max-w-4xl mx-auto" id="couple"
                 style={{ backgroundImage:'url(/img/bg-2.jpg)' }}>
                 <div className="w-full h-full text-center font-quicksand py-8 px-5">
+                    <Observer4>
+                        <div className="flex justify-center mb-8">
+                            <img 
+                                src="/logo/logo-hill-nay.png" 
+                                alt="Wedding Logo" 
+                                className="w-[150px] h-auto"
+                            />
+                        </div>
+                    </Observer4>
+
                     <Observer3>
                         <h1 className="text-4xl text-[#D4AF37] capitalize pb-8" style={{ fontFamily: `${data?.fontTitle ? data?.fontTitle?.font_title : "romantic"}` }}>
                             Kedua Mempelai
