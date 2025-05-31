@@ -86,11 +86,13 @@ const [socmedLeft, setSocmedLeft] = useState<any>([]);
                         {/* Pengantin Wanita */}
                         <Observer2>
                             <div className="flex flex-col items-center w-full max-w-md">                                <div className="mb-8 relative">                                    {/* Container utama dengan posisi relative */}
-                                    <div className="w-[400px] h-[450px] relative ml-[-30px]">
-                                        {/* Komponen foto pengantin (independent) */}
+                                    <div className="w-[400px] h-[450px] relative ml-[-30px]">                                        {/* Komponen foto pengantin (independent) */}
                                         <div className="absolute top-[10%] left-[15%] w-[70%] h-[80%] z-0" style={{ zIndex: 0 }}>
-                                            {/* Container oval untuk foto */}
-                                            <div className="w-full h-full overflow-hidden rounded-full" style={{ borderRadius: '50%' }}>
+                                            {/* Container oval untuk foto - COMMENTED OUT */}
+                                            {/* <div className="w-full h-full overflow-hidden rounded-full" style={{ borderRadius: '50%' }}> */}
+                                            
+                                            {/* Container kotak dengan rounded corners untuk foto */}
+                                            <div className="w-full h-full overflow-hidden rounded-3xl">
                                                 <img 
                                                     src={`${data?.brideGroomLeft && data.brideGroomLeft.length > 0 
                                                         ? (data.brideGroomLeft[0].image_female || data.brideGroomLeft[0].image_male) 
@@ -139,11 +141,13 @@ const [socmedLeft, setSocmedLeft] = useState<any>([]);
                         <Observer3>
                             <div className="flex flex-col items-center w-full max-w-md">                               
                                  <div className="mb-8 relative">
-                                    <div className="w-[400px] h-[450px] relative mr-[-30px]">
-                                        {/* Komponen foto pengantin (independent) */}
+                                    <div className="w-[400px] h-[450px] relative mr-[-30px]">                                        {/* Komponen foto pengantin (independent) */}
                                         <div className="absolute top-[10%] left-[15%] w-[70%] h-[80%] z-0" style={{ zIndex: 0 }}>
-                                            {/* Container oval untuk foto */}
-                                            <div className="w-full h-full overflow-hidden rounded-full" style={{ borderRadius: '50%' }}>
+                                            {/* Container oval untuk foto - COMMENTED OUT */}
+                                            {/* <div className="w-full h-full overflow-hidden rounded-full" style={{ borderRadius: '50%' }}> */}
+                                            
+                                            {/* Container kotak dengan rounded corners untuk foto */}
+                                            <div className="w-full h-full overflow-hidden rounded-3xl">
                                                 <img 
                                                     src={`${data?.brideGroomRight && data.brideGroomRight.length > 0 
                                                         ? (data.brideGroomRight[0].image_male || data.brideGroomRight[0].image_female) 
