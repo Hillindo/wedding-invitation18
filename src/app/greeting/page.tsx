@@ -84,12 +84,17 @@ const [greetings, setGreetings] = useState<any>([]);
     setLoading(false);
     };
     console.log(presence, "pres");
-    
-    return (
+      return (
     <section className='px-5 sm:mx-12 lg:px-5 lg:max-w-md mx-auto' id='greeting'>
         <Observer>
         <section
-            className="bg-[#051E31] z-50 w-full rounded-3xl shadow-slate-200 shadow-md relative mt-12 text-white">
+            className="bg-[#051E31] z-50 w-full rounded-3xl shadow-slate-200 shadow-md relative mt-12 text-white"
+            style={{
+                backgroundImage: "url('/img/bg-2.jpg')",
+                backgroundSize: 'cover',
+                backgroundPosition: 'center',
+                backgroundRepeat: 'no-repeat'
+            }}>
             <div className="w-full flex flex-wrap mx-auto py-12">
                 <div className="text-center mb-5 w-full font-youkiss text-4xl">RSVP
                 </div>
