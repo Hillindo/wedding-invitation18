@@ -83,17 +83,20 @@ export default function Gift ({data}:any) {
             </button>
             </div>
         </div>
-     </div>
-     {isModalOpen && (
-        <div className="fixed top-0 w-full h-full flex justify-center items-center bg-black bg-opacity-50 z-[60] lg:max-w-lg mx-auto">
-            <div className="bg-white py-2 rounded-lg mx-2 font-lionel max-h-[500px] overflow-y-scroll">
+     </div>     {isModalOpen && (
+        <div className="fixed inset-0 flex justify-center items-center bg-black bg-opacity-50 z-[60] p-4">
+            <div className="bg-white rounded-xl mx-2 font-lionel max-h-[90vh] w-full max-w-lg overflow-y-auto shadow-2xl">
 
-                <div className='border-b flex items-center p-3'>
-                    <p className=' text-xl grow font-semibold'>Kirim Hadiah</p>
+                <div className='border-b flex items-center p-4 bg-gradient-to-r from-blue-600 to-indigo-600 rounded-t-xl'>
+                    <h2 className='text-xl grow font-semibold text-white flex items-center'>
+                        <i className="fas fa-gift mr-2"></i>
+                        Kirim Hadiah
+                    </h2>
                     <button onClick={closeModal}
-                        className='p-2 px-4 bg-red-500 text-white font-louis rounded-lg hover:bg-red-700'>Tutup</button>
-                </div>
-                <div className='p-2 '>
+                        className='p-2 px-3 bg-red-500 text-white font-bold rounded-lg hover:bg-red-600 transition-colors duration-200 shadow-md'>
+                        <i className="fas fa-times"></i>
+                    </button>
+                </div><div className='p-2 '>
                     <p>
                         <strong>
                             Direct Transfer &nbsp;
@@ -101,10 +104,64 @@ export default function Gift ({data}:any) {
                         <span className='italic'>
                             Transfer langsung ke rekening yang tertera
                         </span>
-                            </p>
-                            <p className="mt-2">
+                    </p>
+                    <p className="mt-2">
                         Transfer langsung ke rekening di bawah ini:
                     </p>
+                      {/* Informasi Pengiriman Kado */}
+                    {data?.brideGift && (
+                        <div className="mt-4 p-4 bg-gradient-to-r from-blue-50 to-indigo-50 rounded-xl border border-blue-200 shadow-sm">
+                            <h4 className="font-semibold text-blue-800 mb-3 flex items-center text-base">
+                                <i className="fas fa-gift mr-2 text-blue-600"></i>
+                                Informasi Pengiriman Kado Fisik
+                            </h4>
+                            
+                            <div className="space-y-3">
+                                <div className="bg-white p-3 rounded-lg border border-gray-200">
+                                    <div className="flex items-center justify-between mb-2">
+                                        <span className="text-sm font-semibold text-gray-700 flex items-center">
+                                            <i className="fas fa-map-marker-alt mr-2 text-red-500"></i>
+                                            Alamat Penerima:
+                                        </span>
+                                        <CopyButton 
+                                            text={data.brideGift.address} 
+                                            color={"blue"} 
+                                            hovercolor={"blue"} 
+                                            warn={"Alamat"} 
+                                        />
+                                    </div>
+                                    <p className="text-sm text-gray-800 bg-gray-50 p-3 rounded-md border font-medium leading-relaxed">
+                                        {data.brideGift.address}
+                                    </p>
+                                </div>
+                                
+                                <div className="bg-white p-3 rounded-lg border border-gray-200">
+                                    <div className="flex items-center justify-between mb-2">
+                                        <span className="text-sm font-semibold text-gray-700 flex items-center">
+                                            <i className="fas fa-user mr-2 text-green-500"></i>
+                                            Nama Penerima:
+                                        </span>
+                                        <CopyButton 
+                                            text={data.brideGift.receive_name} 
+                                            color={"blue"} 
+                                            hovercolor={"blue"} 
+                                            warn={"Nama Penerima"} 
+                                        />
+                                    </div>
+                                    <p className="text-sm text-gray-800 bg-gray-50 p-3 rounded-md border font-semibold">
+                                        {data.brideGift.receive_name}
+                                    </p>
+                                </div>
+                            </div>
+                            
+                            <div className="mt-3 p-2 bg-blue-100 rounded-lg">
+                                <p className="text-xs text-blue-700 flex items-center">
+                                    <i className="fas fa-info-circle mr-2"></i>
+                                    Klik tombol copy untuk menyalin alamat atau nama penerima dengan mudah
+                                </p>
+                            </div>
+                        </div>
+                    )}
                 </div>
                 <div className=''>
                     <div className='flex flex-wrap'>
