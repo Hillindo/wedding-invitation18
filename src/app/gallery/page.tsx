@@ -17,8 +17,7 @@ export default function Gallery({ data }: any) {
     const [showModal, setShowModal] = useState(false);
     const [selectedImage, setSelectedImage] = useState<any>(null);
 
-    
-    useEffect(() => {
+      useEffect(() => {
         const fetchData = async () => {
           try {
             setPreweddingVideo(data.preweddingVideo);
@@ -32,6 +31,12 @@ export default function Gallery({ data }: any) {
     
         fetchData();
       }, [data]);
+      
+      // Jika tidak ada foto dan tidak ada video, sembunyikan section
+      if ((!preweddingImage || preweddingImage.length === 0) && 
+          (!preweddingVideo || preweddingVideo.length === 0)) {
+          return null;
+      }
       
       const itemA = {
         hidden: { scale: 0, y: 200 },

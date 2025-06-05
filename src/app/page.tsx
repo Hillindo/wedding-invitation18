@@ -167,7 +167,7 @@ export default function Home() {
                   <Event data={data}/>
                   <section className='bg-white py-[10%] relative w-full z-40'>
                     <div className='bg-[#A5131300] mix-blend-multiply top-0 bg-center h-full w-full absolute'
-                        style={{backgroundImage: `url('/img/bg-6.jpg')`}}></div>
+                        style={{backgroundImage: `url('/img/bg-2.jpg')`}}></div>
                     <Greeting data={data}/>
                     <Gift data={data}/>
                     <BrideGift data={data}/>
@@ -176,7 +176,7 @@ export default function Home() {
                   <Gallery data={data} />
                   <section className='bg-white py-[10%] relative w-full'>
                     <div className='bg-[#A5131300] mix-blend-multiply top-0 bg-bottom bg-cover h-full w-full absolute'
-                        style={{backgroundImage: `url('/img/bg-6.jpg')`}}></div>
+                        style={{backgroundImage: `url('/img/bg-2.jpg')`}}></div>
                     <Live data={data}/>
                     <End data={data}/>
                   </section>
