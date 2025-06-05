@@ -30,9 +30,8 @@ export default function Section2({data}:any) {
         };
     
         fetchData();
-    }, [data]);
-  return (
-    <section className='px-1 overflow-hidden relative pt-5 pb-10 lg:max-w-md mx-auto' style={{backgroundImage: `url('/img/bg-9.jpg')`, backgroundSize: 'cover', backgroundPosition: 'center'}}>
+    }, [data]);  return (
+    <section className='px-1 overflow-hidden relative pt-5 pb-10 lg:max-w-md mx-auto' style={{backgroundImage: `url('/img/bg-event.png')`, backgroundSize: 'cover', backgroundPosition: 'center'}}>
         <div className='relative w-full sm:w-3/4 mx-auto'>
             <div className='relative flex'>
                 <div className='m-2 p-2 w-full flex relative min-[425px]:px-8 sm:px-0'>
