@@ -84,9 +84,12 @@ const [socmedLeft, setSocmedLeft] = useState<any>([]);
                     {/* Layout baru vertikal sesuai referensi */}
                     <div className="flex flex-col items-center gap-16 px-4 max-w-3xl mx-auto">                        {/* Pengantin Wanita */}
                         <Observer2>
-                            <div className="flex flex-col items-center w-full max-w-md">                                <div className="mb-8 relative">                                    {/* Container utama dengan posisi relative */}
-                                    <div className="w-[400px] h-[450px] relative ml-[-30px]">                                        {/* Komponen foto pengantin (independent) */}
-                                        <div className="absolute top-[10%] left-[15%] w-[70%] h-[80%] z-0" style={{ zIndex: 0 }}>
+                            <div className="flex flex-col items-center w-full max-w-md">
+                                <div className="mb-8 relative">
+                                    {/* Container utama dengan posisi relative */}
+                                    <div className="w-[400px] h-[450px] relative flex items-center justify-center">
+                                        {/* Komponen foto pengantin (independent) */}
+                                        <div className="w-[70%] h-[80%] z-0" style={{ zIndex: 0 }}>
                                             {/* Container oval untuk foto - COMMENTED OUT */}
                                             {/* <div className="w-full h-full overflow-hidden rounded-full" style={{ borderRadius: '50%' }}> */}
                                             
@@ -136,9 +139,10 @@ const [socmedLeft, setSocmedLeft] = useState<any>([]);
                         <div className="text-[#D4AF37] text-6xl font-romantic my-4">&</div>                        {/* Pengantin Pria */}
                         <Observer3>
                             <div className="flex flex-col items-center w-full max-w-md">                               
-                                 <div className="mb-8 relative">
-                                    <div className="w-[400px] h-[450px] relative mr-[-30px]">                                        {/* Komponen foto pengantin (independent) */}
-                                        <div className="absolute top-[10%] left-[15%] w-[70%] h-[80%] z-0" style={{ zIndex: 0 }}>
+                                <div className="mb-8 relative">
+                                    <div className="w-[400px] h-[450px] relative flex items-center justify-center">
+                                        {/* Komponen foto pengantin (independent) */}
+                                        <div className="w-[70%] h-[80%] z-0" style={{ zIndex: 0 }}>
                                             {/* Container oval untuk foto - COMMENTED OUT */}
                                             {/* <div className="w-full h-full overflow-hidden rounded-full" style={{ borderRadius: '50%' }}> */}
                                             
