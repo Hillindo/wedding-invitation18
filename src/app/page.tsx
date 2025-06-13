@@ -39,6 +39,9 @@ export default function Home() {
     // Enable music when invitation is opened
     setMusicEnabled(true);
     
+    // Re-enable scroll
+    document.body.style.overflow = 'auto';
+    
     // Set mainContentVisible first, then hide front page
     setMainContentVisible(true);
     setTimeout(() => {
@@ -134,6 +137,20 @@ export default function Home() {
       getData();
     }
   }, [myCookie]);
+
+  // Block scroll when front page is visible
+  useEffect(() => {
+    if (frontVisible) {
+      document.body.style.overflow = 'hidden';
+    } else {
+      document.body.style.overflow = 'auto';
+    }
+    
+    // Cleanup on unmount
+    return () => {
+      document.body.style.overflow = 'auto';
+    };
+  }, [frontVisible]);
 
   return (
     <div>
