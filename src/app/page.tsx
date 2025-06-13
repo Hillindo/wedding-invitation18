@@ -1,5 +1,5 @@
 "use client"
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useRef } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { setCookie, getCookie } from "cookies-next";
 import axios from "next@js/lib/axios";
@@ -34,13 +34,16 @@ export default function Home() {
   const [imageLoaded, setImageLoaded] = useState("flex");
   const [allImagesLoaded, setAllImagesLoaded] = useState(false);
   const [musicEnabled, setMusicEnabled] = useState(false);
+  const mainContainerRef = useRef<HTMLDivElement>(null);
 
   const handleOpenInvitation = () => {
     // Enable music when invitation is opened
     setMusicEnabled(true);
     
-    // Re-enable scroll
-    document.body.style.overflow = 'auto';
+    // Re-enable scroll on the correct container
+    if (mainContainerRef.current) {
+      mainContainerRef.current.style.overflowY = 'auto';
+    }
     
     // Set mainContentVisible first, then hide front page
     setMainContentVisible(true);
@@ -138,17 +141,22 @@ export default function Home() {
     }
   }, [myCookie]);
 
-  // Block scroll when front page is visible
+  // Block scroll on the main container when front page is visible
   useEffect(() => {
-    if (frontVisible) {
-      document.body.style.overflow = 'hidden';
-    } else {
-      document.body.style.overflow = 'auto';
+    const container = mainContainerRef.current;
+    if (container) {
+      if (frontVisible) {
+        container.style.overflowY = 'hidden';
+      } else {
+        container.style.overflowY = 'auto';
+      }
     }
     
     // Cleanup on unmount
     return () => {
-      document.body.style.overflow = 'auto';
+      if (container) {
+        container.style.overflowY = 'auto';
+      }
     };
   }, [frontVisible]);
 
@@ -168,7 +176,7 @@ export default function Home() {
                   Silahkan Lakukan Pembayaran
                 </div>
               )}
-              <div className='mx-auto lg:max-w-md overflow-y-auto overflow-x-hidden relative scroll-smooth h-screen'>
+              <div ref={mainContainerRef} className='mx-auto lg:max-w-md overflow-y-auto overflow-x-hidden relative scroll-smooth h-screen'>
                 {frontVisible && (
                   <div className="absolute inset-0 z-50">
                     <Front data={data} guestName={guestName} onOpenInvitation={handleOpenInvitation}/>   
