@@ -42,6 +42,19 @@ export default function Front({data, guestName, onOpenInvitation}:any) {
     }, []);
 
     useEffect(() => {
+        // Disable scroll on mount
+        if (typeof window !== 'undefined') {
+            const originalOverflow = document.body.style.overflow;
+            document.body.style.overflow = 'hidden';
+
+            // Cleanup function to restore scroll on unmount
+            return () => {
+                document.body.style.overflow = originalOverflow;
+            };
+        }
+    }, []);
+
+    useEffect(() => {
         if (guestName) {
             setNewGuestName(guestName.split('#') ? guestName.split('#')[0] : guestName);
         }
@@ -66,6 +79,9 @@ export default function Front({data, guestName, onOpenInvitation}:any) {
     }, [data]);
 
     const handleOpenInvitation = () => {
+        if (typeof window !== 'undefined') {
+            document.body.style.overflow = 'unset';
+        }
         setIsLeaving(true);
         setTimeout(() => {
             if (onOpenInvitation) {
