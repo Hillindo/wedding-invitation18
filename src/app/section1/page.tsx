@@ -17,6 +17,34 @@ export default function Section1({data}:any) {
     seconds: 0
   });
 
+  // Helper function to format date time for Google Calendar
+  const formatGoogleCalendarDateTime = (dateTime: string) => {
+    const [datePart, timePart] = dateTime.split("T");
+    const cleanedTimePart = timePart ? timePart.replace(/:/g, "") + "00".substring(0, 6 - timePart.replace(/:/g, "").length) : "000000";
+    return datePart.replace(/-/g, "") + "T" + cleanedTimePart;
+  };
+
+  // Function to add event to Google Calendar
+  const addToCalendar = () => {
+    if (event && event.length > 0 && event[0].date && event[0].start_event && event[0].end_event) {
+      const eventData = event[0];
+      const startDate = eventData.date.split(" ")[0];
+      const startTimeStr = eventData.start_event.split(" ")[0];
+      const endTimeStr = eventData.end_event.split(" ")[0];
+      const startTime = formatGoogleCalendarDateTime(startDate + "T" + startTimeStr);
+      const endTime = formatGoogleCalendarDateTime(startDate + "T" + endTimeStr);
+
+      const eventUrl = `https://www.google.com/calendar/render?action=TEMPLATE&text=${encodeURIComponent(
+        eventData.name || 'Wedding Event'
+      )}&dates=${encodeURIComponent(
+        startTime + "/" + endTime
+      )}&location=${encodeURIComponent(eventData.address || eventData.location || '')}`;
+      window.open(eventUrl, "_blank");
+    } else {
+      console.warn('Event data not available for calendar');
+    }
+  };
+
   useEffect(() => {
     const fetchData = async () => {
       try {
@@ -139,13 +167,15 @@ export default function Section1({data}:any) {
             </div>
 
             {/* Simpan Tanggal Button */}
-            <button 
-              className="font-quicksand font-semibold py-2.5 px-5 rounded-lg text-sm flex items-center justify-center mx-auto relative z-20"
+            <button
+              className="font-quicksand font-semibold py-2.5 px-5 rounded-lg text-sm flex items-center justify-center mx-auto relative z-20 hover:opacity-90 transition-opacity"
               style={{ backgroundColor: '#e1ba60', color: '#001530' }}
+              onClick={addToCalendar}
             >
               <i className="fa fa-calendar mr-2"></i>
               Simpan Tanggal
-            </button>            {/* Flower decorations - BOTTOM dengan gambar dirotasi horizontal */}
+            </button>
+            {/* Flower decorations - BOTTOM dengan gambar dirotasi horizontal */}
               <div className="absolute left-0 bottom-[-95px] -z-10 w-full">
                   <div className="relative h-40">
                       <motion.div 
