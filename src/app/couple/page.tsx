@@ -160,7 +160,7 @@ const [socmedLeft, setSocmedLeft] = useState<any>([]);
                                     </div>
                                 </div>
                                 <div className="text-center">
-                                    <h3 className="text-[#D4AF37] font-bloverly text-2xl mb-2">
+                                    <h3 className="text-[#D4AF37] font-bloverly text-3xl mb-2">
                                         {data?.brideGroomRight && data.brideGroomRight.length > 0 
                                         ? (data.brideGroomRight[0].name_male || data.brideGroomRight[0].name_female) 
                                         : ''}
