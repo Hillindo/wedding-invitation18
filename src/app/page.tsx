@@ -38,6 +38,7 @@ export default function Home() {
 
   const handleOpenInvitation = () => {
     // Enable music when invitation is opened
+    console.log("handleOpenInvitation called, setting musicEnabled to true");
     setMusicEnabled(true);
     
     // Re-enable scroll on the correct container
@@ -121,7 +122,9 @@ export default function Home() {
             `/api/invitation/${getCookie("subDomain")}`
           );
           setData(res.data);
-          setMusic(res.data?.music?.path_music ?? res.data?.music?.embed_link);
+          const musicUrl = res.data?.music?.path_music ?? res.data?.music?.embed_link;
+          console.log("Music URL from API:", musicUrl);
+          setMusic(musicUrl);
           addFontsDynamically(res.data.font);
 
           if (res?.data?.isItemNotPaid.length > 0) {
