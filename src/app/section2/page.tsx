@@ -45,7 +45,7 @@ export default function Section2({data}:any) {
                             </Observer>
                         </div>
                     </div>
-                    <div className='right-[-30%] top-1/3 z-20 absolute w-full'>
+                    {/* <div className='right-[-30%] top-1/3 z-20 absolute w-full'>
                     <Observer2>
                         <img src="/img/bg-3.png" className='h-auto w-full opacity-25' alt="" />
                     </Observer2>
@@ -54,7 +54,7 @@ export default function Section2({data}:any) {
                     <Observer3>
                         <img src="/img/bg-4.png" className='h-auto w-full opacity-25' alt="" />
                     </Observer3>
-                    </div>
+                    </div> */}
                 </div>
             </div>
         </div>
