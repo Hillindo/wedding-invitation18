@@ -153,7 +153,7 @@ export default function Location({ data }: any) {
                                     <p>{eventData.location || eventData.address}</p>
                                 </div>
                             </div>
-                            <div className="flex justify-center mt-4">
+                            {/* <div className="flex justify-center mt-4">
                                 <button
                                     className="bg-yellow-400 hover:bg-yellow-500 text-black text-xs py-2.5 px-6 rounded-lg font-semibold tracking-wide"
                                     onClick={addToCalendar}
@@ -164,7 +164,7 @@ export default function Location({ data }: any) {
                                         <i className="fas fa-arrow-right-long ml-2"></i>
                                     </span>
                                 </button>
-                            </div>
+                            </div> */}
                         </div>
                     </div>
                 </Observer4>
