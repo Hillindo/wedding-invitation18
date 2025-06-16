@@ -17,7 +17,6 @@ interface BackgroundMusicProps {
  * - Multiple audio formats untuk kompatibilitas maksimal
  */
 const BackgroundMusic = ({ src, isEnabled = false }: BackgroundMusicProps) => {
-  console.log("BackgroundMusic rendered. src:", src, "isEnabled:", isEnabled);
   const audioRef = useRef<HTMLAudioElement | null>(null);
   const [isPlaying, setIsPlaying] = useState<boolean>(false);
   const [isManuallyPaused, setIsManuallyPaused] = useState<boolean>(false);
@@ -71,7 +70,6 @@ const BackgroundMusic = ({ src, isEnabled = false }: BackgroundMusicProps) => {
       // Setup event listeners
       const handleCanPlayThrough = () => {
         if (isMounted) {
-          console.log("Audio can play through. Setting audioLoaded to true.");
           setAudioLoaded(true);
           setAudioError(false);
         }
@@ -115,10 +113,6 @@ const BackgroundMusic = ({ src, isEnabled = false }: BackgroundMusicProps) => {
 
   // Sinkronisasi auto play dengan isEnabled setelah interaksi user
   useEffect(() => {
-    console.log(
-      "Autoplay check:",
-      { isEnabled, hasAudioRef: !!audioRef.current, isPlaying, isManuallyPaused, audioLoaded }
-    );
     if (isEnabled && audioRef.current && !isPlaying && !isManuallyPaused && audioLoaded) {
       // Delay sedikit untuk memastikan browser sudah siap
       const timer = setTimeout(() => {
@@ -126,7 +120,6 @@ const BackgroundMusic = ({ src, isEnabled = false }: BackgroundMusicProps) => {
         if (playPromise !== undefined) {
           playPromise
             .then(() => {
-              console.log("Audio playback started successfully.");
               setIsPlaying(true);
             })
             .catch((error) => {
