@@ -350,7 +350,7 @@ export default function Front({data, guestName, onOpenInvitation}:any) {
                                     alt="Rumah Gadang" 
                                     loading="lazy" 
                                     // style={{ maxWidth: "65%", margin: "0 auto", display: "block" }}
-                                    className="mx-auto block w-[55%] md:w-[65%]"
+                                    className="mx-auto block w-[40%] md:w-[65%]"
                                 />
                             </motion.div>
                                 <motion.div
