@@ -36,7 +36,7 @@ export default function Section2({data}:any) {
             <div className='relative flex'>
                 <div className='m-2 p-2 w-full flex relative min-[425px]:px-8 sm:px-0'>
                     <div className='flex justify-center p-5 relative w-full flex-nowrap'>
-                        <img src="/img/bg-5.png" className='absolute w-full h-full z-10 opacity-50' alt="" />
+                        <img src="/img/bg-5.png" className='absolute w-full h-full z-10 opacity-80' alt="" />
                         <div className='flex items-center justify-center z-30 min-h-[500px] w-full'>
                             <Observer>
                                 <div className='w-5/6 mx-auto text-center text-xs sm:text-sm font-medium text-black' style={{ fontFamily: `${data?.fontContent ? data?.fontContent?.font_content : "Quicksand"}` }}>
