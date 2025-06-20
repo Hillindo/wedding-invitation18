@@ -43,15 +43,15 @@ export default function Last({data}:any) {
 }, [data]);
 
     return (
-        <div className="bg-cover bg-bottom bg-fixed text-black relative lg:max-w-md mx-auto" style={{backgroundImage: "url('/img/bg-11.png')"}}>
+        <div className="bg-cover bg-center bg-no-repeat text-black relative lg:max-w-md mx-auto min-h-screen" style={{backgroundImage: "url('/img/bg-11.png')"}}>
 <Observer>
-            <div className="px-6 relative">
-          <div className="w-full text-center flex flex-col justify-center items-center h-[620px] md:h-[800px] lg:h-[620px]">
+            <div className="px-6 relative min-h-screen">
+          <div className="w-full text-center flex flex-col justify-center items-center min-h-screen">
             <div className="w-10/12">
                   <Observer4>
             <p
               className="text-sm md:text-xl lg:text-sm font-quicksand my-2">
-              Merupakan Suatu Kebahagiaan Dan Kehormatan Bagi Kami Apabila Bapak/Ibu/Saudara/i Berkenan Hadir Untuk Memberikan Doa Restu Kepada Kami. Atas Kehadiran Dan Doa Restunya Kami Ucapkan Terima Kasih.
+                 Merupakan Suatu Kebahagiaan Dan Kehormatan Bagi Kami Apabila Bapak/Ibu/Saudara/i Berkenan Hadir Untuk Memberikan Doa Restu Kepada Kami. Atas Kehadiran Dan Doa Restunya Kami Ucapkan Terima Kasih.
             </p>
             <h1
               className="font-roserri text-3xl md:text-4xl lg:text-3xl capitalize mt-8">
