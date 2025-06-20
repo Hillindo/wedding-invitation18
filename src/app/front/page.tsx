@@ -337,7 +337,7 @@ export default function Front({data, guestName, onOpenInvitation}:any) {
                             />
                         </div>
                         
-                        <div className="absolute w-full h-full bottom-0 z-20 py-20 mt-auto">
+                        <div className="absolute w-full h-full bottom-0 z-20 py-10 mt-auto">
                             <div className="w-full h-full flex flex-col justify-center text-white">
                             <motion.div 
                                 initial={{ opacity: 0, y: -20 }}
