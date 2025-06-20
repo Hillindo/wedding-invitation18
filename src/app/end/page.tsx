@@ -43,25 +43,22 @@ export default function Last({data}:any) {
 }, [data]);
 
     return (
-        <div className="bg-cover bg-bottom bg-fixed text-black relative lg:max-w-md mx-auto">
+        <div className="bg-cover bg-bottom bg-fixed text-black relative lg:max-w-md mx-auto" style={{backgroundImage: "url('/img/bg-11.png')"}}>
 <Observer>
             <div className="pb-16 px-6 relative">
-          <div
-            className="w-full md:w-3/4 lg:w-full mx-auto h-[620px] md:h-[800px] lg:h-[620px] bg-white/80 text text-center mt-24 rounded-t-full p-7 flex flex-col justify-between">
-            <div
-              className="h-3/4 md:h-4/5 lg:h-3/4 w-full  rounded-t-full overflow-hidden">
-              <img src={frontPage?.front_page ? frontPage?.front_page : " "} alt="" className="w-full h-full object-cover object-center" />
-            </div>
+          <div className="w-full text-center flex flex-col justify-center items-center h-[620px] md:h-[800px] lg:h-[620px]">
+            <div className="w-10/12">
                   <Observer4>
             <p
               className="text-sm md:text-xl lg:text-sm font-quicksand my-2">
               Merupakan Suatu Kebahagiaan Dan Kehormatan Bagi Kami Apabila Bapak/Ibu/Saudara/i Berkenan Hadir Untuk Memberikan Doa Restu Kepada Kami. Atas Kehadiran Dan Doa Restunya Kami Ucapkan Terima Kasih.
             </p>
             <h1
-              className="font-roserri text-3xl md:text-4xl lg:text-3xl capitalize">
+              className="font-roserri text-3xl md:text-4xl lg:text-3xl capitalize mt-8">
             {nameAliasLeft ? nameAliasLeft : nameLeft ? nameLeft: " "} & {nameAliasRight ? nameAliasRight : nameRight ? nameRight : " "}
             </h1>
                   </Observer4>
+            </div>
           </div>
           
             </div>
