@@ -45,7 +45,7 @@ export default function Last({data}:any) {
     return (
         <div className="bg-cover bg-bottom bg-fixed text-black relative lg:max-w-md mx-auto" style={{backgroundImage: "url('/img/bg-11.png')"}}>
 <Observer>
-            <div className="pb-16 px-6 relative">
+            <div className="px-6 relative">
           <div className="w-full text-center flex flex-col justify-center items-center h-[620px] md:h-[800px] lg:h-[620px]">
             <div className="w-10/12">
                   <Observer4>
