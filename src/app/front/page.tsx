@@ -371,6 +371,10 @@ export default function Front({data, guestName, onOpenInvitation}:any) {
                                     style={{ color: '#e1ba60' }}>
                                         Kepada Yth :
                                     </div>
+                                    <div className="w-auto h-auto text-center text-[10px] opacity-95 md:text-2xl lg:text-[15px] md:mt-4 xl:mt-0"
+                                    style={{ color: '#e1ba60' }}>
+                                        Bapak/Ibu/Saudara/i
+                                    </div>
                                     <div className="w-auto h-auto text-center text-[24px] mt-2 font-newsreader opacity-95 md:text-5xl lg:text-[26px] md:mt-4 xl:mt-2"
                                     style={{ color: '#e1ba60' }}>
                                         {newGuestName ? newGuestName : ""}
