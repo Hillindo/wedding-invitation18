@@ -318,7 +318,7 @@ export default function Front({data, guestName, onOpenInvitation}:any) {
                         </div>
                         
                         <div className="absolute w-full h-full bottom-0 z-20 py-10 mt-5 pb-10 md:pb-0 lg:pb-0">
-                            <div className="w-full flex flex-col justify-center text-white" style={{ marginTop: '29%' }}>
+                            <div className="w-full flex flex-col justify-center text-white" style={{ marginTop: '27%' }}>
                             <motion.div 
                                 initial={{ opacity: 0, y: -20 }}
                                 animate={{ opacity: 1, y: 0 }}
@@ -343,7 +343,7 @@ export default function Front({data, guestName, onOpenInvitation}:any) {
                                     style={{ color: '#e1ba60' }}>
                                         THE WEDDING OF
                                     </div>
-                                    <div className="w-auto h-auto text-center tracking-[3.7px] font-roxborough-cf text-[30px] md:text-6xl lg:text-[40px] opacity-95"
+                                    <div className="w-auto h-auto text-center tracking-[3.7px] font-roxborough-cf text-[25px] md:text-6xl lg:text-[40px] opacity-95"
                                     style={{ color: '#e1ba60' }}> 
                                         {nameAliasLeft ? nameAliasLeft : nameLeft ? nameLeft: " "} & {nameAliasRight ? nameAliasRight : nameRight ? nameRight : " "}
                                     </div>
@@ -357,16 +357,16 @@ export default function Front({data, guestName, onOpenInvitation}:any) {
                                             Bapak/Ibu/Saudara/i
                                         </div>
                                     </div>
-                                    <div className="w-auto h-auto text-center text-[24px] mt-2 font-newsreader opacity-95 md:text-5xl lg:text-[26px] md:mt-4 xl:mt-2"
+                                    <div className="w-auto h-auto text-center text-[22px] mt-1 font-newsreader opacity-95 md:text-5xl lg:text-[26px] md:mt-4 xl:mt-2"
                                     style={{ color: '#e1ba60' }}>
                                         {newGuestName ? newGuestName : ""}
                                     </div>
                                     <div>
-                                     <div className="w-auto h-auto text-center text-[10px] opacity-95 md:text-2xl lg:text-[15px] md:mt-2 xl:mt-0"
+                                     <div className="w-auto text-center text-[10px] opacity-95 md:text-2xl lg:text-[15px] md:mt-2 xl:mt-0"
                                         style={{ color: '#e1ba60' }}>
                                             mohon maaf jika ada kesalahan
                                         </div>
-                                        <div className="w-auto h-auto text-center text-[10px] opacity-95 md:text-2xl lg:text-[15px] md:mt-2 xl:mt-0"
+                                        <div className="w-auto text-center text-[10px] opacity-95 md:text-2xl lg:text-[15px] md:mt-2 xl:mt-0"
                                         style={{ color: '#e1ba60' }}>
                                            dalam penulisan nama / gelar
                                         </div>
