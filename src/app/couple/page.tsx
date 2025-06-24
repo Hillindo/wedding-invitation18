@@ -107,7 +107,7 @@ const [socmedLeft, setSocmedLeft] = useState<any>([]);
                                     </div>
                                 </div>
                                 <div className="text-center">
-                                    <h3 className="text-[#D4AF37] font-bloverly text-4xl mb-2">
+                                    <h3 className="text-[#D4AF37] font-roxborough-cf text-4xl mb-2">
                                         {data?.brideGroomLeft && data.brideGroomLeft.length > 0 
                                         ? (data.brideGroomLeft[0].name_female || data.brideGroomLeft[0].name_male) 
                                         : ''}
@@ -120,6 +120,7 @@ const [socmedLeft, setSocmedLeft] = useState<any>([]);
                                         <br />dan Ibu {data?.brideGroomLeft && data.brideGroomLeft.length > 0 
                                         ? (data.brideGroomLeft[0].mother_female || data.brideGroomLeft[0].mother_male) 
                                         : ''}
+                                        <br/>(Restoran Lembah Anai Baru)
                                     </div>
                                     <div className="my-2">
                                         <a href={socmedLeft?.url}
@@ -160,7 +161,7 @@ const [socmedLeft, setSocmedLeft] = useState<any>([]);
                                     </div>
                                 </div>
                                 <div className="text-center">
-                                    <h3 className="text-[#D4AF37] font-bloverly text-3xl mb-2">
+                                    <h3 className="text-[#D4AF37] font-roxborough-cf text-3xl mb-2">
                                         {data?.brideGroomRight && data.brideGroomRight.length > 0 
                                         ? (data.brideGroomRight[0].name_male || data.brideGroomRight[0].name_female) 
                                         : ''}
@@ -173,6 +174,7 @@ const [socmedLeft, setSocmedLeft] = useState<any>([]);
                                         <br />dan Ibu {data?.brideGroomRight && data.brideGroomRight.length > 0 
                                         ? (data.brideGroomRight[0].mother_male || data.brideGroomRight[0].mother_female) 
                                         : ''}
+                                        <br/>(PT Matra Hillindo Teknologi)
                                     </div>
                                     <div className="my-2">
                                         <a href={socmedRight?.url}

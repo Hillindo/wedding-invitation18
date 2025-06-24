@@ -318,7 +318,7 @@ export default function Front({data, guestName, onOpenInvitation}:any) {
                         </div>
                         
                         <div className="absolute w-full h-full bottom-0 z-20 py-10 mt-5 pb-10 md:pb-0 lg:pb-0">
-                            <div className="w-full flex flex-col justify-center text-white" style={{ marginTop: '30%' }}>
+                            <div className="w-full flex flex-col justify-center text-white" style={{ marginTop: '26%' }}>
                             <motion.div 
                                 initial={{ opacity: 0, y: -20 }}
                                 animate={{ opacity: 1, y: 0 }}
@@ -361,6 +361,16 @@ export default function Front({data, guestName, onOpenInvitation}:any) {
                                     style={{ color: '#e1ba60' }}>
                                         {newGuestName ? newGuestName : ""}
                                     </div>
+                                    <div>
+                                     <div className="w-auto h-auto text-center text-[11px] opacity-95 md:text-2xl lg:text-[15px] md:mt-2 xl:mt-0"
+                                        style={{ color: '#e1ba60' }}>
+                                            mohon maaf jika ada keasalahan
+                                        </div>
+                                        <div className="w-auto h-auto text-center text-[11px] opacity-95 md:text-2xl lg:text-[15px] md:mt-2 xl:mt-0"
+                                        style={{ color: '#e1ba60' }}>
+                                           dalam penulisan nama / gelar
+                                        </div>
+                                        </div>
                                 </motion.div>
                                 <motion.a 
                                     className="mt-4 md:mt-7 text-center w-full h-auto cursor-pointer"
