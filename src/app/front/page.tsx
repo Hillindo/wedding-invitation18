@@ -357,9 +357,9 @@ export default function Front({data, guestName, onOpenInvitation}:any) {
                                         color: '#e1ba60',
                                         fontSize: 'clamp(26px, 8vw, 35px)'
                                     }}>
-                                        {(nameAliasLeft ? nameAliasLeft : nameLeft ? nameLeft : " ").toUpperCase()} <br/> 
+                                        <b>{(nameAliasLeft ? nameAliasLeft : nameLeft ? nameLeft : " ").toUpperCase()}</b> <br/> 
                                         & <br/>
-                                        {(nameAliasRight ? nameAliasRight : nameRight ? nameRight : " ").toUpperCase()} 
+                                        <b>{(nameAliasRight ? nameAliasRight : nameRight ? nameRight : " ").toUpperCase()}</b>
                                     </div>
                                     <div className="mt-[2vh]">
                                         <div className="w-auto h-auto text-center opacity-95"
