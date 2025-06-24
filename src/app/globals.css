@@ -113,6 +113,12 @@
 	font-display: auto;
 	src: url('/font/Saignh.woff2') format('woff2');
 }
+@font-face {
+	font-family: 'RoxboroughCF';
+	font-weight: 400;
+	font-display: auto;
+	src: url('/font/RoxboroughCF.ttf') format('truetype');
+}
 
 html {
   scroll-behavior: smooth;

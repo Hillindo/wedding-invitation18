@@ -337,7 +337,7 @@ export default function Front({data, guestName, onOpenInvitation}:any) {
                             />
                         </div>
                         
-                        <div className="absolute w-full h-full bottom-0 z-20 py-10 mt-5">
+                        <div className="absolute w-full h-full bottom-0 z-20 py-10 mt-5 pb-10 md:pb-0 lg:pb-0">
                             <div className="w-full h-full flex flex-col justify-center text-white">
                             <motion.div 
                                 initial={{ opacity: 0, y: -20 }}
@@ -350,7 +350,7 @@ export default function Front({data, guestName, onOpenInvitation}:any) {
                                     alt="Rumah Gadang" 
                                     loading="lazy" 
                                     // style={{ maxWidth: "65%", margin: "0 auto", display: "block" }}
-                                    className="mx-auto block w-[55%] md:w-[40%]"
+                                    className="mx-auto block w-[45%] md:w-[45%] lg:w-[35%] "
                                 />
                             </motion.div>
                                 <motion.div
@@ -363,17 +363,19 @@ export default function Front({data, guestName, onOpenInvitation}:any) {
                                     style={{ color: '#e1ba60' }}>
                                         THE WEDDING OF
                                     </div>
-                                    <div className="w-auto h-auto text-center tracking-[3.7px] font-qageto text-[30px] md:text-6xl lg:text-[40px] opacity-95"
+                                    <div className="w-auto h-auto text-center tracking-[3.7px] font-roxborough-cf text-[30px] md:text-6xl lg:text-[40px] opacity-95"
                                     style={{ color: '#e1ba60' }}> 
                                         {nameAliasLeft ? nameAliasLeft : nameLeft ? nameLeft: " "} & {nameAliasRight ? nameAliasRight : nameRight ? nameRight : " "}
                                     </div>
-                                    <div className="w-auto h-auto text-center text-[10px] opacity-95 md:text-2xl lg:text-[15px] md:mt-4 xl:mt-0"
-                                    style={{ color: '#e1ba60' }}>
-                                        Kepada Yth :
-                                    </div>
-                                    <div className="w-auto h-auto text-center text-[10px] opacity-95 md:text-2xl lg:text-[15px] md:mt-4 xl:mt-0"
-                                    style={{ color: '#e1ba60' }}>
-                                        Bapak/Ibu/Saudara/i
+                                    <div>
+                                        <div className="w-auto h-auto text-center text-[10px] opacity-95 md:text-2xl lg:text-[15px] md:mt-4 xl:mt-0"
+                                        style={{ color: '#e1ba60' }}>
+                                            Kepada Yth :
+                                        </div>
+                                        <div className="w-auto h-auto text-center text-[10px] opacity-95 md:text-2xl lg:text-[15px] md:mt-4 xl:mt-0"
+                                        style={{ color: '#e1ba60' }}>
+                                            Bapak/Ibu/Saudara/i
+                                        </div>
                                     </div>
                                     <div className="w-auto h-auto text-center text-[24px] mt-2 font-newsreader opacity-95 md:text-5xl lg:text-[26px] md:mt-4 xl:mt-2"
                                     style={{ color: '#e1ba60' }}>

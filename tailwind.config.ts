@@ -42,7 +42,8 @@ const config: Config = {
         'garaigit': ['Garaigit', 'sans-serif'],
         'roserri': ['Roserri', 'sans-serif'],
         'amiri': ['Amiri', 'sans-serif'],
-        'edwardian': ['Edwardian', 'cursive']
+        'edwardian': ['Edwardian', 'cursive'],
+        'roxborough-cf': ['RoxboroughCF', 'sans-serif']
 
       },
     },
