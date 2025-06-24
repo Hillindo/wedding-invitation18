@@ -328,7 +328,7 @@ export default function Front({data, guestName, onOpenInvitation}:any) {
                                     initial={{ opacity: 0, y: -20 }}
                                     animate={{ opacity: 1, y: 0 }}
                                     transition={{ delay: 0.5 }}
-                                    className="w-full h-auto mb-[3vh]"
+                                    className="w-full h-auto mt-[3vh]"
                                 >
                                     <img
                                         src="/img/rumah-gadang.png"
@@ -355,9 +355,11 @@ export default function Front({data, guestName, onOpenInvitation}:any) {
                                     <div className="w-auto h-auto text-center tracking-[3.7px] font-roxborough-cf opacity-95 mt-2"
                                     style={{ 
                                         color: '#e1ba60',
-                                        fontSize: 'clamp(24px, 7vw, 32px)'
+                                        fontSize: 'clamp(24px, 7vw, 33px)'
                                     }}>
-                                        {nameAliasLeft ? nameAliasLeft : nameLeft ? nameLeft: " "} & {nameAliasRight ? nameAliasRight : nameRight ? nameRight : " "}
+                                        {(nameAliasLeft ? nameAliasLeft : nameLeft ? nameLeft : " ").toUpperCase()} <br/> 
+                                        & <br/>
+                                        {(nameAliasRight ? nameAliasRight : nameRight ? nameRight : " ").toUpperCase()} 
                                     </div>
                                     <div className="mt-[2vh]">
                                         <div className="w-auto h-auto text-center opacity-95"
@@ -403,7 +405,7 @@ export default function Front({data, guestName, onOpenInvitation}:any) {
                                 {/* Button with consistent positioning */}
                                 <motion.a
                                     className="text-center w-full h-auto cursor-pointer"
-                                    style={{ marginTop: '4vh' }}
+                                    style={{ marginTop: '2vh' }}
                                     initial={{ opacity: 0, y: 20 }}
                                     animate={{ opacity: 1, y: 0 }}
                                     transition={{ delay: 1.2 }}
