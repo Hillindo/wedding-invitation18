@@ -132,7 +132,7 @@ export default function Section1({data}:any) {
 
             {/* Names */}
             <div 
-              className="font-qageto text-4xl lg:text-5xl tracking-[3px] opacity-95" 
+              className="font-roxborough-cf text-3xl lg:text-4xl tracking-[3px] opacity-95" 
               style={{ color: '#e1ba60' }}
             > 
               {nameAliasLeft ? nameAliasLeft : nameLeft ? nameLeft: " "} & {nameAliasRight ? nameAliasRight : nameRight ? nameRight : " "}
