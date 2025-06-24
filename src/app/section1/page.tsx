@@ -132,10 +132,10 @@ export default function Section1({data}:any) {
 
             {/* Names */}
             <div 
-              className="font-roxborough-cf text-3xl lg:text-4xl tracking-[3px] opacity-95" 
+              className="font-roxborough-cf text-2xl lg:text-4xl tracking-[3px] opacity-95" 
               style={{ color: '#e1ba60' }}
             > 
-              {nameAliasLeft ? nameAliasLeft : nameLeft ? nameLeft: " "} & {nameAliasRight ? nameAliasRight : nameRight ? nameRight : " "}
+              <b>{(nameAliasLeft ? nameAliasLeft : nameLeft ? nameLeft: " ").toUpperCase()} & {(nameAliasRight ? nameAliasRight : nameRight ? nameRight : " ").toUpperCase()}</b>
             </div>
 
             {/* Date */}
