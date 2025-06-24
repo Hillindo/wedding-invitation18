@@ -112,7 +112,7 @@ const [socmedLeft, setSocmedLeft] = useState<any>([]);
                                         ? (data.brideGroomLeft[0].name_female || data.brideGroomLeft[0].name_male) 
                                         : ''}
                                     </h3>
-                                    <div className="text-[#D4AF37] font-redressed text-lg mb-4">
+                                    <div className="text-[#D4AF37] text-lg mb-4" style={{ fontFamily: `${data?.fontTitle ? data?.fontTitle?.font_title : "romantic"}` }}>
                                         Putri dari
                                         <br />Bapak {data?.brideGroomLeft && data.brideGroomLeft.length > 0 
                                         ? (data.brideGroomLeft[0].father_female || data.brideGroomLeft[0].father_male) 
@@ -166,7 +166,7 @@ const [socmedLeft, setSocmedLeft] = useState<any>([]);
                                         ? (data.brideGroomRight[0].name_male || data.brideGroomRight[0].name_female) 
                                         : ''}
                                     </h3>
-                                    <div className="text-center font-redressed text-[#D4AF37] text-lg mb-4">
+                                    <div className="text-center text-[#D4AF37] text-lg mb-4" style={{ fontFamily: `${data?.fontTitle ? data?.fontTitle?.font_title : "romantic"}` }}>
                                         Putra dari
                                         <br />Bapak {data?.brideGroomRight && data.brideGroomRight.length > 0 
                                         ? (data.brideGroomRight[0].father_male || data.brideGroomRight[0].father_female) 
