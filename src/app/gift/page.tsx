@@ -67,7 +67,7 @@ export default function Gift ({data}:any) {
      <div className="bg-[#051E31] rounded-3xl shadow-slate-800 shadow-md relative mx-5 sm:mx-20 lg:px-5 border-white flex z-20 border">
      <div className=" rounded-3xl bg-center left-0 bg-no-repeat bg-cover bg-blend-multiply h-full w-full absolute z-10 bg-[#051E31]" style={{backgroundImage: `url('/img/bg-1.jpg')`}}></div>
         <div className="w-full flex flex-wrap justify-center items-center gap-5 text-center py-5 bg-transparent z-50">
-            <div className="font-amiri text-2xl text-[#D4AF37] text-white text-center">
+            <div className="font-roxborough-cf text-2xl text-[#D4AF37] text-white text-center">
                 Wedding Gift
             </div>
             <div className="text-center text-sm mb-5 w-full mx-5 text-white" style={{ fontFamily: `${data?.fontContent ? data?.fontContent?.font_content : "Quicksand"}` }}>    

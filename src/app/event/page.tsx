@@ -123,8 +123,7 @@ export default function Location({ data }: any) {
                         className="w-full p-6 md:p-8 rounded-2xl shadow-xl text-white bg-[#0A2036E6] backdrop-blur-sm" // Dark semi-transparent background for card
                     >
                         <h2
-                            className="text-3xl md:text-4xl font-bold text-yellow-400 text-center mb-6 uppercase"
-                            style={{fontFamily: data?.fontTitle?.font_title || 'Cinzel, serif'}}
+                            className="text-3xl md:text-4xl font-bold text-yellow-400 text-center mb-6 uppercase font-roxborough-cf"
                         >
                             {eventData.name} {/* Dynamic title from backend */}
                         </h2>
@@ -149,7 +148,7 @@ export default function Location({ data }: any) {
                             </div>
                             <div className="mb-5 w-full flex items-center justify-center text-center">
                                 <i className="fa-solid fa-location-dot pr-3 text-sm text-gray-300"></i>
-                                <div className="text-sm italic text-gray-200" style={{fontFamily: data?.fontContent?.font_content || 'Newsreader, serif'}}>
+                                <div className="text-sm italic text-gray-200 font-quicksand">
                                     <p>{eventData.location || eventData.address}</p>
                                 </div>
                             </div>

@@ -96,7 +96,7 @@ const [greetings, setGreetings] = useState<any>([]);
                 backgroundRepeat: 'no-repeat'
             }}>
             <div className="w-full flex flex-wrap mx-auto py-12">
-                <div className="text-center text-[#D4AF37] mb-5 w-full font-youkiss text-4xl">RSVP
+                <div className="text-center text-[#D4AF37] mb-5 w-full font-roxborough-cf text-4xl">RSVP
                 </div>
 
                 <div className="text-center  font-saignh text-md mb-5 mx-6">Please kindly help us prepare everything
