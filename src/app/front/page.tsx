@@ -328,7 +328,7 @@ export default function Front({data, guestName, onOpenInvitation}:any) {
                                     initial={{ opacity: 0, y: -20 }}
                                     animate={{ opacity: 1, y: 0 }}
                                     transition={{ delay: 0.5 }}
-                                    className="w-full h-auto mt-[3vh]"
+                                    className="w-full h-auto mt-[8vh]"
                                 >
                                     <img
                                         src="/img/rumah-gadang.png"
@@ -343,19 +343,19 @@ export default function Front({data, guestName, onOpenInvitation}:any) {
                                     initial={{ opacity: 0 }}
                                     animate={{ opacity: 1 }}
                                     transition={{ delay: 0.8 }}
-                                    className="flex flex-col items-center"
+                                    className="flex flex-col items-center pt-[2vh]"
                                 >
                                     <div className="w-auto h-auto text-center font-quicksand tracking-[1px] opacity-80"
                                     style={{ 
                                         color: '#e1ba60',
-                                        fontSize: 'clamp(12px, 3vw, 14px)'
+                                        fontSize: 'clamp(14px, 3.5vw, 16px)'
                                     }}>
                                         THE WEDDING OF
                                     </div>
                                     <div className="w-auto h-auto text-center tracking-[3.7px] font-roxborough-cf opacity-95 mt-2"
                                     style={{ 
                                         color: '#e1ba60',
-                                        fontSize: 'clamp(24px, 7vw, 33px)'
+                                        fontSize: 'clamp(26px, 8vw, 35px)'
                                     }}>
                                         {(nameAliasLeft ? nameAliasLeft : nameLeft ? nameLeft : " ").toUpperCase()} <br/> 
                                         & <br/>
@@ -380,7 +380,7 @@ export default function Front({data, guestName, onOpenInvitation}:any) {
                                     <div className="w-auto h-auto text-center mt-[1vh] font-newsreader opacity-95"
                                     style={{ 
                                         color: '#e1ba60',
-                                        fontSize: 'clamp(18px, 5vw, 24px)'
+                                        fontSize: 'clamp(20px, 6vw, 26px)'
                                     }}>
                                         {newGuestName ? newGuestName : ""}
                                     </div>
@@ -388,14 +388,14 @@ export default function Front({data, guestName, onOpenInvitation}:any) {
                                         <div className="w-auto text-center opacity-95"
                                         style={{ 
                                             color: '#e1ba60',
-                                            fontSize: 'clamp(10px, 2.5vw, 12px)'
+                                            fontSize: 'clamp(8px, 2vw, 10px)'
                                         }}>
-                                            mohon maaf jika ada kesalahan
+                                            *mohon maaf jika ada kesalahan
                                         </div>
                                         <div className="w-auto text-center opacity-95"
                                         style={{ 
                                             color: '#e1ba60',
-                                            fontSize: 'clamp(10px, 2.5vw, 12px)'
+                                            fontSize: 'clamp(8px, 2vw, 10px)'
                                         }}>
                                            dalam penulisan nama / gelar
                                         </div>
