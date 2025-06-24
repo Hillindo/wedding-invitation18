@@ -396,3 +396,8 @@ body {
 .content-transition.visible {
   opacity: 1;
 }
+.no-scroll {
+    overflow: hidden !important;
+    position: fixed;
+    width: 100%;
+}

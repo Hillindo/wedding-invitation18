@@ -41,22 +41,6 @@ export default function Front({data, guestName, onOpenInvitation}:any) {
         setIsGateOpen(true);
     }, []);
 
-    useEffect(() => {
-        // Disable scroll on mount
-        if (typeof window !== 'undefined') {
-            const originalBodyOverflow = document.body.style.overflow;
-            const originalDocumentElementOverflow = document.documentElement.style.overflow;
-            
-            document.body.style.overflow = 'hidden';
-            document.documentElement.style.overflow = 'hidden';
-
-            // Cleanup function to restore scroll on unmount
-            return () => {
-                document.body.style.overflow = originalBodyOverflow;
-                document.documentElement.style.overflow = originalDocumentElementOverflow;
-            };
-        }
-    }, []);
 
     useEffect(() => {
         if (guestName) {
@@ -83,10 +67,6 @@ export default function Front({data, guestName, onOpenInvitation}:any) {
     }, [data]);
 
     const handleOpenInvitation = () => {
-        if (typeof window !== 'undefined') {
-            document.body.style.overflow = 'unset';
-            document.documentElement.style.overflow = 'unset';
-        }
         setIsLeaving(true);
         setTimeout(() => {
             if (onOpenInvitation) {
@@ -109,7 +89,7 @@ export default function Front({data, guestName, onOpenInvitation}:any) {
                     leftColor="#8D7B68"
                     rightColor="#A4907C"
                 >                    <section 
-                        className='relative w-full min-h-screen bg-transparent bg-cover bg-center bg-no-repeat lg:max-w-md mx-auto' 
+                        className='relative w-full min-h-screen bg-transparent bg-cover bg-center bg-no-repeat lg:max-w-md mx-auto no-scroll'
                         style={{ backgroundImage: `url('/img/bg-2.jpg')` }}
                     >
                         {/* Corner ornaments - TOP RIGHT */}
