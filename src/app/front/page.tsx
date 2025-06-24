@@ -382,7 +382,7 @@ export default function Front({data, guestName, onOpenInvitation}:any) {
                                         color: '#e1ba60',
                                         fontSize: 'clamp(20px, 6vw, 26px)'
                                     }}>
-                                        {newGuestName ? newGuestName : ""}
+                                        <b>{newGuestName ? newGuestName : ""}</b>
                                     </div>
                                     <div className="mt-[1vh]">
                                         <div className="w-auto text-center opacity-95"
