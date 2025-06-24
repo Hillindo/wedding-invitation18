@@ -88,8 +88,9 @@ export default function Front({data, guestName, onOpenInvitation}:any) {
                     onAnimationComplete={() => {}}
                     leftColor="#8D7B68"
                     rightColor="#A4907C"
-                >                    <section 
-                        className='relative w-full min-h-screen bg-transparent bg-cover bg-center bg-no-repeat lg:max-w-md mx-auto no-scroll'
+                >
+                    <section 
+                        className='relative w-full h-screen bg-transparent bg-cover bg-center bg-no-repeat lg:max-w-md mx-auto no-scroll overflow-hidden'
                         style={{ backgroundImage: `url('/img/bg-2.jpg')` }}
                     >
                         {/* Corner ornaments - TOP RIGHT */}
@@ -110,9 +111,10 @@ export default function Front({data, guestName, onOpenInvitation}:any) {
                             />
                         </div>
                         
-                        {/* Flower decorations - LEFT */}
-                        <motion.div 
+                        {/* Flower decorations - LEFT - Using viewport units for responsive positioning */}
+                        <motion.div
                                 className="w-full h-auto top-[600px] absolute left-[-100px]"
+                                // style={{ top: '75vh' }}
                                 animate={{
                                     x: [0, 9, 0, -4, 0],
                                     transition: {
@@ -127,7 +129,7 @@ export default function Front({data, guestName, onOpenInvitation}:any) {
                                     className="w-32 md:w-40 " style={{ transform: 'rotate(35deg)' }}
                                         />
                         </motion.div>
-                        <motion.div 
+                       <motion.div 
                                 className="w-full h-auto top-[500px] absolute left-[-100px]"
                                 animate={{
                                     x: [0, 10, 0, -5, 0],
@@ -308,7 +310,8 @@ export default function Front({data, guestName, onOpenInvitation}:any) {
                                 </motion.div>
                             </div>
                         </div>
-                          {/* Frame Border 1*/}
+                        
+                        {/* Frame Border */}
                         <div className="absolute inset-0 flex items-center justify-center z-10 px-8 py-12">
                             <img 
                                 src="/img/Asset1.png" 
@@ -317,69 +320,100 @@ export default function Front({data, guestName, onOpenInvitation}:any) {
                             />
                         </div>
                         
-                        <div className="absolute w-full h-full bottom-0 z-20 py-10 mt-5 pb-10 md:pb-0 lg:pb-0">
-                            <div className="w-full flex flex-col justify-center text-white" style={{ marginTop: '27%' }}>
-                            <motion.div 
-                                initial={{ opacity: 0, y: -20 }}
-                                animate={{ opacity: 1, y: 0 }}
-                                transition={{ delay: 0.5 }}
-                                className="w-full h-auto"
-                            >
-                                <img 
-                                    src="/img/rumah-gadang.png" 
-                                    alt="Rumah Gadang" 
-                                    loading="lazy" 
-                                    // style={{ maxWidth: "65%", margin: "0 auto", display: "block" }}
-                                    className="mx-auto block w-[45%] md:w-[45%] lg:w-[35%] "
-                                />
-                            </motion.div>
+                        {/* Main content container with consistent positioning across all screen sizes */}
+                        <div className="absolute inset-0 z-20 flex flex-col justify-center items-center px-4" style={{ paddingBottom: '8vh' }}>
+                            <div className="w-full flex flex-col items-center text-white max-w-sm mx-auto">
+                                {/* Rumah Gadang with consistent proportional sizing */}
+                                <motion.div
+                                    initial={{ opacity: 0, y: -20 }}
+                                    animate={{ opacity: 1, y: 0 }}
+                                    transition={{ delay: 0.5 }}
+                                    className="w-full h-auto mb-[3vh]"
+                                >
+                                    <img
+                                        src="/img/rumah-gadang.png"
+                                        alt="Rumah Gadang"
+                                        loading="lazy"
+                                        className="mx-auto block w-[45%] max-w-[180px]"
+                                    />
+                                </motion.div>
+                                
+                                {/* Text content with responsive sizing */}
                                 <motion.div
                                     initial={{ opacity: 0 }}
                                     animate={{ opacity: 1 }}
                                     transition={{ delay: 0.8 }}
-                                    className="space-y-4"
+                                    className="flex flex-col items-center"
                                 >
-                                    <div className="w-auto h-auto text-center font-quicksand tracking-[1px] text-[15px] opacity-80 md:text-2xl lg:text-[15px]" 
-                                    style={{ color: '#e1ba60' }}>
+                                    <div className="w-auto h-auto text-center font-quicksand tracking-[1px] opacity-80"
+                                    style={{ 
+                                        color: '#e1ba60',
+                                        fontSize: 'clamp(12px, 3vw, 14px)'
+                                    }}>
                                         THE WEDDING OF
                                     </div>
-                                    <div className="w-auto h-auto text-center tracking-[3.7px] font-roxborough-cf text-[25px] md:text-6xl lg:text-[40px] opacity-95"
-                                    style={{ color: '#e1ba60' }}> 
+                                    <div className="w-auto h-auto text-center tracking-[3.7px] font-roxborough-cf opacity-95 mt-2"
+                                    style={{ 
+                                        color: '#e1ba60',
+                                        fontSize: 'clamp(24px, 7vw, 32px)'
+                                    }}>
                                         {nameAliasLeft ? nameAliasLeft : nameLeft ? nameLeft: " "} & {nameAliasRight ? nameAliasRight : nameRight ? nameRight : " "}
                                     </div>
-                                    <div>
-                                        <div className="w-auto h-auto text-center text-[11px] opacity-95 md:text-2xl lg:text-[15px] md:mt-4 xl:mt-0"
-                                        style={{ color: '#e1ba60' }}>
+                                    <div className="mt-[2vh]">
+                                        <div className="w-auto h-auto text-center opacity-95"
+                                        style={{ 
+                                            color: '#e1ba60',
+                                            fontSize: 'clamp(10px, 2.5vw, 12px)'
+                                        }}>
                                             Kepada Yth :
                                         </div>
-                                        <div className="w-auto h-auto text-center text-[11px] opacity-95 md:text-2xl lg:text-[15px] md:mt-4 xl:mt-0"
-                                        style={{ color: '#e1ba60' }}>
+                                        <div className="w-auto h-auto text-center opacity-95"
+                                        style={{ 
+                                            color: '#e1ba60',
+                                            fontSize: 'clamp(10px, 2.5vw, 12px)'
+                                        }}>
                                             Bapak/Ibu/Saudara/i
                                         </div>
                                     </div>
-                                    <div className="w-auto h-auto text-center text-[22px] mt-1 font-newsreader opacity-95 md:text-5xl lg:text-[26px] md:mt-4 xl:mt-2"
-                                    style={{ color: '#e1ba60' }}>
+                                    <div className="w-auto h-auto text-center mt-[1vh] font-newsreader opacity-95"
+                                    style={{ 
+                                        color: '#e1ba60',
+                                        fontSize: 'clamp(18px, 5vw, 24px)'
+                                    }}>
                                         {newGuestName ? newGuestName : ""}
                                     </div>
-                                    <div>
-                                     <div className="w-auto text-center text-[10px] opacity-95 md:text-2xl lg:text-[15px] md:mt-2 xl:mt-0"
-                                        style={{ color: '#e1ba60' }}>
+                                    <div className="mt-[1vh]">
+                                        <div className="w-auto text-center opacity-95"
+                                        style={{ 
+                                            color: '#e1ba60',
+                                            fontSize: 'clamp(10px, 2.5vw, 12px)'
+                                        }}>
                                             mohon maaf jika ada kesalahan
                                         </div>
-                                        <div className="w-auto text-center text-[10px] opacity-95 md:text-2xl lg:text-[15px] md:mt-2 xl:mt-0"
-                                        style={{ color: '#e1ba60' }}>
+                                        <div className="w-auto text-center opacity-95"
+                                        style={{ 
+                                            color: '#e1ba60',
+                                            fontSize: 'clamp(10px, 2.5vw, 12px)'
+                                        }}>
                                            dalam penulisan nama / gelar
                                         </div>
-                                        </div>
+                                    </div>
                                 </motion.div>
-                                <motion.a 
-                                    className="mt-4 md:mt-7 text-center w-full h-auto cursor-pointer"
+                                
+                                {/* Button with consistent positioning */}
+                                <motion.a
+                                    className="text-center w-full h-auto cursor-pointer"
+                                    style={{ marginTop: '4vh' }}
                                     initial={{ opacity: 0, y: 20 }}
                                     animate={{ opacity: 1, y: 0 }}
                                     transition={{ delay: 1.2 }}
                                     onClick={handleOpenInvitation}
                                 >
-                                    <button className="border hover:border-black border-solid tracking-[1px] bg-black hover:bg-white rounded-xl p-2 text-[13px] font-quicksand opacity-95 text-white font-semibold hover:text-black md:text-2xl lg:text-[13px]">
+                                    <button className="border hover:border-black border-solid tracking-[1px] bg-black hover:bg-white rounded-xl font-quicksand opacity-95 text-white font-semibold hover:text-black"
+                                    style={{
+                                        padding: 'clamp(6px, 2vw, 8px) clamp(12px, 4vw, 16px)',
+                                        fontSize: 'clamp(12px, 3vw, 14px)'
+                                    }}>
                                         <span>
                                             <i className="fa fa-envelope-open mr-2 z-20"></i>
                                         </span>
