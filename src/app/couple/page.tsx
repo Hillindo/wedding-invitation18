@@ -72,8 +72,7 @@ const [socmedLeft, setSocmedLeft] = useState<any>([]);
                         </h1>
                     </Observer3>
                     <div
-                        className="text-center mb-12 text-[#D4AF37] w-full text-sm sm:text-base md:text-lg lg:text-sm"
-                        style={{ fontFamily: `${data?.fontTitle ? data?.fontTitle?.font_title : "romantic"}` }}
+                        className="text-center mb-12 text-[#D4AF37] w-full text-sm sm:text-base md:text-lg lg:text-sm font-quicksand"
                     >
                         <div className="mx-5">
                             <Observer>
