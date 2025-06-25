@@ -189,13 +189,15 @@ export default function Home() {
                   <Section1 data={data}/>
                   <Section2 data={data}/>
                   <Couple data={data}/>
-                  <Date data={data}/>
                   <Event data={data}/>
+                  <Date data={data}/>
                   <section className='bg-white py-[10%] relative w-full z-40'>
-                    <div className='bg-[#A5131300] mix-blend-multiply top-0 bg-center h-full w-full absolute'
-                        style={{backgroundImage: `url('/img/bg-2.jpg')`}}></div>                <Greeting data={data}/>
-                    <Gift data={data}/>
+                  <div className='bg-[#A5131300] mix-blend-multiply top-0 bg-center h-full w-full absolute'
+                      style={{backgroundImage: `url('/img/bg-2.jpg')`}}></div>                <Greeting data={data}/>
+                  <Gift data={data}/>
                   </section>
+                 
+                  
                   <Love data={data} />
                   <Gallery data={data} />
                   <section className='bg-white py-[10%] relative w-full'>
