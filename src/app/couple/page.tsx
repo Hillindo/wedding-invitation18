@@ -71,11 +71,16 @@ const [socmedLeft, setSocmedLeft] = useState<any>([]);
                             Kedua Mempelai
                         </h1>
                     </Observer3>
-                    <div className="text-center text-xl mb-12 text-[#D4AF37] w-full" style={{ fontFamily: `${data?.fontContent ? data?.fontContent?.font_content : "Redressed"}` }}>
+                    <div
+                        className="text-center mb-12 text-[#D4AF37] w-full text-sm sm:text-base md:text-lg lg:text-sm"
+                        style={{ fontFamily: `${data?.fontTitle ? data?.fontTitle?.font_title : "romantic"}` }}
+                    >
                         <div className="mx-5">
                             <Observer>
                                 <p>
-                                    {caption2 ? caption2 : defaultCaption2}
+                                    {/* {caption2 ? caption2 : defaultCaption2} */}
+                                    Assalamualaikum Warahmatullahi Wabarakatuh <br />
+                                    Maha Suci Allah yang telah menciptakan makhluk-Nya berpasang-pasangan, Ya Allah semoga ridho Mu tercurah mengiringi pernikahan kami, Aamiin.
                                 </p>
                             </Observer>
                         </div>
