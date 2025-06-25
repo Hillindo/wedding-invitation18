@@ -99,16 +99,16 @@ const [greetings, setGreetings] = useState<any>([]);
                 <div className="text-center text-[#D4AF37] mb-5 w-full font-roxborough-cf text-4xl">RSVP
                 </div>
 
-                <div className="text-center  font-saignh text-md mb-5 mx-6">Please kindly help us prepare everything
+                <div className="text-center  font-quicksand text-md mb-5 mx-6">Please kindly help us prepare everything
                     better by confirming your attendance to our wedding event with the following RSVP form:
                 </div>
                 <div className="mb-5 w-full">
                     <div className="p-5">
 
                         <div className=" pb-3">
-                            <div className=" font-saignh text-sm mb-2">Name*</div>
+                            <div className=" font-quicksand text-sm mb-2">Name*</div>
                             <textarea
-                                className="w-full rounded-xl border border-white py-1 px-4 text-xs font-romantic text-black"
+                                className="w-full rounded-xl border border-white py-1 px-4 text-xs font-quicksand text-black"
                                 value={nameGuest} onChange={(e)=> setNameGuest(e.target.value)}>
                                 </textarea>
                         </div>
@@ -148,16 +148,16 @@ const [greetings, setGreetings] = useState<any>([]);
             <div className="text-white rounded-lg text-lg bg-red-500 text-center">{presenceError}</div>)}
                         </div> */}
                         <div className=" pb-3">
-                            <div className=" font-saignh text-sm mb-2">Give prayers and greetings to the bride and groom
+                            <div className=" font-quicksand text-sm mb-2">Give prayers and greetings to the bride and groom
                             </div>
-                            <textarea className="w-full rounded-xl border border-white p-5 text-xs font-romantic text-black"
+                            <textarea className="w-full rounded-xl border border-white p-5 text-xs font-quicksand text-black"
                                 value={greetingWord} onChange={(e)=> setGreetingWord(e.target.value)}>
                                 </textarea>
                         </div>
                         <button
                             className="MobileButton self-stretch h-12 bg-[#183A51] rounded-lg justify-center items-center gap-4 inline-flex w-full"
                             onClick={sendGreeting}>
-                            <div className={`Text text-white text-sm font-normal leading-normal ${loading
+                            <div className={`Text text-white text-sm font-quicksand leading-normal ${loading
                                 && "cursor-not-allowed" }`}>
                                 Submit
                             </div>
