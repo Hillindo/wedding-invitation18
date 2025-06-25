@@ -129,8 +129,7 @@ export default function Location({ data }: any) {
                         </h2>
                         <div className="text-center text-white">
                             <div
-                                className="mb-3 capitalize font-semibold text-lg"
-                                style={{fontFamily: data?.fontContent?.font_content || 'Garaigit, serif'}}
+                                className="mb-3 capitalize font-semibold text-lg font-quicksand"
                             >
                                 {d.toLocaleDateString("id-ID", {
                                     weekday: "long",
@@ -142,7 +141,7 @@ export default function Location({ data }: any) {
                             <div className="mb-3 w-full border-t border-gray-400 opacity-30" />
                             <div className="w-full mb-3 flex items-center justify-center">
                                 <i className="fa-solid fa-clock pr-3 text-sm text-gray-300"></i>
-                                <div className="text-sm text-gray-200" style={{fontFamily: data?.fontContent?.font_content || 'sans-serif'}}>
+                                <div className="text-sm text-gray-200 font-quicksand">
                                     {`${eventData.start_event.substr(0, 5).replace(":", ".")} - ${eventData.end_event.substr(0, 5).replace(":", ".")}`} {eventData.time_zone}
                                 </div>
                             </div>
