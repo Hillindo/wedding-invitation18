@@ -54,7 +54,7 @@ export default function Last({data}:any) {
                  Merupakan Suatu Kebahagiaan Dan Kehormatan Bagi Kami Apabila Bapak/Ibu/Saudara/i Berkenan Hadir Untuk Memberikan Doa Restu Kepada Kami. Atas Kehadiran Dan Doa Restunya Kami Ucapkan Terima Kasih.
             </p>
             <h1
-              className="font-roserri text-3xl md:text-4xl lg:text-3xl capitalize mt-8">
+              className="font-roxborough-cf text-3xl md:text-4xl lg:text-3xl capitalize mt-8">
             {nameAliasLeft ? nameAliasLeft : nameLeft ? nameLeft: " "} & {nameAliasRight ? nameAliasRight : nameRight ? nameRight : " "}
             </h1>
                   </Observer4>
