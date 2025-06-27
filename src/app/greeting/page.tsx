@@ -1,6 +1,6 @@
 "use client";
 import React, { useState, useEffect, useCallback, useRef } from 'react';
-import axios from "axios";
+import axios from "next@js/lib/axios";
 import { getCookie } from "cookies-next";
 import Observer from "next@js/app/component/observer/observer-up";
 
@@ -78,7 +78,6 @@ const useGreetings = (subDomain: string | undefined) => {
   // Function to send a new greeting with optimistic update
   const sendGreeting = useCallback(async (newGreeting: Omit<GreetingMessage, 'id' | 'created_at'>) => {
     if (!subDomain) return;
-
     const optimisticGreeting: GreetingMessage = {
       ...newGreeting,
       id: `optimistic-${Date.now()}`,
