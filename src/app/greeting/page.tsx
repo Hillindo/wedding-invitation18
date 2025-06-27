@@ -73,7 +73,7 @@ const useGreetings = (subDomain: string | undefined) => {
     }, 5000); // Poll every 5 seconds
 
     return () => clearInterval(interval);
-  }, [fetchGreetings, subDomain, greetings]);
+  }, [fetchGreetings, subDomain]);
 
   // Function to send a new greeting with optimistic update
   const sendGreeting = useCallback(async (newGreeting: Omit<GreetingMessage, 'id' | 'created_at'>) => {
