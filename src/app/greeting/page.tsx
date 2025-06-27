@@ -56,7 +56,7 @@ const [greetings, setGreetings] = useState<any>([]);
     return () => {
     clearInterval(interval);
     };
-    });
+    }, []);
 
     const sendGreeting = async (e: any) => {
     e.preventDefault();
