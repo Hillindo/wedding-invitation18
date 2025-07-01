@@ -124,7 +124,7 @@ const [socmedLeft, setSocmedLeft] = useState<any>([]);
                                         <br />dan Ibu {data?.brideGroomLeft && data.brideGroomLeft.length > 0 
                                         ? (data.brideGroomLeft[0].mother_female || data.brideGroomLeft[0].mother_male) 
                                         : ''}
-                                        <br/>(Restoran Lembah Anai Baru)
+                                        {/* <br/>(Restoran Lembah Anai Baru) */}
                                     </div>
                                     <div className="my-2">
                                         <a href={socmedLeft?.url}
@@ -178,7 +178,7 @@ const [socmedLeft, setSocmedLeft] = useState<any>([]);
                                         <br />dan Ibu {data?.brideGroomRight && data.brideGroomRight.length > 0 
                                         ? (data.brideGroomRight[0].mother_male || data.brideGroomRight[0].mother_female) 
                                         : ''}
-                                        <br/>(PT Matra Hillindo Teknologi)
+                                        {/* <br/>(PT Matra Hillindo Teknologi) */}
                                     </div>
                                     <div className="my-2">
                                         <a href={socmedRight?.url}
