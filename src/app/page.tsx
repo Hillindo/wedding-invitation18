@@ -118,12 +118,11 @@ export default function Home() {
         try {
           setIsLoading(true);
           const res = await axios.get(
-            `/api/invitation/${getCookie("subDomain")}`
+            `https://pastinikah.id/api/invitation/${getCookie("subDomain")}`
           );
           setData(res.data);
-          // const musicUrl = res.data?.music?.path_music ?? res.data?.music?.embed_link;
-          // setMusic(musicUrl);
-          setMusic("/testMusic.mp3");
+          const musicUrl = res.data?.music?.path_music ?? res.data?.music?.embed_link;
+          setMusic(musicUrl);
           addFontsDynamically(res.data.font);
 
           if (res?.data?.isItemNotPaid.length > 0) {
@@ -208,7 +207,7 @@ export default function Home() {
                   </section>
                   <Footer />
                   <Navbar/>
-                  <BackgroundMusic src={music ? music : "/testMusic.mp3"} isEnabled={musicEnabled} />
+                  <BackgroundMusic src={music ? music : "/music/default.mp3"} isEnabled={musicEnabled} />
                 </div>
               </div>
             </>
