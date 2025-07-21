@@ -4,7 +4,7 @@ const nextConfig = {}
 // module.exports = nextConfig
 module.exports = {
     images: {
-        domains: ['pastinikah.id'],
+        domains: ['pastinikah.site'],
     },
     eslint: {
         // Warning: This allows production builds to successfully complete even if

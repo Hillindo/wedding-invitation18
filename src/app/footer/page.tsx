@@ -4,14 +4,14 @@ export default function Footer () {
 
         <div className='flex items-center justify-center text-xs pt-4 lg:text-sm'>
           <span className='text-center'>
-          <a href="https://pastinikah.id" target='_blank' className='pt-5 pb-5 flex justify-center'>
+          <a href="https://pastinikah.site" target='_blank' className='pt-5 pb-5 flex justify-center'>
           <img src="/logo/iconpastinikah2.svg" className=' w-1/3' alt="" loading="lazy"/>
           </a>
           ©CopyRight 
           </span>
         </div>
         <div className="flex gap-1 items-center justify-center  ">
-          <a href="https://instagram.com/pastinikah.id" target="_blank"
+          <a href="https://instagram.com/pastinikah.site" target="_blank"
             className="w-10 h-10  rounded-full flex justify-center items-center border border-white  hover:bg-[#BEB4A3] hover:text-black">
             <svg role="img" width="20" className="fill-current" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
               <title>Instagram</title>

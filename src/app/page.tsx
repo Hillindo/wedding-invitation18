@@ -118,7 +118,7 @@ export default function Home() {
         try {
           setIsLoading(true);
           const res = await axios.get(
-            `https://pastinikah.id/api/invitation/${getCookie("subDomain")}`
+            `https://pastinikah.site/api/invitation/${getCookie("subDomain")}`
           );
           setData(res.data);
           const musicUrl = res.data?.music?.path_music ?? res.data?.music?.embed_link;
